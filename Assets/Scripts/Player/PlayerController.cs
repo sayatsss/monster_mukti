@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float jumpValue;
     [SerializeField] private float gravity;
     private float _yvelocity=0.0f;
+
+    //private Vector3 moveDirection = Vector3.zero;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,12 +24,17 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         //direction for the character.
-        Vector3 direction = Vector3.forward;
+        Vector3 direction = new Vector3(Mathf.Clamp(Input.GetAxis("Horizontal"),-1.3f,1.3f), 0, 1);
         //velocity for the character.
         Vector3 velocity = direction * speed;
+
         if(controller.isGrounded)
         {
             characterAnimator.SetBool("IsJump", false);
+
+           // velocity = 
+           // velocity = transform.TransformDirection(velocity);
+           // velocity *= speed;
 
             if (Input.GetKeyDown(KeyCode.Space))
             {

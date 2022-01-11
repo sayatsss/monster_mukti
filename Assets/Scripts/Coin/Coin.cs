@@ -4,6 +4,11 @@ public class Coin : MonoBehaviour
 {
 
     [SerializeField]private float turnSpeed=90f;
+
+    private void Start()
+    {
+        turnSpeed = Random.Range(60f, 90f);
+    }
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag=="Player")
@@ -14,7 +19,6 @@ public class Coin : MonoBehaviour
         
     }
   
-    
 
     // Update is called once per frame
     void Update()

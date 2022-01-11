@@ -71,7 +71,8 @@ public class LevelGenerator : MonoBehaviour
             platform.transform.rotation = Quaternion.identity;
             platform.transform.rotation = Quaternion.Euler(0, 0, 0);
             Z_Offset += FPZ_Value;
+            platform.GetComponent<CoinGenerator>().ReArrangeCoinManagers();
         }
-       // platform.GetComponent<CoinGenerator>().SpawnCoins();
+       
     }
 }

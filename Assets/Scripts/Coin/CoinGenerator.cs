@@ -26,7 +26,7 @@ public class CoinGenerator : MonoBehaviour
         ReArrangeCoinManagers();
     }
 
-    private void ReArrangeCoinManagers()
+    public void ReArrangeCoinManagers()
     {
         for(int i=0;i<CoinManagers.Count;i++)
         {
