@@ -27,7 +27,9 @@ public class PlayerController : MonoBehaviour
         Vector3 velocity = direction * speed;
         if(controller.isGrounded)
         {
-            if(Input.GetKeyDown(KeyCode.Space))
+            characterAnimator.SetBool("IsJump", false);
+
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 characterAnimator.SetBool("IsJump", true);
                 _yvelocity = jumpValue;
@@ -36,7 +38,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-             characterAnimator.SetBool("IsJump", false);
+             //characterAnimator.SetBool("IsJump", false);
             _yvelocity -= gravity;
         }
 
