@@ -4,6 +4,7 @@ using UnityEngine;
 
 
 
+
 public class PlayerController : MonoBehaviour
 {
 
@@ -12,10 +13,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField]private float speed;
     [SerializeField] private float jumpValue;
     [SerializeField] private float gravity;
+    [SerializeField] private float sensitivity= 3f;
+    [SerializeField]float dead = 0.001f;
+    private float _xvelocity = 0.0f;
     private float _yvelocity=0.0f;
+    private Vector3 velocity;
+    private float target;
+    private float moveValue;
 
-    private float P_X_Value=0;
-    private Touch touch;
 
     //private Vector3 moveDirection = Vector3.zero;
     // Start is called before the first frame update
@@ -25,50 +30,58 @@ public class PlayerController : MonoBehaviour
         characterAnimator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     private void FixedUpdate()
     {
 
-        //velocity for the character.
-       // Vector3 direction = new Vector3(Input.GetAxis("Horizontal"), 0, 1);
-        Vector3 velocity = Vector3.forward * speed;
 
-        if(controller.isGrounded)
+        
+
+        if (controller.isGrounded)
         {
 
-            //Need to check this once all rest done.
-           /* if(Input.GetKeyDown(KeyCode.A))
-            {
-                velocity.x = -30;
-            }
-            if (Input.GetKeyDown(KeyCode.D))
-            {
-                velocity.x = 30;
-            }
-            */
             characterAnimator.SetBool("IsJump", false);
-
-           // velocity = 
-           // velocity = transform.TransformDirection(velocity);
-           // velocity *= speed;
-
-            if (Input.GetKeyDown(KeyCode.Space)||SwipeManager.swipeUp)
+            if (Input.GetKeyDown(KeyCode.Space) || SwipeManager.swipeUp)
             {
+                 moveValue = 0;
                 characterAnimator.SetBool("IsJump", true);
                 _yvelocity = jumpValue;
             }
-          
+            if (Input.touchCount > 0)
+            {
+
+                // touchPosition = Input.GetTouch(0).position;
+                if (SwipeManager.swipeRight)
+                {
+                    target = 1;
+                }
+                if (SwipeManager.swipeLeft)
+                {
+                    target = -1;
+                }
+
+                moveValue = Mathf.MoveTowards(moveValue, target, sensitivity * Time.deltaTime);
+
+            }
+            else
+            {
+                moveValue = (moveValue < dead) ? 0 : Mathf.MoveTowards(moveValue, 0, sensitivity * Time.deltaTime);
+            }
+
         }
         else
         {
-             //characterAnimator.SetBool("IsJump", false);
+
             _yvelocity -= gravity;
         }
 
+        velocity = new Vector3(moveValue, 0, 1) * speed;
 
+        Debug.Log(velocity.x);
         velocity.y = _yvelocity;
         //movement for the character.
         controller.Move(velocity * Time.deltaTime);
+       // controller.l
+        //velocity.x = 0;
 
 
         

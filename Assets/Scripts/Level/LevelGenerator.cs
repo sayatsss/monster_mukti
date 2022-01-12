@@ -55,7 +55,14 @@ public class LevelGenerator : MonoBehaviour
                 Go.transform.rotation = Quaternion.Euler(0, 0, 0);
                 Z_Offset += FPZ_Value;
             }
-            if(Go.name.Contains("Cross"))
+            if (Go.name.Contains("Damage"))
+            {
+                Go.transform.position = new Vector3(0, SPY_Offset, i * FPZ_Value - SPZ_Offset);
+                Go.transform.rotation = Quaternion.identity;
+                Go.transform.rotation = Quaternion.Euler(-90, 0, 0);
+                Z_Offset += FPZ_Value;
+            }
+            if (Go.name.Contains("Cross"))
             {
                 Go.transform.position = new Vector3(0, SPY_Offset, i * FPZ_Value - SPZ_Offset);
                 Go.transform.rotation = Quaternion.Euler(0, 180, 0);
@@ -72,7 +79,8 @@ public class LevelGenerator : MonoBehaviour
         {
 
         }
-        else
+       
+        if (platform.name.Contains("Plain") || platform.name.Contains("Broken"))
         {
             platform.transform.position = new Vector3(0, SPY_Offset, Z_Offset);
             platform.transform.rotation = Quaternion.identity;
@@ -80,6 +88,21 @@ public class LevelGenerator : MonoBehaviour
             Z_Offset += FPZ_Value;
             platform.GetComponent<CoinGenerator>().ReArrangeCoinManagers();
         }
-       
+        if (platform.name.Contains("Damage"))
+        {
+            platform.transform.position = new Vector3(0, SPY_Offset, Z_Offset);
+            platform.transform.rotation = Quaternion.identity;
+            platform.transform.rotation = Quaternion.Euler(-90, 0, 0);
+            Z_Offset += FPZ_Value;
+            platform.GetComponent<CoinGenerator>().ReArrangeCoinManagers();
+        }
+        if (platform.name.Contains("Cross"))
+        {
+            platform.transform.position = new Vector3(0, SPY_Offset, Z_Offset);
+            platform.transform.rotation = Quaternion.Euler(0, 180, 0);
+            platform.transform.rotation = Quaternion.Euler(0, 0, 0);
+            Z_Offset += FPZ_Value;
+        }
+
     }
 }
