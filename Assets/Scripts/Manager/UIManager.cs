@@ -6,16 +6,27 @@ using DG.Tweening;
 
 public class UIManager : MonoBehaviour
 {
-    public GameObject PausePanel;
 
+    public static UIManager instance;
+    public GameObject GamePanel;
+    public GameObject PausePanel;
+    public GameObject GameEndPanel;
+
+
+    private void Awake()
+    {
+        instance = this;
+    }
     private void Start()
     {
         PausePanel.SetActive(false);
+        GameEndPanel.SetActive(false);
     }
 
     public void PauseButton()
     {
         PausePanel.SetActive(true);
+        GamePanel.SetActive(false);
        // PausePanel.transform.DOScale(1f, 0.5f);
         GameManager.instance.GameStateChange(GameManager.GameState.pause);
         Time.timeScale = 0;
@@ -29,6 +40,7 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 1;
         GameManager.instance.GameStateChange(GameManager.GameState.game);
         PausePanel.SetActive(false);
+        GamePanel.SetActive(true);
     }
     public void RestartGame()
     {

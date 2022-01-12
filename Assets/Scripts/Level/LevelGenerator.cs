@@ -48,10 +48,17 @@ public class LevelGenerator : MonoBehaviour
                 SPZ_Offset -= FPZO_Value;
                 Z_Offset += FPZ_Value - SPZ_Offset;
             }
-            else
+            if(Go.name.Contains("Plain")|| Go.name.Contains("Broken"))
             {
                 Go.transform.position = new Vector3(0, SPY_Offset, i * FPZ_Value - SPZ_Offset);
                 Go.transform.rotation = Quaternion.identity;
+                Go.transform.rotation = Quaternion.Euler(0, 0, 0);
+                Z_Offset += FPZ_Value;
+            }
+            if(Go.name.Contains("Cross"))
+            {
+                Go.transform.position = new Vector3(0, SPY_Offset, i * FPZ_Value - SPZ_Offset);
+                Go.transform.rotation = Quaternion.Euler(0, 180, 0);
                 Go.transform.rotation = Quaternion.Euler(0, 0, 0);
                 Z_Offset += FPZ_Value;
             }

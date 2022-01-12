@@ -41,6 +41,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void GameEndAction()
+    {
+
+
+        Time.timeScale = 0;
+    }
     public enum GameState
     {
         menu,

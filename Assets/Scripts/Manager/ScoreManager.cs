@@ -9,6 +9,7 @@ public class ScoreManager : MonoBehaviour
 
     [SerializeField]private Text _coinText;
     [SerializeField]private Text _scoreText;
+    [SerializeField] private Text _finalScoreText;
     [HideInInspector]public float _coinCount, _scoreCount;
     private int _tempScore = 0;
 
@@ -30,6 +31,7 @@ public class ScoreManager : MonoBehaviour
             {
                 _scoreCount++;
                 _scoreText.text = (_scoreCount).ToString("00");
+                _finalScoreText.text= (_scoreCount).ToString("00");
                 _tempScore = 0;
             }
         }
