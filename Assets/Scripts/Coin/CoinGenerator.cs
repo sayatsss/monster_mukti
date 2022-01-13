@@ -47,13 +47,17 @@ public class CoinGenerator : MonoBehaviour
             }
         }
 
-        for (int i=0;i<CoinManagers.Count;i++)
+        if(CoinManagers.Count!=0)
         {
-            CoinManagers[i].SetActive(false);
+            for (int i = 0; i < CoinManagers.Count; i++)
+            {
+                CoinManagers[i].SetActive(false);
+            }
+            CoinManagerActiveValue = CoinManagerValue();
+            CoinManagers[CoinManagerActiveValue].SetActive(true);
+            CoinManagers[CoinManagerActiveValue].GetComponent<CoinManager>().GenerateCoins();
         }
-        CoinManagerActiveValue = CoinManagerValue();
-        CoinManagers[CoinManagerActiveValue].SetActive(true);
-        CoinManagers[CoinManagerActiveValue].GetComponent<CoinManager>().GenerateCoins();
+        
     }
 
     private int CoinManagerValue()

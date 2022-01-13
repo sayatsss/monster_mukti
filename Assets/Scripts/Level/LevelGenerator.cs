@@ -41,30 +41,28 @@ public class LevelGenerator : MonoBehaviour
 
             if(Go.name.Contains("Step"))
             {
-                SPZ_Offset += SPZ_Value;
-                Go.transform.position = new Vector3(0, SPY_Offset, i * FPZ_Value - SPZ_Offset);
-                Go.transform.rotation =Quaternion.Euler(0,180,0);
+                Go.transform.position = new Vector3(0, SPY_Offset, i * FPZ_Value);
+                Go.transform.rotation =Quaternion.Euler(0,0,0);
                 SPY_Offset += SPY_Value;
-                SPZ_Offset -= FPZO_Value;
-                Z_Offset += FPZ_Value - SPZ_Offset;
+                Z_Offset += FPZ_Value;
             }
             if(Go.name.Contains("Plain")|| Go.name.Contains("Broken"))
             {
-                Go.transform.position = new Vector3(0, SPY_Offset, i * FPZ_Value - SPZ_Offset);
+                Go.transform.position = new Vector3(0, SPY_Offset, i * FPZ_Value);
                 Go.transform.rotation = Quaternion.identity;
                 Go.transform.rotation = Quaternion.Euler(0, 0, 0);
                 Z_Offset += FPZ_Value;
             }
             if (Go.name.Contains("Damage"))
             {
-                Go.transform.position = new Vector3(0, SPY_Offset, i * FPZ_Value - SPZ_Offset);
-                Go.transform.rotation = Quaternion.identity;
+                Go.transform.position = new Vector3(0, SPY_Offset, i * FPZ_Value);
+               // Go.transform.rotation = Quaternion.identity;
                 Go.transform.rotation = Quaternion.Euler(-90, 0, 0);
                 Z_Offset += FPZ_Value;
             }
             if (Go.name.Contains("Cross"))
             {
-                Go.transform.position = new Vector3(0, SPY_Offset, i * FPZ_Value - SPZ_Offset);
+                Go.transform.position = new Vector3(0, SPY_Offset, i * FPZ_Value);
                 Go.transform.rotation = Quaternion.Euler(0, 180, 0);
                 Go.transform.rotation = Quaternion.Euler(0, 0, 0);
                 Z_Offset += FPZ_Value;
@@ -77,7 +75,10 @@ public class LevelGenerator : MonoBehaviour
     {
         if(platform.name.Contains("Step"))
         {
-
+            platform.transform.position = new Vector3(0, SPY_Offset, Z_Offset);
+            platform.transform.rotation = Quaternion.Euler(-0, 0, 0);
+            SPY_Offset += SPY_Value;
+            Z_Offset += FPZ_Value;
         }
        
         if (platform.name.Contains("Plain") || platform.name.Contains("Broken"))

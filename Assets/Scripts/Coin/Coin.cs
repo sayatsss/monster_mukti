@@ -5,11 +5,15 @@ public class Coin : MonoBehaviour
 {
    // private Transform _camera;
     private float turnSpeed=2f;
+    public float y;
+    private float speed=1;
 
     private void Start()
     {
         //_camera = GetComponent<Camera>().transform;
-        turnSpeed = Random.Range(60f, 90f);
+        turnSpeed = Random.Range(45f, 60f);
+        speed = Random.Range(0.2f, 0.5f);
+        transform.DOMoveY(Mathf.PingPong(0f,0.5f), 0.5f);
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -26,7 +30,11 @@ public class Coin : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       // transform.DOMoveY(Mathf.PingPong(0, 1),0.5f);
-        transform.Rotate(0, 0, turnSpeed*Time.deltaTime);
+        float y = Mathf.PingPong(Time.time * speed, 0.6f) * 1;
+       //transform.position = new Vector3(0, y, 0);
+
+        transform.position = new Vector3(transform.position.x, y, transform.position.z);
+        // transform.DOMoveY(Mathf.PingPong(0, 1),0.5f);
+       // transform.Rotate(0, 0, -turnSpeed*Time.deltaTime);
     }
 }
