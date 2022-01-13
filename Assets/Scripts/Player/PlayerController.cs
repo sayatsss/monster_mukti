@@ -1,13 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-
-
+﻿using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-
     private Animator characterAnimator;
     private CharacterController controller;
     [SerializeField]private float speed;
@@ -21,9 +15,6 @@ public class PlayerController : MonoBehaviour
     private float target;
     private float moveValue;
 
-
-    //private Vector3 moveDirection = Vector3.zero;
-    // Start is called before the first frame update
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -32,59 +23,45 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-
-
-        
-
-        if (controller.isGrounded)
+        if(GameManager.instance.GameStatus==GameManager.GameState.game.ToString())
         {
-
-            characterAnimator.SetBool("IsJump", false);
-            if (Input.GetKeyDown(KeyCode.Space) || SwipeManager.swipeUp)
+            if (controller.isGrounded)
             {
-                 moveValue = 0;
-                characterAnimator.SetBool("IsJump", true);
-                _yvelocity = jumpValue;
-            }
-            if (Input.touchCount > 0)
-            {
-
-                // touchPosition = Input.GetTouch(0).position;
-                if (SwipeManager.swipeRight)
+                characterAnimator.SetBool("IsJump", false);
+                if (Input.GetKeyDown(KeyCode.Space) || SwipeManager.swipeUp)
                 {
-                    target = 1;
+                     moveValue = 0;
+                     characterAnimator.SetBool("IsJump", true);
+                    _yvelocity = jumpValue;
                 }
-                if (SwipeManager.swipeLeft)
+                if (Input.touchCount > 0)
                 {
-                    target = -1;
+                    if (SwipeManager.swipeRight)
+                    {
+                        target = 1;
+                    }
+                    if (SwipeManager.swipeLeft)
+                    {
+                        target = -1;
+                    }
+                    moveValue = Mathf.MoveTowards(moveValue, target, sensitivity * Time.deltaTime);
                 }
-
-                moveValue = Mathf.MoveTowards(moveValue, target, sensitivity * Time.deltaTime);
-
+                else
+                {
+                    moveValue = (moveValue < dead) ? 0 : Mathf.MoveTowards(moveValue, 0, sensitivity * Time.deltaTime);
+                }
             }
             else
             {
-                moveValue = (moveValue < dead) ? 0 : Mathf.MoveTowards(moveValue, 0, sensitivity * Time.deltaTime);
+                _yvelocity -= gravity;
             }
 
+           // velocity = new Vector3(moveValue, 0, 1) * speed;
+            velocity = new Vector3(Input.GetAxis("Horizontal"), 0, 1) * speed;
+
+            velocity.y = _yvelocity;
+            controller.Move(velocity * Time.deltaTime);
+
         }
-        else
-        {
-
-            _yvelocity -= gravity;
-        }
-
-        velocity = new Vector3(moveValue, 0, 1) * speed;
-
-        Debug.Log(velocity.x);
-        velocity.y = _yvelocity;
-        //movement for the character.
-        controller.Move(velocity * Time.deltaTime);
-       // controller.l
-        //velocity.x = 0;
-
-
-        
-        
     }
 }

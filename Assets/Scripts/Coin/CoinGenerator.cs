@@ -7,14 +7,20 @@ public class CoinGenerator : MonoBehaviour
 
     public List<GameObject> CoinManagers;
     private int CoinManagerActiveValue;
+    private GameObject Skull;
 
     private void OnEnable()
     {
+        
         foreach (Transform child in transform)
         {
             if(child.name.Contains("Coin"))
             {
                 CoinManagers.Add(child.transform.gameObject);
+            }
+            if(child.name.Contains("skull"))
+            {
+                Skull = child.gameObject;
             }
         }
         
@@ -28,7 +34,20 @@ public class CoinGenerator : MonoBehaviour
 
     public void ReArrangeCoinManagers()
     {
-        for(int i=0;i<CoinManagers.Count;i++)
+        if (Skull != null)
+        {
+            int value = Random.Range(0, 2);
+            if (value == 1)
+            {
+                Skull.SetActive(true);
+            }
+            else
+            {
+                Skull.SetActive(false);
+            }
+        }
+
+        for (int i=0;i<CoinManagers.Count;i++)
         {
             CoinManagers[i].SetActive(false);
         }

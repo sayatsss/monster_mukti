@@ -1,12 +1,14 @@
 ﻿using UnityEngine;
+using DG.Tweening;
 
 public class Coin : MonoBehaviour
 {
-
-    [SerializeField]private float turnSpeed=90f;
+   // private Transform _camera;
+    private float turnSpeed=2f;
 
     private void Start()
     {
+        //_camera = GetComponent<Camera>().transform;
         turnSpeed = Random.Range(60f, 90f);
     }
     private void OnTriggerEnter(Collider other)
@@ -24,7 +26,7 @@ public class Coin : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       // transform.position = new Vector3(transform.position.x, 0, transform.position.z);
-        transform.Rotate(0, 0, turnSpeed * Time.deltaTime);
+       // transform.DOMoveY(Mathf.PingPong(0, 1),0.5f);
+        transform.Rotate(0, 0, turnSpeed*Time.deltaTime);
     }
 }
