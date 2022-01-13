@@ -8,6 +8,7 @@ public class CoinGenerator : MonoBehaviour
     public List<GameObject> CoinManagers;
     private int CoinManagerActiveValue;
     private GameObject Skull;
+    private GameObject pillarArc;
 
     private void OnEnable()
     {
@@ -21,6 +22,10 @@ public class CoinGenerator : MonoBehaviour
             if(child.name.Contains("skull"))
             {
                 Skull = child.gameObject;
+            }
+            if (child.name.Contains("pillararch"))
+            {
+                pillarArc = child.gameObject;
             }
         }
         
@@ -46,8 +51,20 @@ public class CoinGenerator : MonoBehaviour
                 Skull.SetActive(false);
             }
         }
+        if (pillarArc != null)
+        {
+            int value = Random.Range(0, 2);
+            if (value == 1)
+            {
+                pillarArc.SetActive(true);
+            }
+            else
+            {
+                pillarArc.SetActive(false);
+            }
+        }
 
-        if(CoinManagers.Count!=0)
+        if (CoinManagers.Count!=0)
         {
             for (int i = 0; i < CoinManagers.Count; i++)
             {
