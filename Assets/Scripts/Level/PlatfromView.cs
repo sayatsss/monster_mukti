@@ -9,7 +9,17 @@ public class PlatfromView : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            LevelGenerator.instance.ReCyclePlatform(this.gameObject.transform.parent.gameObject);
+            if(this.gameObject.name.Contains("End"))
+            {
+                LevelGenerator.instance.ReCyclePlatform(this.gameObject.transform.parent.gameObject);
+            }
+
+            if (this.gameObject.name.Contains("Start"))
+            {
+                Debug.Log("Destruct start");
+                this.gameObject.transform.parent.GetComponent<DestructableManager>().DestructAction();
+            }
+
         }
        
     }

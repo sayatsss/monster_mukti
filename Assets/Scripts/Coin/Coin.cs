@@ -33,7 +33,7 @@ public class Coin : MonoBehaviour
         float y = Mathf.PingPong(Time.time * speed, 0.6f) * 1;
        //transform.position = new Vector3(0, y, 0);
 
-        transform.position = new Vector3(transform.position.x, y, transform.position.z);
+        transform.localPosition = new Vector3(transform.localPosition.x, y, transform.localPosition.z);
         // transform.DOMoveY(Mathf.PingPong(0, 1),0.5f);
        // transform.Rotate(0, 0, -turnSpeed*Time.deltaTime);
     }

@@ -46,7 +46,9 @@ public class PlayerController : MonoBehaviour
                 _yvelocity -= gravity;
             }
 
-            velocity = new Vector3(Input.acceleration.x, 0, 1) * speed;
+            // velocity = new Vector3(Input.acceleration.x, 0, 1) * speed;
+             velocity = new Vector3(Input.GetAxis("Horizontal"), 0, 1) * speed;
+
             velocity.y = _yvelocity;
             controller.Move(velocity * Time.deltaTime);
 

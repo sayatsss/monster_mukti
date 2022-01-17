@@ -553,6 +553,7 @@ GameObject:
   - component: {fileID: 5931617874102515453}
   - component: {fileID: 7434826951065222721}
   - component: {fileID: 7434826951065222720}
+  - component: {fileID: 263984583098856170}
   m_Layer: 0
   m_Name: DamagePlatform
   m_TagString: Untagged
@@ -608,7 +609,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 71d055db5f3c58a4bb077058b4aa4bea, type: 2}
+  - {fileID: 2100000, guid: 48e297d2b9a298546939aa21754e6dbf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -656,6 +657,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CoinManagers: []
+--- !u!114 &263984583098856170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5283192368685864744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a304330706b2a7f4eaddb653b4c17eed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DestructableElements: []
 --- !u!1001 &3349663065338711788
 PrefabInstance:
   m_ObjectHideFlags: 0
