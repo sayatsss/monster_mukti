@@ -2456,40 +2456,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6954573910182336904, guid: 90a07112b0edf6c42a7678dcb91fcb45,
+    - target: {fileID: 4406878234224073039, guid: 90a07112b0edf6c42a7678dcb91fcb45,
         type: 3}
-      propertyPath: moveLeft
-      value: -5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6954573910182336904, guid: 90a07112b0edf6c42a7678dcb91fcb45,
-        type: 3}
-      propertyPath: moveRight
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6954573910182336904, guid: 90a07112b0edf6c42a7678dcb91fcb45,
-        type: 3}
-      propertyPath: moveValue
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6954573910182336904, guid: 90a07112b0edf6c42a7678dcb91fcb45,
-        type: 3}
-      propertyPath: jumpValue
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 6954573910182336904, guid: 90a07112b0edf6c42a7678dcb91fcb45,
-        type: 3}
-      propertyPath: sensitivity
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6954573910182336904, guid: 90a07112b0edf6c42a7678dcb91fcb45,
-        type: 3}
-      propertyPath: speed
-      value: 10
+      propertyPath: m_ApplyRootMotion
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6954573910182336905, guid: 90a07112b0edf6c42a7678dcb91fcb45,
         type: 3}
-      propertyPath: m_StepOffset
-      value: 1.1
+      propertyPath: m_Center.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954573910182336905, guid: 90a07112b0edf6c42a7678dcb91fcb45,
+        type: 3}
+      propertyPath: m_Height
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6954573910182336911, guid: 90a07112b0edf6c42a7678dcb91fcb45,
         type: 3}

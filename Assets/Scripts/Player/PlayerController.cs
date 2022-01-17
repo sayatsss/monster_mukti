@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
 
 public class PlayerController : MonoBehaviour
 {
@@ -7,13 +10,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField]private float speed;
     [SerializeField] private float jumpValue;
     [SerializeField] private float gravity;
-    [SerializeField] private float sensitivity= 3f;
-    [SerializeField]float dead = 0.001f;
     private float _xvelocity = 0.0f;
     private float _yvelocity=0.0f;
     private Vector3 velocity;
     private float target;
-    private float moveValue;
+   
 
     void Start()
     {
@@ -30,38 +31,36 @@ public class PlayerController : MonoBehaviour
                 characterAnimator.SetBool("IsJump", false);
                 if (Input.GetKeyDown(KeyCode.Space) || SwipeManager.swipeUp)
                 {
-                     moveValue = 0;
+                  
                      characterAnimator.SetBool("IsJump", true);
                     _yvelocity = jumpValue;
                 }
-                if (Input.touchCount > 0)
+                if (Input.GetKeyDown(KeyCode.S) || SwipeManager.swipeDown)
                 {
-                    if (SwipeManager.swipeRight)
-                    {
-                        target = 1;
-                    }
-                    if (SwipeManager.swipeLeft)
-                    {
-                        target = -1;
-                    }
-                    moveValue = Mathf.MoveTowards(moveValue, target, sensitivity * Time.deltaTime);
+                    StartCoroutine(SlideAnimation());
                 }
-                else
-                {
-                    moveValue = (moveValue < dead) ? 0 : Mathf.MoveTowards(moveValue, 0, sensitivity * Time.deltaTime);
-                }
+
             }
             else
             {
                 _yvelocity -= gravity;
             }
 
-           // velocity = new Vector3(moveValue, 0, 1) * speed;
-            velocity = new Vector3(Input.GetAxis("Horizontal"), 0, 1) * speed;
-
+            velocity = new Vector3(Input.acceleration.x, 0, 1) * speed;
             velocity.y = _yvelocity;
             controller.Move(velocity * Time.deltaTime);
 
         }
     }
+    IEnumerator SlideAnimation()
+    {
+        characterAnimator.SetBool("IsSlide", true);
+        controller.center = new Vector3(controller.center.x, 0.5f, controller.center.z);
+        controller.height = 0.5f;
+        yield return new WaitForSeconds(1.06f);
+        characterAnimator.SetBool("IsSlide", false);
+        controller.center = new Vector3(controller.center.x, 1f, controller.center.z);
+        controller.height = 2f;
+    }
+    
 }
