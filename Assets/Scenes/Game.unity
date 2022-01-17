@@ -265,66 +265,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &52115664
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 52115665}
-  m_Layer: 0
-  m_Name: StepUpper
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &52115665
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 52115664}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.395, z: 0.431}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1519893697}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &68942478
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 68942479}
-  m_Layer: 0
-  m_Name: StepLower
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &68942479
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 68942478}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.026, z: 0.402}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1519893697}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &104798572
 GameObject:
   m_ObjectHideFlags: 0
@@ -2516,21 +2456,40 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1519893695, guid: 90a07112b0edf6c42a7678dcb91fcb45, type: 3}
-      propertyPath: m_AngularDrag
-      value: 0
+    - target: {fileID: 6954573910182336904, guid: 90a07112b0edf6c42a7678dcb91fcb45,
+        type: 3}
+      propertyPath: moveLeft
+      value: -5
       objectReference: {fileID: 0}
-    - target: {fileID: 1519893695, guid: 90a07112b0edf6c42a7678dcb91fcb45, type: 3}
-      propertyPath: m_Constraints
-      value: 112
+    - target: {fileID: 6954573910182336904, guid: 90a07112b0edf6c42a7678dcb91fcb45,
+        type: 3}
+      propertyPath: moveRight
+      value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 1519893695, guid: 90a07112b0edf6c42a7678dcb91fcb45, type: 3}
-      propertyPath: m_Mass
+    - target: {fileID: 6954573910182336904, guid: 90a07112b0edf6c42a7678dcb91fcb45,
+        type: 3}
+      propertyPath: moveValue
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1519893695, guid: 90a07112b0edf6c42a7678dcb91fcb45, type: 3}
-      propertyPath: m_CollisionDetection
-      value: 1
+    - target: {fileID: 6954573910182336904, guid: 90a07112b0edf6c42a7678dcb91fcb45,
+        type: 3}
+      propertyPath: jumpValue
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954573910182336904, guid: 90a07112b0edf6c42a7678dcb91fcb45,
+        type: 3}
+      propertyPath: sensitivity
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954573910182336904, guid: 90a07112b0edf6c42a7678dcb91fcb45,
+        type: 3}
+      propertyPath: speed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954573910182336905, guid: 90a07112b0edf6c42a7678dcb91fcb45,
+        type: 3}
+      propertyPath: m_StepOffset
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 6954573910182336911, guid: 90a07112b0edf6c42a7678dcb91fcb45,
         type: 3}
@@ -2545,7 +2504,7 @@ PrefabInstance:
     - target: {fileID: 7766541890193605429, guid: 90a07112b0edf6c42a7678dcb91fcb45,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7766541890193605429, guid: 90a07112b0edf6c42a7678dcb91fcb45,
         type: 3}
@@ -2594,67 +2553,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90a07112b0edf6c42a7678dcb91fcb45, type: 3}
---- !u!1 &1519893694 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6954573910182336911, guid: 90a07112b0edf6c42a7678dcb91fcb45,
-    type: 3}
-  m_PrefabInstance: {fileID: 1519893693}
-  m_PrefabAsset: {fileID: 0}
---- !u!136 &1519893695
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1519893694}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 1, z: 0}
---- !u!114 &1519893696
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1519893694}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc32fda732cb1ae46a6508718a6873de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stepRayUpper: {fileID: 52115664}
-  stepRayLower: {fileID: 68942478}
-  stepHeight: 2.5
-  stepSmooth: 2
---- !u!4 &1519893697 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7766541890193605429, guid: 90a07112b0edf6c42a7678dcb91fcb45,
-    type: 3}
-  m_PrefabInstance: {fileID: 1519893693}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1519893698
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1519893694}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28e86712b5b1ab2418cf0a5109019048, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 500
-  jumpValue: 5
-  gravity: -1
-  sensitivity: 3
-  groundLayers:
-    serializedVersion: 2
-    m_Bits: 1
 --- !u!1 &1546704958
 GameObject:
   m_ObjectHideFlags: 0
