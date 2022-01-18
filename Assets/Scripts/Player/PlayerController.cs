@@ -64,10 +64,11 @@ public class PlayerController : MonoBehaviour
             {
                 speed += acceleration * Time.deltaTime;
             }
-            
-            velocity = new Vector3(Input.GetAxis("Horizontal"), 0, 1) * speed;//curSpeed += acceleration * Time.deltaTime; ;
-           
-          
+
+            //velocity = new Vector3(Input.GetAxis("Horizontal"), 0, 1) * speed;//curSpeed += acceleration * Time.deltaTime;
+            velocity = new Vector3(Input.acceleration.x, 0, 1) * speed;
+
+
 
             velocity.y = _yvelocity;
             controller.Move(velocity * Time.deltaTime);
