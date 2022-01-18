@@ -7,8 +7,10 @@ public class LevelGenerator : MonoBehaviour
 
     public static LevelGenerator instance;
 
-    [Header("FlatPlatform prefabs and values")]
+    [Header("FlatPlatform prefabs ")]
     [SerializeField] private List<GameObject> platformPrefab;
+
+    [Header("Tweakable values")]
     //flat platform z Value.
     [SerializeField] private float FPZ_Value;
     [SerializeField] private float SPZ_Value;
@@ -17,11 +19,7 @@ public class LevelGenerator : MonoBehaviour
 
     //private float SPZ_Temp;
 
-    [Header("StepPlatformPrefab prefabs and values")]
-    [SerializeField] private List<GameObject> stepPlatformPrefab;
-
-    [Header("CornerplatformPrefab prefabs and values")]
-    [SerializeField] private List<GameObject> cornerplatformPrefab;
+   
 
     [HideInInspector]public float X_Offset,Z_Offset,Y_Offset, SPZ_Offset,SPY_Offset;
 

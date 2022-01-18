@@ -15,12 +15,12 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 1
-  m_FogColor: {r: 0.4509804, g: 0.7294118, b: 0.7529412, a: 1}
-  m_FogMode: 3
+  m_FogColor: {r: 0.41709685, g: 0.82409626, b: 0.8584906, a: 1}
+  m_FogMode: 1
   m_FogDensity: 0.04
-  m_LinearFogStart: 0
-  m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.745283, g: 0.745283, b: 0.745283, a: 1}
+  m_LinearFogStart: 5
+  m_LinearFogEnd: 45
+  m_AmbientSkyColor: {r: 0.9528302, g: 0.91698605, b: 0.4539427, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -2458,21 +2458,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4406878234224073039, guid: 90a07112b0edf6c42a7678dcb91fcb45,
-        type: 3}
-      propertyPath: m_ApplyRootMotion
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6954573910182336905, guid: 90a07112b0edf6c42a7678dcb91fcb45,
-        type: 3}
-      propertyPath: m_Center.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6954573910182336905, guid: 90a07112b0edf6c42a7678dcb91fcb45,
-        type: 3}
-      propertyPath: m_Height
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 6954573910182336911, guid: 90a07112b0edf6c42a7678dcb91fcb45,
         type: 3}
       propertyPath: m_Name

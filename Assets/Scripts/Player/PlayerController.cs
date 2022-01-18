@@ -7,19 +7,28 @@ public class PlayerController : MonoBehaviour
 {
     private Animator characterAnimator;
     private CharacterController controller;
+
     [SerializeField]private float speed;
     [SerializeField] private float jumpValue;
     [SerializeField] private float gravity;
+    [SerializeField] private float acceleration = 0.1f;
+    [SerializeField]private float maxSpeed;
+
     private float _xvelocity = 0.0f;
     private float _yvelocity=0.0f;
     private Vector3 velocity;
     private float target;
-   
+
+
 
     void Start()
     {
         controller = GetComponent<CharacterController>();
         characterAnimator = GetComponent<Animator>();
+    }
+    private void Update()
+    {
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -1.4f, 1.4f), transform.position.y, transform.position.z);
     }
 
     private void FixedUpdate()
@@ -47,10 +56,23 @@ public class PlayerController : MonoBehaviour
             }
 
             // velocity = new Vector3(Input.acceleration.x, 0, 1) * speed;
-             velocity = new Vector3(Input.GetAxis("Horizontal"), 0, 1) * speed;
+            if(speed>= maxSpeed)
+            {
+                speed = maxSpeed;
+            }
+            else
+            {
+                speed += acceleration * Time.deltaTime;
+            }
+            
+            velocity = new Vector3(Input.GetAxis("Horizontal"), 0, 1) * speed;//curSpeed += acceleration * Time.deltaTime; ;
+           
+          
 
             velocity.y = _yvelocity;
             controller.Move(velocity * Time.deltaTime);
+         
+
 
         }
     }
