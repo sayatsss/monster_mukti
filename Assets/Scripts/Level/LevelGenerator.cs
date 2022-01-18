@@ -17,6 +17,12 @@ public class LevelGenerator : MonoBehaviour
     [SerializeField] private float FPZO_Value;
     [SerializeField] private float SPY_Value;
 
+
+    [Header("WaterBody values")]
+    [SerializeField] private GameObject waterBody;
+    [SerializeField] private float waterBodyYValue;
+    private float _YValueW;
+
     //private float SPZ_Temp;
 
    
@@ -85,6 +91,8 @@ public class LevelGenerator : MonoBehaviour
             platform.transform.rotation = Quaternion.Euler(-0, 0, 0);
             SPY_Offset += SPY_Value;
             Z_Offset += FPZ_Value;
+            _YValueW += waterBodyYValue;
+            waterBody.transform.position = new Vector3(0, _YValueW, 0);
         }
        
         if (platform.name.Contains("Plain") || platform.name.Contains("Broken"))
