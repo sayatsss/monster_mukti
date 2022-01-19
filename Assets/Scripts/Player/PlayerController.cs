@@ -65,8 +65,17 @@ public class PlayerController : MonoBehaviour
                 speed += acceleration * Time.deltaTime;
             }
 
-            //velocity = new Vector3(Input.GetAxis("Horizontal"), 0, 1) * speed;//curSpeed += acceleration * Time.deltaTime;
+
+         #if (UNITY_EDITOR && !UNITY_ANDROID)
+                velocity = new Vector3(Input.GetAxis("Horizontal"), 0, 1) * speed;//curSpeed += acceleration * Time.deltaTime;
+         #endif
+
+        #if UNITY_ANDROID
+            // your code
             velocity = new Vector3(Input.acceleration.x, 0, 1) * speed;
+        #endif
+           
+
 
 
 
