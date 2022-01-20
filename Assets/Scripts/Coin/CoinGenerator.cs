@@ -41,7 +41,7 @@ public class CoinGenerator : MonoBehaviour
     {
         if (Skull != null)
         {
-            int value = Random.Range(0, 2);
+           /* int value = Random.Range(0, 2);
             if (value == 1)
             {
                 Skull.SetActive(true);
@@ -49,7 +49,7 @@ public class CoinGenerator : MonoBehaviour
             else
             {
                 Skull.SetActive(false);
-            }
+            }*/
         }
         if (pillarArc != null)
         {
