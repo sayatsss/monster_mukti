@@ -102,6 +102,7 @@ GameObject:
   - component: {fileID: 917589336968478896}
   - component: {fileID: 917589336968478903}
   - component: {fileID: 917589336968478902}
+  - component: {fileID: 1172909070}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -174,6 +175,22 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 917589336968478901}
   m_Enabled: 1
+--- !u!114 &1172909070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 917589336968478901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ab8353b5ebd32545867da143199a814, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DefaultPosInfluence: {x: 0.15, y: 0.15, z: 0.15}
+  DefaultRotInfluence: {x: 1, y: 1, z: 1}
+  RestPositionOffset: {x: 0, y: 3.14, z: -4.61}
+  RestRotationOffset: {x: 12.882, y: 0, z: 0}
 --- !u!1 &1104427667422126186
 GameObject:
   m_ObjectHideFlags: 0
@@ -1195,7 +1212,7 @@ MonoBehaviour:
   speed: 8
   jumpValue: 20
   gravity: 1
-  acceleration: 0.1
+  acceleration: 0.3
   maxSpeed: 25
 --- !u!1 &7153956267868814036
 GameObject:

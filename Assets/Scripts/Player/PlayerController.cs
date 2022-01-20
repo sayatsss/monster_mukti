@@ -5,13 +5,16 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+
+    public static PlayerController instance;
     private Animator characterAnimator;
     private CharacterController controller;
 
-    [SerializeField]private float speed;
+    public float speed;
     [SerializeField] private float jumpValue;
     [SerializeField] private float gravity;
     [SerializeField] private float acceleration = 0.1f;
+    //[SerializeField] private float deccelaration = 0.1f;
     [SerializeField]private float maxSpeed;
 
     private float _xvelocity = 0.0f;
@@ -19,7 +22,10 @@ public class PlayerController : MonoBehaviour
     private Vector3 velocity;
     private float target;
 
-
+    private void Awake()
+    {
+        instance = this;
+    }
 
     void Start()
     {
