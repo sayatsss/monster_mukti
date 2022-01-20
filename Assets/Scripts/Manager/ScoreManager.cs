@@ -9,6 +9,9 @@ public class ScoreManager : MonoBehaviour
     [SerializeField]private Text _scoreText;
     [SerializeField] private Text _finalScoreText;
     [HideInInspector]public float _coinCount, _scoreCount;
+    [SerializeField] private Slider coinIndicator;
+
+    private float _tempSliderValue = 0;
     private int _tempScore = 0;
 
     private void Awake()
@@ -17,6 +20,7 @@ public class ScoreManager : MonoBehaviour
     }
     private void Start()
     {
+        coinIndicator.value = _tempSliderValue;
         _coinText.text = _coinCount.ToString();
         _scoreText.text = _scoreCount.ToString();
     }
@@ -35,9 +39,13 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
-    public void AddCoin()
+    public void AddCoin(GameObject coinGameobject)
     {
         _coinCount += 1;
+        _tempSliderValue = _coinCount;
+        coinIndicator.value = _tempSliderValue;
         _coinText.text = _coinCount.ToString();
+
+       // CoinAnimation.Instance.StartMovingCoin(coinGameobject.transform.position);
     }
 }

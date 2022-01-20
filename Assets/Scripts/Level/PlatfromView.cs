@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using EZCameraShake;
 
 public class PlatfromView : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class PlatfromView : MonoBehaviour
             {
                 Debug.Log("Destruct start");
                 this.gameObject.transform.parent.GetComponent<DestructableManager>().DestructAction();
+                CameraShaker.Instance.ShakeOnce(4f, 4f, 0.1f, 1f);
             }
 
         }

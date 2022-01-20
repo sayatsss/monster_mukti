@@ -21,7 +21,7 @@ public class Coin : MonoBehaviour
         {
             //return;
             this.gameObject.SetActive(false);
-            ScoreManager.instance.AddCoin();
+            ScoreManager.instance.AddCoin(this.gameObject);
         }
         
     }

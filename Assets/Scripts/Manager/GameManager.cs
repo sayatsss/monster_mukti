@@ -40,12 +40,16 @@ public class GameManager : MonoBehaviour
                 break;
         }
     }
-
-    private void GameEndAction()
+    
+    public IEnumerator GameEndAction()
     {
 
-
+        GameStateChange(GameManager.GameState.gameEnd);
+        UIManager.instance.GameEndPanel.SetActive(true);
+        UIManager.instance.GamePanel.SetActive(false);
+        yield return new WaitForSeconds(0.2f);
         Time.timeScale = 0;
+        
     }
     public enum GameState
     {

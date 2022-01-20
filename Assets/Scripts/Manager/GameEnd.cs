@@ -6,6 +6,7 @@ using EZCameraShake;
 public class GameEnd : MonoBehaviour
 {
 
+   
     private void OnTriggerEnter(Collider other)
     {
        if(this.gameObject.name.Contains("Death"))
@@ -18,6 +19,8 @@ public class GameEnd : MonoBehaviour
         }
 
     }
+
+    
 
 
     IEnumerator GameEndAction()
