@@ -14,6 +14,7 @@ public class DestructableManager : MonoBehaviour
             {
                 DestructableElements.Add(child.transform.gameObject);
             }
+           
         }
 
     }
