@@ -79,6 +79,13 @@ public class LevelGenerator : MonoBehaviour
                 Go.transform.rotation = Quaternion.Euler(-90f, 0, 0);
                 Z_Offset += FPZ_Value;
             }
+            if (Go.name.Contains("Under") )
+            {
+                Go.transform.position = new Vector3(0, SPY_Offset, i * FPZ_Value);
+                Go.transform.rotation = Quaternion.identity;
+                Go.transform.rotation = Quaternion.Euler(0, 0, 0);
+                Z_Offset += FPZ_Value;
+            }
 
         }
     }
@@ -133,7 +140,14 @@ public class LevelGenerator : MonoBehaviour
             platform.GetComponent<CoinGenerator>().ReArrangeCoinManagers();
            // platform.GetComponent<DestructableManager>().activeDestruc();
         }
-       
-        
+        if (platform.name.Contains("Under"))
+        {
+            platform.transform.position = new Vector3(0, SPY_Offset, Z_Offset);
+            platform.transform.rotation = Quaternion.identity;
+            platform.transform.rotation = Quaternion.Euler(0, 0, 0);
+            Z_Offset += FPZ_Value;
+        }
+
+
     }
 }
