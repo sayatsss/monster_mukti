@@ -32,7 +32,7 @@ public class DestructableManager : MonoBehaviour
         int value = 2;
         if(value == 2)
         {
-            Debug.Log("Baccaoo");
+            //Debug.Log("Baccaoo");
             int RandomValue = Random.Range(0, DestructableElements.Count);
             DestructableElements[RandomValue].GetComponent<Destructable>().Destruct();
         }

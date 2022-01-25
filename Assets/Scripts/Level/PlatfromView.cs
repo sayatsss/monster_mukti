@@ -17,7 +17,7 @@ public class PlatfromView : MonoBehaviour
 
             if (this.gameObject.name.Contains("Start"))
             {
-                Debug.Log("Destruct start");
+                //Debug.Log("Destruct start");
                 this.gameObject.transform.parent.GetComponent<DestructableManager>().DestructAction();
                 CameraShaker.Instance.ShakeOnce(4f, 4f, 0.1f, 1f);
             }
