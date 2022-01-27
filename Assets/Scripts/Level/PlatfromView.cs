@@ -21,9 +21,21 @@ public class PlatfromView : MonoBehaviour
                 this.gameObject.transform.parent.GetComponent<DestructableManager>().DestructAction();
                 CameraShaker.Instance.ShakeOnce(4f, 4f, 0.1f, 1f);
             }
+            if (this.gameObject.name.Contains("BridgePoint"))
+            {
+                int value = Random.Range(0, 3);
+
+
+                if (value == 2)
+                {
+                    //Debug.Log("Destruct start");
+                    this.gameObject.transform.parent.GetComponent<DestructionArc>().ArcDestruction();
+                    
+                }
+            }
 
         }
-       
+
     }
     
 }

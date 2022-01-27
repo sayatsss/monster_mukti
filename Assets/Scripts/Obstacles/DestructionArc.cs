@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using EZCameraShake;
 
 public class DestructionArc : MonoBehaviour
 {
@@ -16,6 +17,22 @@ public class DestructionArc : MonoBehaviour
             }
 
         }
+    }
+    public void activeDestruc()
+    {
+        for (int i = 0; i < DestructableElement.Count; i++)
+        {
+            DestructableElement[i].SetActive(true);
+        }
+    }
+
+    public void ArcDestruction()
+    {
+
+        CameraShaker.Instance.ShakeOnce(4f, 4f, 0.1f, 1f);
+        // int RandomValue = Random.Range(0, DestructableElement.Count);
+        DestructableElement[0].GetComponent<Destructable>().Destruct();
+        
     }
    
 }
