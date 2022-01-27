@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using EZCameraShake;
+
 
 public class GameEnd : MonoBehaviour
 {
@@ -33,7 +33,7 @@ public class GameEnd : MonoBehaviour
     }
     IEnumerator GameEndActionCameraShake()
     {
-        SimpleCameraShakeInCinemachine.Instance.CameraAction();
+        StartCoroutine(SimpleCameraShakeInCinemachine.Instance.cameraAction());
         //CameraShaker.Instance.ShakeOnce(4f, 4f, 0.1f, 1f);
         yield return new WaitForSeconds(0.1f);
         PlayerController.instance.speed = 8;
