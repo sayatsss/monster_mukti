@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
     //[HideInInspector]public GameState gameState = new GameState();
     [HideInInspector] public string GameStatus = "";
 
+    private bool FogChange = false;
+
     private void Awake()
     {
         instance = this;
@@ -19,10 +21,15 @@ public class GameManager : MonoBehaviour
         StartCoroutine(GameStartAction());
     }
 
+    private void Update()
+    {
+        
 
+    }
     IEnumerator GameStartAction()
     {
         GameStateChange(GameState.menu);
+        RenderSettings.fogDensity = 0.004f;
         yield return new WaitForSeconds(3f);
         UIManager.instance.MenuPanel.SetActive(true);
     }
@@ -64,7 +71,7 @@ public class GameManager : MonoBehaviour
     {
         StartCoroutine(GameStartMotion());
     }
-
+   
 
    IEnumerator GameStartMotion()
     {
@@ -76,6 +83,22 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(2f);
         CinemachineCameraManager.instance.CameraTransition.SetActive(false);
         CinemachineCameraManager.instance.GamePlayCamera.SetActive(true);
+
+        RenderSettings.fogDensity = 0.005f;
+        RenderSettings.fogDensity = 0.006f;
+        RenderSettings.fogDensity = 0.008f;
+        RenderSettings.fogDensity = 0.009f;
+        RenderSettings.fogDensity = 0.010f;
+        RenderSettings.fogDensity = 0.011f;
+        RenderSettings.fogDensity = 0.012f;
+        RenderSettings.fogDensity = 0.013f;
+        RenderSettings.fogDensity = 0.014f;
+        RenderSettings.fogDensity = 0.015f;
+        RenderSettings.fogDensity = 0.018f;
+        RenderSettings.fogDensity = 0.020f;
+        RenderSettings.fogDensity = 0.023f;
+
+
 
     }
     public enum GameState
