@@ -33,7 +33,8 @@ public class GameEnd : MonoBehaviour
     }
     IEnumerator GameEndActionCameraShake()
     {
-        CameraShaker.Instance.ShakeOnce(4f, 4f, 0.1f, 1f);
+        SimpleCameraShakeInCinemachine.Instance.CameraAction();
+        //CameraShaker.Instance.ShakeOnce(4f, 4f, 0.1f, 1f);
         yield return new WaitForSeconds(0.1f);
         PlayerController.instance.speed = 8;
         //yield return new WaitForSeconds(0.8f);

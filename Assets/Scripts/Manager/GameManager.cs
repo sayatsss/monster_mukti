@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         //Need to change once the menu is done.
-        GameStateChange(GameState.game);
+        //GameStateChange(GameState.game);
     }
    
     public void GameStateChange(GameState gameState)
