@@ -16,6 +16,15 @@ public class GameManager : MonoBehaviour
     {
         //Need to change once the menu is done.
         //GameStateChange(GameState.game);
+        StartCoroutine(GameStartAction());
+    }
+
+
+    IEnumerator GameStartAction()
+    {
+        GameStateChange(GameState.menu);
+        yield return new WaitForSeconds(3f);
+        UIManager.instance.MenuPanel.SetActive(true);
     }
    
     public void GameStateChange(GameState gameState)
@@ -50,6 +59,24 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         Time.timeScale = 0;
         
+    }
+    public void GameStart()
+    {
+        StartCoroutine(GameStartMotion());
+    }
+
+
+   IEnumerator GameStartMotion()
+    {
+        UIManager.instance.GameUIPanel.SetActive(true);
+        UIManager.instance.MenuPanel.SetActive(false);
+        GameStateChange(GameState.game);
+        CinemachineCameraManager.instance.MenuCamera.SetActive(false);
+        CinemachineCameraManager.instance.CameraTransition.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        CinemachineCameraManager.instance.CameraTransition.SetActive(false);
+        CinemachineCameraManager.instance.GamePlayCamera.SetActive(true);
+
     }
     public enum GameState
     {

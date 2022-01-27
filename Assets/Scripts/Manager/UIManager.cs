@@ -8,6 +8,8 @@ public class UIManager : MonoBehaviour
 {
 
     public static UIManager instance;
+    public GameObject GameUIPanel;
+    public GameObject MenuPanel;
     public GameObject GamePanel;
     public GameObject PausePanel;
     public GameObject GameEndPanel;
@@ -19,6 +21,8 @@ public class UIManager : MonoBehaviour
     }
     private void Start()
     {
+        MenuPanel.SetActive(false);
+        GameUIPanel.SetActive(false);
         PausePanel.SetActive(false);
         GameEndPanel.SetActive(false);
     }
