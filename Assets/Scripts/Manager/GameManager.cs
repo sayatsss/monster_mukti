@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
     IEnumerator GameStartAction()
     {
         GameStateChange(GameState.menu);
-        RenderSettings.fogDensity = 0.004f;
+        //RenderSettings.fogDensity = 0.004f;
         yield return new WaitForSeconds(3f);
         UIManager.instance.MenuPanel.SetActive(true);
     }
@@ -84,19 +84,19 @@ public class GameManager : MonoBehaviour
         CinemachineCameraManager.instance.CameraTransition.SetActive(false);
         CinemachineCameraManager.instance.GamePlayCamera.SetActive(true);
 
-        RenderSettings.fogDensity = 0.005f;
-        RenderSettings.fogDensity = 0.006f;
-        RenderSettings.fogDensity = 0.008f;
-        RenderSettings.fogDensity = 0.009f;
-        RenderSettings.fogDensity = 0.010f;
-        RenderSettings.fogDensity = 0.011f;
-        RenderSettings.fogDensity = 0.012f;
-        RenderSettings.fogDensity = 0.013f;
-        RenderSettings.fogDensity = 0.014f;
-        RenderSettings.fogDensity = 0.015f;
-        RenderSettings.fogDensity = 0.018f;
-        RenderSettings.fogDensity = 0.020f;
-        RenderSettings.fogDensity = 0.023f;
+        //RenderSettings.fogDensity = 0.005f;
+        //RenderSettings.fogDensity = 0.006f;
+        //RenderSettings.fogDensity = 0.008f;
+        //RenderSettings.fogDensity = 0.009f;
+        //RenderSettings.fogDensity = 0.010f;
+        //RenderSettings.fogDensity = 0.011f;
+        //RenderSettings.fogDensity = 0.012f;
+        //RenderSettings.fogDensity = 0.013f;
+        //RenderSettings.fogDensity = 0.014f;
+        //RenderSettings.fogDensity = 0.015f;
+        //RenderSettings.fogDensity = 0.018f;
+        //RenderSettings.fogDensity = 0.020f;
+        //RenderSettings.fogDensity = 0.023f;
 
 
 
