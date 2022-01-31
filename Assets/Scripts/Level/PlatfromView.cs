@@ -20,7 +20,8 @@ public class PlatfromView : MonoBehaviour
                 //Debug.Log("Destruct start");
                 this.gameObject.transform.parent.GetComponent<DestructableManager>().DestructAction();
                 StartCoroutine(SimpleCameraShakeInCinemachine.Instance.cameraAction());
-                //CameraShaker.Instance.ShakeOnce(4f, 4f, 0.1f, 1f);
+               // StartCoroutine(UIManager.instance.BloodScreenSplash());
+          
             }
             if (this.gameObject.name.Contains("BridgePoint"))
             {

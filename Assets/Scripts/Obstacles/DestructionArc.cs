@@ -29,9 +29,8 @@ public class DestructionArc : MonoBehaviour
     public void ArcDestruction()
     {
         StartCoroutine(SimpleCameraShakeInCinemachine.Instance.cameraAction());
+        //StartCoroutine(UIManager.instance.BloodScreenSplash());
        
-        //CameraShaker.Instance.ShakeOnce(4f, 4f, 0.1f, 1f);
-        // int RandomValue = Random.Range(0, DestructableElement.Count);
         DestructableElement[0].GetComponent<Destructable>().Destruct();
         
     }

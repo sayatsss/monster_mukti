@@ -8,6 +8,7 @@ public class PlayerHitData : MonoBehaviour
     {
         if(hit.transform.tag == "Block")
         {
+            StartCoroutine(UIManager.instance.BloodScreenSplash());
             StartCoroutine(GameManager.instance.GameEndAction());
         }
         

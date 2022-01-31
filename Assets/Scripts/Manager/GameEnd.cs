@@ -34,14 +34,11 @@ public class GameEnd : MonoBehaviour
     IEnumerator GameEndActionCameraShake()
     {
         StartCoroutine(SimpleCameraShakeInCinemachine.Instance.cameraAction());
-        //CameraShaker.Instance.ShakeOnce(4f, 4f, 0.1f, 1f);
+        StartCoroutine(UIManager.instance.BloodScreenSplash());
+   
         yield return new WaitForSeconds(0.1f);
         PlayerController.instance.speed = 8;
-        //yield return new WaitForSeconds(0.8f);
-        //GameManager.instance.GameStateChange(GameManager.GameState.gameEnd);
-        //UIManager.instance.GameEndPanel.SetActive(true);
-        //UIManager.instance.GamePanel.SetActive(false);
-        //Time.timeScale = 0;
+       
 
     }
 }

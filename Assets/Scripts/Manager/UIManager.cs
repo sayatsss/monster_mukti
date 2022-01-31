@@ -13,6 +13,7 @@ public class UIManager : MonoBehaviour
     public GameObject GamePanel;
     public GameObject PausePanel;
     public GameObject GameEndPanel;
+    public GameObject BloodHint;
 
 
     private void Awake()
@@ -25,6 +26,7 @@ public class UIManager : MonoBehaviour
         GameUIPanel.SetActive(false);
         PausePanel.SetActive(false);
         GameEndPanel.SetActive(false);
+        BloodHint.SetActive(false);
     }
 
     public void PauseButton()
@@ -52,6 +54,19 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene(0);
         
     }
+
+    public IEnumerator BloodScreenSplash()
+    {
+        if(BloodHint==true)
+        {
+            BloodHint.SetActive(false);
+        }
+
+        BloodHint.SetActive(true);
+        yield return new WaitForSeconds(0.5f);
+        BloodHint.SetActive(false);
+    }
+
     public void HelpForTheGame()
     {
         Debug.Log("Help panel open");
