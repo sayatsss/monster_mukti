@@ -609,10 +609,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 1
-  m_FollowOffset: {x: 0, y: 3.3, z: -4.5}
+  m_FollowOffset: {x: 0, y: 3.3, z: -4.2}
   m_XDamping: 0.8
   m_YDamping: 1
-  m_ZDamping: 1.2
+  m_ZDamping: 1
   m_AngularDampingMode: 0
   m_PitchDamping: 0
   m_YawDamping: 0.8
@@ -16654,9 +16654,10 @@ MonoBehaviour:
   - {fileID: 5820521577381121756, guid: bb211010a677a5941b8c4d767d96a13c, type: 3}
   - {fileID: 2336200168564716137, guid: 665e32e8ab42046749813a971bdbb17d, type: 3}
   - {fileID: 5820521577381121756, guid: bb211010a677a5941b8c4d767d96a13c, type: 3}
-  - {fileID: 637329882360725440, guid: bf13397d9a31941c48e59b467d3d1e1f, type: 3}
-  - {fileID: 263840700282695702, guid: 9e91c65bfb2064b1f9a87ca02ae6c846, type: 3}
-  - {fileID: 6192740832369059657, guid: 6df19e55146d94fb7868db16a2608d5a, type: 3}
+  - {fileID: 5820521577381121756, guid: bb211010a677a5941b8c4d767d96a13c, type: 3}
+  - {fileID: 599218490731872883, guid: bf13397d9a31941c48e59b467d3d1e1f, type: 3}
+  - {fileID: 3467268162476633287, guid: 9e91c65bfb2064b1f9a87ca02ae6c846, type: 3}
+  - {fileID: 5588928367640625726, guid: 6df19e55146d94fb7868db16a2608d5a, type: 3}
   FPZ_Value: 15.6
   SPZ_Value: 7.8
   FPZO_Value: 1.2
@@ -44218,7 +44219,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1199395752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44264,8 +44265,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1199395751}
-  m_LocalRotation: {x: 0.15123937, y: 0.00000000850423, z: -0.0000000013011409, w: 0.9884972}
-  m_LocalPosition: {x: 0, y: 3.3, z: -50.9}
+  m_LocalRotation: {x: 0.16123897, y: 0.000000016981058, z: -0.0000000027743088, w: 0.9869154}
+  m_LocalPosition: {x: 0, y: 3.3, z: -50.600002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -50381,7 +50382,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1430387419
 Transform:
   m_ObjectHideFlags: 0
@@ -50389,7 +50390,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1430387418}
-  m_LocalRotation: {x: 0.000077639015, y: 0.9981362, z: -0.0012701454, w: 0.06101216}
+  m_LocalRotation: {x: 0.00007763772, y: 0.9981362, z: -0.0012701248, w: 0.061012123}
   m_LocalPosition: {x: -2.4, y: 1.9, z: -19.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -64894,8 +64895,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 917589335986338824}
-  m_LocalRotation: {x: 0.000077639015, y: 0.9981362, z: -0.0012701454, w: 0.06101216}
-  m_LocalPosition: {x: -2.4, y: 1.9, z: -19.1}
+  m_LocalRotation: {x: 0.16123897, y: 0.000000016981058, z: -0.0000000027743088, w: 0.9869154}
+  m_LocalPosition: {x: 0, y: 3.3, z: -50.600002}
   m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -80457,7 +80458,6 @@ GameObject:
   - component: {fileID: 6116540730631821731}
   - component: {fileID: 144816366098662361}
   - component: {fileID: 6893183433497166619}
-  - component: {fileID: 6893183433497166618}
   m_Layer: 0
   m_Name: Bhasmasura
   m_TagString: Untagged
@@ -80465,22 +80465,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!54 &6893183433497166618
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6893183433497166617}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!114 &6893183433497166619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80496,7 +80480,7 @@ MonoBehaviour:
   target: {fileID: 6954573908729767218}
   moveSpeed: 8
   rotationSpeed: 4
-  maxSpeed: 20
+  maxSpeed: 10
   acceleration: 0.1
 --- !u!4 &6894257233662320744
 Transform:
@@ -80572,7 +80556,7 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 1.8
+  m_Height: 2
   m_Radius: 0.4
   m_SlopeLimit: 45
   m_StepOffset: 1.1

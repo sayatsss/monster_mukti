@@ -47,9 +47,10 @@ public class PlayerController : MonoBehaviour
                 characterAnimator.SetBool("IsJump", false);
                 if (Input.GetKeyDown(KeyCode.Space) || SwipeManager.swipeUp)
                 {
+                    Debug.Log("jump");
                   
-                     characterAnimator.SetBool("IsJump", true);
                     _yvelocity = jumpValue;
+                     characterAnimator.SetBool("IsJump", true);
                 }
                 if (Input.GetKeyDown(KeyCode.S) || SwipeManager.swipeDown)
                 {
