@@ -75,6 +75,7 @@ public class GameManager : MonoBehaviour
 
    IEnumerator GameStartMotion()
     {
+        AssetAnimation.Instance.DoorAnimation();
         UIManager.instance.GameUIPanel.SetActive(true);
         UIManager.instance.MenuPanel.SetActive(false);
         GameStateChange(GameState.game);
