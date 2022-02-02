@@ -44248,7 +44248,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1, y: 1}
+    m_SensorSize: {x: 0.5625, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -44264,7 +44264,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1199395751}
-  m_LocalRotation: {x: 0.15123937, y: 0.00000000850423, z: -0.000000001301141, w: 0.9884972}
+  m_LocalRotation: {x: 0.15123937, y: 0.00000000850423, z: -0.0000000013011409, w: 0.9884972}
   m_LocalPosition: {x: 0, y: 3.3, z: -50.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -50381,7 +50381,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1430387419
 Transform:
   m_ObjectHideFlags: 0
@@ -50389,8 +50389,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1430387418}
-  m_LocalRotation: {x: 0.013197976, y: 0.9841629, z: -0.08330916, w: 0.15591274}
-  m_LocalPosition: {x: -11.14, y: 8.5, z: -9.2}
+  m_LocalRotation: {x: 0.000077639015, y: 0.9981362, z: -0.0012701454, w: 0.06101216}
+  m_LocalPosition: {x: -2.4, y: 1.9, z: -19.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -50427,7 +50427,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1, y: 1}
+    m_SensorSize: {x: 0.5625, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -64894,8 +64894,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 917589335986338824}
-  m_LocalRotation: {x: 0.015287255, y: 0.95869637, z: -0.052506357, w: 0.27912498}
-  m_LocalPosition: {x: -42.6, y: 22.54, z: 27.3}
+  m_LocalRotation: {x: 0.000077639015, y: 0.9981362, z: -0.0012701454, w: 0.06101216}
+  m_LocalPosition: {x: -2.4, y: 1.9, z: -19.1}
   m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -79769,8 +79769,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6893183433497166617}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.09, z: -49.022}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0.09, z: -48.63}
+  m_LocalScale: {x: 1.2, y: 1.3, z: 1.2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7721073188323653264}
@@ -80456,6 +80456,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6116540730631821731}
   - component: {fileID: 144816366098662361}
+  - component: {fileID: 6893183433497166619}
   - component: {fileID: 6893183433497166618}
   m_Layer: 0
   m_Name: Bhasmasura
@@ -80464,24 +80465,39 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!143 &6893183433497166618
-CharacterController:
+--- !u!54 &6893183433497166618
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6893183433497166617}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 1.1
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &6893183433497166619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6893183433497166617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaf9ba80b1ff64d3d99ecb338fcc5b2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 6954573908729767218}
+  moveSpeed: 8
+  rotationSpeed: 4
+  maxSpeed: 20
+  acceleration: 0.1
 --- !u!4 &6894257233662320744
 Transform:
   m_ObjectHideFlags: 0
@@ -80576,6 +80592,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 8
+  turnSpeed: 4
   jumpValue: 20
   gravity: 1
   acceleration: 0.3

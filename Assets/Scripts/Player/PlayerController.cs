@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     private CharacterController controller;
 
     public float speed;
+    public float turnSpeed;
     [SerializeField] private float jumpValue;
     [SerializeField] private float gravity;
     [SerializeField] private float acceleration = 0.1f;
@@ -73,13 +74,14 @@ public class PlayerController : MonoBehaviour
 
 
 #if (UNITY_EDITOR && !UNITY_ANDROID)
-                velocity = new Vector3(Input.GetAxis("Horizontal"), 0, 1) * speed;//curSpeed += acceleration * Time.deltaTime;
+                velocity = new Vector3(Input.GetAxis("Horizontal"), 0, 1) * turnSpeed;//curSpeed += acceleration * Time.deltaTime;
 #endif
 
 #if UNITY_ANDROID
             // your code
             //velocity = new Vector3(Input.acceleration.x, 0, 1) * speed;
-            velocity = new Vector3(Input.GetAxis("Horizontal"), 0, 1) * speed;//curSpeed += acceleration * Time.deltaTime;
+            velocity = new Vector3(0, 0, 1) * speed;//curSpeed += acceleration * Time.deltaTime;
+            velocity.x = Input.GetAxis("Horizontal")*turnSpeed;
 
 #endif
 
