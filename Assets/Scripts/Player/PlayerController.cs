@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
     //[SerializeField] private float deccelaration = 0.1f;
     [SerializeField]private float maxSpeed;
 
+
+    private bool _isGrounded;
     private float _xvelocity = 0.0f;
     private float _yvelocity=0.0f;
     private Vector3 velocity;
@@ -36,13 +38,14 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, -1.4f, 1.4f), transform.position.y, transform.position.z);
-    }
+        _isGrounded = controller.isGrounded;
 
+    }
     private void FixedUpdate()
     {
         if(GameManager.instance.GameStatus==GameManager.GameState.game.ToString())
         {
-            if (controller.isGrounded)
+            if (_isGrounded)
             {
                 characterAnimator.SetBool("IsJump", false);
                 if (Input.GetKeyDown(KeyCode.Space) || SwipeManager.swipeUp)
