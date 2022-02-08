@@ -27226,7 +27226,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &589847798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111071,7 +111071,6 @@ GameObject:
   - component: {fileID: 7172990592466215623}
   - component: {fileID: 7172990592465500445}
   - component: {fileID: 7172990592464411745}
-  - component: {fileID: 8265207217973093145}
   m_Layer: 0
   m_Name: RockCliff-02
   m_TagString: Untagged
@@ -117931,20 +117930,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 5184738356820305995, guid: 2c79a6abf4a7a491a98a5d9cc3c82de5, type: 3}
---- !u!64 &8265207217973093145
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7172990592466422189}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: c521731d4c56ed549850a8cf1211b8ea, type: 3}
 --- !u!33 &8265921045825389752
 MeshFilter:
   m_ObjectHideFlags: 0
