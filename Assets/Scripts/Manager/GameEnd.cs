@@ -37,8 +37,11 @@ public class GameEnd : MonoBehaviour
         StartCoroutine(UIManager.instance.BloodScreenSplash());
    
         yield return new WaitForSeconds(0.1f);
-        PlayerController.instance.speed = 8;
-       
+        if(PlayerController.instance.speed>12)
+        {
+            PlayerController.instance.speed = PlayerController.instance.speed - 2f;
+        }
+        
 
     }
 }
