@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
 {
 
     public static PlayerController instance;
-    private Animator characterAnimator;
+    [HideInInspector]public Animator characterAnimator;
     private CharacterController controller;
 
     public float speed;

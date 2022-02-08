@@ -11,7 +11,7 @@ public class AudioManager : MonoBehaviour
     public AudioSource Playerjump;
     public AudioSource DamageLow;
     public AudioSource Slide;
-
+    public AudioSource PlayerKilled;
 
     public static AudioManager Instance;
 

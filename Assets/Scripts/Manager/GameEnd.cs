@@ -11,10 +11,12 @@ public class GameEnd : MonoBehaviour
     {
        if(this.gameObject.name.Contains("Death"))
         {
+           
             StartCoroutine(GameEndAction());
         }
         if (this.gameObject.name.Contains("Cam"))
         {
+            AudioManager.Instance.DamageLow.Play();
             StartCoroutine(GameEndActionCameraShake());
         }
 
@@ -25,20 +27,22 @@ public class GameEnd : MonoBehaviour
 
     IEnumerator GameEndAction()
     {
+        PlayerController.instance.characterAnimator.SetBool("IsDead", true);
         GameManager.instance.GameStateChange(GameManager.GameState.gameEnd);
         UIManager.instance.GameEndPanel.SetActive(true);
         UIManager.instance.GamePanel.SetActive(false);
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(2f);
         Time.timeScale = 0;
     }
     IEnumerator GameEndActionCameraShake()
     {
-        AudioManager.Instance.DamageLow.Play();
+       
         StartCoroutine(SimpleCameraShakeInCinemachine.Instance.cameraAction());
         StartCoroutine(UIManager.instance.BloodScreenSplash());
-   
-        yield return new WaitForSeconds(0.1f);
-        if(PlayerController.instance.speed>12)
+        PlayerController.instance.characterAnimator.SetBool("IsHit", true);
+        yield return new WaitForSeconds(0.3f);
+        PlayerController.instance.characterAnimator.SetBool("IsHit", false);
+        if (PlayerController.instance.speed>12)
         {
             PlayerController.instance.speed = PlayerController.instance.speed - 2f;
         }

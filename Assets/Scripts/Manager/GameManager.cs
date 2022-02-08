@@ -59,11 +59,12 @@ public class GameManager : MonoBehaviour
     
     public IEnumerator GameEndAction()
     {
-
+        AudioManager.Instance.PlayerKilled.Play();
+        PlayerController.instance.characterAnimator.SetBool("IsDead", true);
         GameStateChange(GameManager.GameState.gameEnd);
-        UIManager.instance.GameEndPanel.SetActive(true);
+        yield return new WaitForSeconds(2f);
         UIManager.instance.GamePanel.SetActive(false);
-        yield return new WaitForSeconds(0.2f);
+        UIManager.instance.GameEndPanel.SetActive(true);
         Time.timeScale = 0;
         
     }
