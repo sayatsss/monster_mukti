@@ -20,6 +20,7 @@ public class Coin : MonoBehaviour
         if(other.gameObject.tag=="Player")
         {
             //return;
+            AudioManager.Instance.CollectiveCollection.Play();
             this.gameObject.SetActive(false);
             ScoreManager.instance.AddCoin(this.gameObject);
         }

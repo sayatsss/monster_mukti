@@ -33,6 +33,7 @@ public class GameEnd : MonoBehaviour
     }
     IEnumerator GameEndActionCameraShake()
     {
+        AudioManager.Instance.DamageLow.Play();
         StartCoroutine(SimpleCameraShakeInCinemachine.Instance.cameraAction());
         StartCoroutine(UIManager.instance.BloodScreenSplash());
    

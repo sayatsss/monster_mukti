@@ -51,6 +51,8 @@ public class PlayerController : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Space) || SwipeManager.swipeUp)
                 {
                     Debug.Log("jump");
+
+                    AudioManager.Instance.Playerjump.Play();
                   
                     _yvelocity = jumpValue;
                      characterAnimator.SetBool("IsJump", true);
@@ -104,6 +106,8 @@ public class PlayerController : MonoBehaviour
     }
     IEnumerator SlideAnimation()
     {
+
+        AudioManager.Instance.Slide.Play();
         characterAnimator.SetBool("IsSlide", true);
         controller.center = new Vector3(controller.center.x, 0.5f, controller.center.z);
         controller.height = 0.5f;
