@@ -60,6 +60,7 @@ public class GameManager : MonoBehaviour
     public IEnumerator GameEndAction()
     {
         AudioManager.Instance.PlayerKilled.Play();
+        PlayerController.instance.characterAnimator.SetBool("IsJump", false);
         PlayerController.instance.characterAnimator.SetBool("IsDead", true);
         GameStateChange(GameManager.GameState.gameEnd);
         yield return new WaitForSeconds(2f);
