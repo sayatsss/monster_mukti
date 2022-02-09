@@ -91,7 +91,7 @@ public class PlayerController : MonoBehaviour
             Debug.Log("I ma here");
             velocity = new Vector3(0, 0, 1) * speed;//curSpeed += acceleration * Time.deltaTime;
             velocity.x = Input.acceleration.x * turnSpeed;
-            //velocity.x = Input.GetAxis("Horizontal")*turnSpeed;
+            velocity.x = Input.GetAxis("Horizontal")*turnSpeed;
 
 #endif
 
