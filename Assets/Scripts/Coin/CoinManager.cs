@@ -5,6 +5,7 @@ using UnityEngine;
 public class CoinManager : MonoBehaviour
 {
     public List<GameObject> Coins=new List<GameObject>();
+    public GameObject Jetpack;
     private float _coinGap = 1;
 
     private void OnEnable()
@@ -12,6 +13,10 @@ public class CoinManager : MonoBehaviour
         foreach (Transform child in transform)
         {
             Coins.Add(child.transform.gameObject);
+            if(child.transform.gameObject.name.Contains("JetPack"))
+            {
+                Jetpack = child.transform.gameObject;
+            }
         }
       
     }
@@ -24,11 +29,23 @@ public class CoinManager : MonoBehaviour
                 //Coins[i].transform.position = new Vector3(Coins[i].transform.position.x, Coins[i].transform.position.y + 0.5f, i * _coinGap);
                 Coins[i].SetActive(false);
             }
-        
+            if(Jetpack!=null)
+            {
+                Jetpack.SetActive(false);
+            }
     }
 
     public void GenerateCoins()
     {
+
+        if (Jetpack != null)
+        {
+            int value = Random.Range(0, 5);
+            if(value==2)
+            {
+                Jetpack.SetActive(true);
+            }
+        }
         if (Coins.Count != 0)
         {
             ArrangeCoins();
