@@ -9527,6 +9527,7 @@ GameObject:
   - component: {fileID: 6651557489752981807}
   - component: {fileID: 8911465886649431525}
   - component: {fileID: 6965695825283355702}
+  - component: {fileID: -7938649703407492717}
   m_Layer: 0
   m_Name: Jetpack
   m_TagString: Coin
@@ -9613,6 +9614,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5538827, y: 0.035000168, z: 0.7272844}
   m_Center: {x: 0.004682543, y: -0.000000055233777, z: 0.22125068}
+--- !u!114 &-7938649703407492717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6965695825283355696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4de980305cf8469cacb5de8a55501f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7609607169474039771
 GameObject:
   m_ObjectHideFlags: 0
