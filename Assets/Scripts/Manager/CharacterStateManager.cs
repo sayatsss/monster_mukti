@@ -28,7 +28,7 @@ public class CharacterStateManager : MonoBehaviour
     {
         Garuda.SetActive(true);
         Garuda.transform.position = MainCharacter.transform.position;
-        Garuda.transform.DOMoveY(85f, 3f, false);
+        Garuda.transform.DOMoveY(100f, 8f, false);
         cam.GetComponent<CinemachineVirtualCamera>().m_Follow = Garuda.transform;
         cam.GetComponent<CinemachineVirtualCamera>().LookAt = Garuda.transform;
         // CinemachineCameraManager.GetComponent<CinemachineVirtualCamera>
