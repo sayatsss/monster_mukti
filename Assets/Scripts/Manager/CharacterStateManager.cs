@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
+using DG.Tweening;
 
 public class CharacterStateManager : MonoBehaviour
 {
@@ -27,7 +28,7 @@ public class CharacterStateManager : MonoBehaviour
     {
         Garuda.SetActive(true);
         Garuda.transform.position = MainCharacter.transform.position;
-
+        Garuda.transform.DOMoveY(85f, 3f, false);
         cam.GetComponent<CinemachineVirtualCamera>().m_Follow = Garuda.transform;
         cam.GetComponent<CinemachineVirtualCamera>().LookAt = Garuda.transform;
         // CinemachineCameraManager.GetComponent<CinemachineVirtualCamera>
