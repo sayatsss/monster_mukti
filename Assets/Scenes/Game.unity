@@ -611,7 +611,7 @@ MonoBehaviour:
   m_BindingMode: 1
   m_FollowOffset: {x: 0, y: 3.3, z: -4.2}
   m_XDamping: 0.8
-  m_YDamping: 0.5
+  m_YDamping: 1
   m_ZDamping: 1
   m_AngularDampingMode: 0
   m_PitchDamping: 0
@@ -50069,7 +50069,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1199395751}
   m_LocalRotation: {x: 0.16123898, y: -0.000000016981241, z: 0.0000000027743394, w: 0.9869154}
-  m_LocalPosition: {x: 0, y: 3.3, z: -50.600002}
+  m_LocalPosition: {x: 0, y: 3.3, z: -50}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -56448,7 +56448,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1430387418}
-  m_LocalRotation: {x: 0.00007763772, y: 0.9981362, z: -0.0012701248, w: 0.061012123}
+  m_LocalRotation: {x: 0.00008111884, y: 0.9980524, z: -0.0012981272, w: 0.06236742}
   m_LocalPosition: {x: -2.4, y: 1.9, z: -19.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -68780,7 +68780,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MainCharacter: {fileID: 6954573908729767218}
+  MainCharacterBody: {fileID: 5862657760711783329}
   Garuda: {fileID: 2881291581435170373}
+  GarudaBody: {fileID: 5173801780232012270}
   MainCharacter_Chariot: {fileID: 0}
   cam: {fileID: 1199395751}
 --- !u!1 &1853719715
@@ -108473,9 +108475,12 @@ GameObject:
   m_Component:
   - component: {fileID: 3222246101980812543}
   - component: {fileID: 8815685311876681349}
+  - component: {fileID: 8815685311876681350}
+  - component: {fileID: 8815685311876681351}
+  - component: {fileID: 8815685311876681352}
   m_Layer: 0
   m_Name: Garuda
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125006,6 +125011,48 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8815685311876681350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2881291581435170373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ee1f2f8968894737a5545a142dc8b62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+--- !u!54 &8815685311876681351
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2881291581435170373}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &8815685311876681352
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2881291581435170373}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.5854567, z: 1}
+  m_Center: {x: 0, y: 0.74368817, z: 0}
 --- !u!1 &8837146417623003401
 GameObject:
   m_ObjectHideFlags: 0

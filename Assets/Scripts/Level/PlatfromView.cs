@@ -10,6 +10,8 @@ public class PlatfromView : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            Debug.Log(other.gameObject.name);
+            
             if(this.gameObject.name.Contains("End"))
             {
                 LevelGenerator.instance.ReCyclePlatform(this.gameObject.transform.parent.gameObject);

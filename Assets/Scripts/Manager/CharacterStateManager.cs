@@ -7,7 +7,9 @@ using DG.Tweening;
 public class CharacterStateManager : MonoBehaviour
 {
     public GameObject MainCharacter;
+    public GameObject MainCharacterBody;
     public GameObject Garuda;
+    public GameObject GarudaBody;
     public GameObject MainCharacter_Chariot;
 
     public GameObject cam;
@@ -28,23 +30,23 @@ public class CharacterStateManager : MonoBehaviour
     {
         Garuda.SetActive(true);
         Garuda.transform.position = MainCharacter.transform.position;
-        Garuda.transform.DOMoveY(100f, 8f, false);
+        Garuda.transform.DOMoveY(90f, 10f, false);
         cam.GetComponent<CinemachineVirtualCamera>().m_Follow = Garuda.transform;
         cam.GetComponent<CinemachineVirtualCamera>().LookAt = Garuda.transform;
-        // CinemachineCameraManager.GetComponent<CinemachineVirtualCamera>
+      
         yield return new WaitForSeconds(0f);
         MainCharacter.SetActive(false);
     }
 
     public IEnumerator Garuda_Character_Transition()
     {
-        MainCharacter.SetActive(true);
+        Garuda.transform.DOMoveY(LevelGenerator.instance.SPY_Offset, 5f, false);
+        yield return new WaitForSeconds(6f);
         MainCharacter.transform.position = Garuda.transform.position;
+        MainCharacter.SetActive(true);
 
-        cam.GetComponent<CinemachineVirtualCamera>().m_Follow = MainCharacter.transform;
+        cam.GetComponent<CinemachineVirtualCamera>().m_Follow = MainCharacterBody.transform;
         cam.GetComponent<CinemachineVirtualCamera>().LookAt = MainCharacter.transform;
-        // CinemachineCameraManager.GetComponent<CinemachineVirtualCamera>
-        yield return new WaitForSeconds(0f);
 
         Garuda.SetActive(false);
         
