@@ -14,6 +14,7 @@ public class UIManager : MonoBehaviour
     public GameObject PausePanel;
     public GameObject GameEndPanel;
     public GameObject BloodHint;
+    public GameObject GarudaMeter;
 
 
     private void Awake()
@@ -27,6 +28,7 @@ public class UIManager : MonoBehaviour
         PausePanel.SetActive(false);
         GameEndPanel.SetActive(false);
         BloodHint.SetActive(false);
+        GarudaMeter.SetActive(false);
     }
 
     public void PauseButton()

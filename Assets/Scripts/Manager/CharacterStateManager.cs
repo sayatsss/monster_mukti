@@ -29,6 +29,8 @@ public class CharacterStateManager : MonoBehaviour
     public IEnumerator Character_Garuda_Transition(GameObject gameObject)
     {
         Garuda.SetActive(true);
+        UIManager.instance.GarudaMeter.SetActive(true);
+        GarudaManager.Instance.GarudaTimeSpan = 100;
         Garuda.transform.position = MainCharacter.transform.position;
         Garuda.transform.DOMoveY(90f, 10f, false);
         cam.GetComponent<CinemachineVirtualCamera>().m_Follow = Garuda.transform;
@@ -52,7 +54,9 @@ public class CharacterStateManager : MonoBehaviour
         cam.GetComponent<CinemachineVirtualCamera>().LookAt = MainCharacter.transform;
 
         Garuda.SetActive(false);
-        
+        UIManager.instance.GarudaMeter.SetActive(false);
+        GarudaManager.Instance.GarudaTimeSpan = 100;
+
 
     }
 
