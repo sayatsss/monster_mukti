@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.B))
         {
            // Debug.Log("Garuda Is been activated");
-            StartCoroutine(CharacterStateManager.Instance.Character_Garuda_Transition());
+           // StartCoroutine(CharacterStateManager.Instance.Character_Garuda_Transition());
             
         }
         if (Input.GetKeyDown(KeyCode.M))

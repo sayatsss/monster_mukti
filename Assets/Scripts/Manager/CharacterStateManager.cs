@@ -26,7 +26,7 @@ public class CharacterStateManager : MonoBehaviour
     {
         Garuda.SetActive(false);
     }
-    public IEnumerator Character_Garuda_Transition()
+    public IEnumerator Character_Garuda_Transition(GameObject gameObject)
     {
         Garuda.SetActive(true);
         Garuda.transform.position = MainCharacter.transform.position;
@@ -36,6 +36,9 @@ public class CharacterStateManager : MonoBehaviour
       
         yield return new WaitForSeconds(0f);
         MainCharacter.SetActive(false);
+        gameObject.SetActive(false);
+
+
     }
 
     public IEnumerator Garuda_Character_Transition()

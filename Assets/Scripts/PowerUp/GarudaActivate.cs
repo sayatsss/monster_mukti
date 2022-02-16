@@ -8,7 +8,9 @@ public class GarudaActivate : MonoBehaviour
     {
         if(other.gameObject.tag=="Player")
         {
-            Debug.Log("GarudaMode activated");
+            
+            StartCoroutine(CharacterStateManager.Instance.Character_Garuda_Transition(this.gameObject));
+           
         }
     }
 }
