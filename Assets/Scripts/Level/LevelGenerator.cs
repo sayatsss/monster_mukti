@@ -25,6 +25,8 @@ public class LevelGenerator : MonoBehaviour
 
     //private float SPZ_Temp;
 
+
+    //[SerializeField] private GameObject aboveCloudCoins;
    
 
     [HideInInspector]public float X_Offset,Z_Offset,Y_Offset, SPZ_Offset,SPY_Offset;

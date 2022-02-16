@@ -23,7 +23,7 @@ public class GarudaManager : MonoBehaviour
     private void Update()
     {
         value++;
-        if(value>20)
+        if(value>15)
         {
             GarudaTimeSpan--;
             value = 0;
