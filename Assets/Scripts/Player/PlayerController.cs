@@ -50,8 +50,7 @@ public class PlayerController : MonoBehaviour
                 characterAnimator.SetBool("IsJump", false);
                 if (Input.GetKeyDown(KeyCode.Space) || SwipeManager.swipeUp)
                 {
-                    Debug.Log("jump");
-
+                   
                     AudioManager.Instance.Playerjump.Play();
                   
                     _yvelocity = jumpValue;
