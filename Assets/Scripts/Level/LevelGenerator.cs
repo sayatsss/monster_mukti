@@ -43,7 +43,7 @@ public class LevelGenerator : MonoBehaviour
 
         gameObject.transform.position = new Vector3(0, Y_Offset, Z_Offset);
         gameObject.transform.rotation = Quaternion.Euler(gameObject.GetComponent<TilesValues>().RotationValue);
-        waterBody.transform.position = new Vector3(0,Y_Offset-5, 0);
+        //waterBody.transform.position = new Vector3(0,Y_Offset-5, 0);
         Y_Offset += gameObject.GetComponent<TilesValues>().TileYValue;
         Z_Offset += gameObject.GetComponent<TilesValues>().TileZValue;
 
