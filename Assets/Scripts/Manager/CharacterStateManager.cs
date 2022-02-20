@@ -45,7 +45,7 @@ public class CharacterStateManager : MonoBehaviour
 
     public IEnumerator Garuda_Character_Transition()
     {
-        Garuda.transform.DOMoveY(LevelGenerator.instance.SPY_Offset, 5f, false);
+        Garuda.transform.DOMoveY(LevelGenerator.instance.Y_Offset, 5f, false);
         yield return new WaitForSeconds(6f);
         MainCharacter.transform.position = Garuda.transform.position;
         MainCharacter.SetActive(true);
