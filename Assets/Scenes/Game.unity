@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1685290084181856132}
-  m_IndirectSpecularColor: {r: 0.6236011, g: 0.856324, b: 0.9665219, a: 1}
+  m_IndirectSpecularColor: {r: 0.6359707, g: 0.8732472, b: 0.98541445, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6900,6 +6900,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WaterPlane
+      objectReference: {fileID: 0}
+    - target: {fileID: 8441517749370526054, guid: 8f52a9c4dfea5424ba1c8c5108705bae,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f52a9c4dfea5424ba1c8c5108705bae, type: 3}
@@ -16788,7 +16793,7 @@ MonoBehaviour:
   - {fileID: 5588928367640625726, guid: 6df19e55146d94fb7868db16a2608d5a, type: 3}
   - {fileID: 4122349756465828590, guid: 7532e42b6f77f46de80c9906506fe289, type: 3}
   - {fileID: 2525252559051192421, guid: ca1a031699f974e10996ca81c6755ca4, type: 3}
-  - {fileID: 3392719587421760024, guid: 377951a5c87b44430bbd585425fb85c5, type: 3}
+  - {fileID: 8009733282093607131, guid: 43a68e161c9c747b0972c8cc8ad31e6a, type: 3}
   waterBody: {fileID: 2143058913}
   waterBodyYValue: 1
   Z_Offset: 0
