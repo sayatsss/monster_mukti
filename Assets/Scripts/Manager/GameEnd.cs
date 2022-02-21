@@ -22,8 +22,7 @@ public class GameEnd : MonoBehaviour
 
     }
 
-    
-
+  
 
     IEnumerator GameEndAction()
     {
