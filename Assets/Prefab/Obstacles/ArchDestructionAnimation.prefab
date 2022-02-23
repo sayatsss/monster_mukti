@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 1659068044619341355}
   - component: {fileID: 231677302330927260}
   - component: {fileID: 231677302330927263}
+  - component: {fileID: 4738747981520777262}
   m_Layer: 0
-  m_Name: Object_Part_13
+  m_Name: Death
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -115,6 +116,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &4738747981520777262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231677302330927262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d106167c887db349a23a2395e1671dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &591179758058766455
 GameObject:
   m_ObjectHideFlags: 0
@@ -128,8 +141,9 @@ GameObject:
   - component: {fileID: 2119573483203701867}
   - component: {fileID: 591179758058766453}
   - component: {fileID: 591179758058766452}
+  - component: {fileID: 3528607853746085275}
   m_Layer: 0
-  m_Name: Object_Part_9
+  m_Name: Death
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -230,6 +244,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &3528607853746085275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 591179758058766455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d106167c887db349a23a2395e1671dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &656487872440050472
 GameObject:
   m_ObjectHideFlags: 0
@@ -242,8 +268,9 @@ GameObject:
   - component: {fileID: 7680516859831393368}
   - component: {fileID: 2558820672903018341}
   - component: {fileID: 656487872440050470}
+  - component: {fileID: 6040255961767609839}
   m_Layer: 0
-  m_Name: Object_Part_8
+  m_Name: Death
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -328,6 +355,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 9144400438219488975, guid: a651940ebf2b5476e884f28b860991d1, type: 3}
+--- !u!114 &6040255961767609839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 656487872440050472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d106167c887db349a23a2395e1671dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &788508569133194546
 GameObject:
   m_ObjectHideFlags: 0
@@ -340,8 +379,9 @@ GameObject:
   - component: {fileID: 5248031980906978636}
   - component: {fileID: 2129914945486145635}
   - component: {fileID: 788508569133194544}
+  - component: {fileID: 5091614806756242081}
   m_Layer: 0
-  m_Name: Object_Part_4
+  m_Name: Death
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -426,6 +466,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -467634016066949598, guid: a651940ebf2b5476e884f28b860991d1, type: 3}
+--- !u!114 &5091614806756242081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788508569133194546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d106167c887db349a23a2395e1671dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &943224672996441737
 GameObject:
   m_ObjectHideFlags: 0
@@ -439,8 +491,9 @@ GameObject:
   - component: {fileID: 8235535881710532658}
   - component: {fileID: 943224672996441735}
   - component: {fileID: 943224672996441734}
+  - component: {fileID: 2110232953050837096}
   m_Layer: 0
-  m_Name: Object_Part_17
+  m_Name: Death
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -541,6 +594,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2110232953050837096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 943224672996441737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d106167c887db349a23a2395e1671dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3119257047544257926
 GameObject:
   m_ObjectHideFlags: 0
@@ -554,8 +619,9 @@ GameObject:
   - component: {fileID: 5751066235050741653}
   - component: {fileID: 3119257047544257924}
   - component: {fileID: 3119257047544257927}
+  - component: {fileID: 6277773733239592067}
   m_Layer: 0
-  m_Name: Object_Part_20
+  m_Name: Death
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -656,6 +722,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &6277773733239592067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3119257047544257926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d106167c887db349a23a2395e1671dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3186289056939512397
 GameObject:
   m_ObjectHideFlags: 0
@@ -668,8 +746,9 @@ GameObject:
   - component: {fileID: 5095302658659264250}
   - component: {fileID: 2838380698333121921}
   - component: {fileID: 3186289056939512395}
+  - component: {fileID: 8489694949333929543}
   m_Layer: 0
-  m_Name: Object_Part_15
+  m_Name: Death
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -754,6 +833,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -7539837218016132438, guid: a651940ebf2b5476e884f28b860991d1, type: 3}
+--- !u!114 &8489694949333929543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3186289056939512397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d106167c887db349a23a2395e1671dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3691749246729176939
 GameObject:
   m_ObjectHideFlags: 0
@@ -766,8 +857,9 @@ GameObject:
   - component: {fileID: 6784659029332858647}
   - component: {fileID: 6287747645658812529}
   - component: {fileID: 3691749246729176937}
+  - component: {fileID: 2151413412855971715}
   m_Layer: 0
-  m_Name: Object_Part_5
+  m_Name: Death
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -852,6 +944,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -6512579843093631771, guid: a651940ebf2b5476e884f28b860991d1, type: 3}
+--- !u!114 &2151413412855971715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3691749246729176939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d106167c887db349a23a2395e1671dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3752319032673030367
 GameObject:
   m_ObjectHideFlags: 0
@@ -864,8 +968,9 @@ GameObject:
   - component: {fileID: 4544176579362399403}
   - component: {fileID: 7375342281458755137}
   - component: {fileID: 3752319032673030365}
+  - component: {fileID: 2344170294637642492}
   m_Layer: 0
-  m_Name: Object_Part_6
+  m_Name: Death
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -950,6 +1055,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -3729866555599957730, guid: a651940ebf2b5476e884f28b860991d1, type: 3}
+--- !u!114 &2344170294637642492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3752319032673030367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d106167c887db349a23a2395e1671dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3843726173953460368
 GameObject:
   m_ObjectHideFlags: 0
@@ -963,8 +1080,9 @@ GameObject:
   - component: {fileID: 8164279043440232233}
   - component: {fileID: 3843726173953461102}
   - component: {fileID: 3843726173953460369}
+  - component: {fileID: 5738363736111516538}
   m_Layer: 0
-  m_Name: Object_Part_7
+  m_Name: Death
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1065,6 +1183,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &5738363736111516538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3843726173953460368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d106167c887db349a23a2395e1671dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3964234856243322582
 GameObject:
   m_ObjectHideFlags: 0
@@ -1219,8 +1349,9 @@ GameObject:
   - component: {fileID: 5373752220798152585}
   - component: {fileID: 6839511326764971239}
   - component: {fileID: 4205891083378372599}
+  - component: {fileID: 4324414361854756724}
   m_Layer: 0
-  m_Name: Object_Part_18
+  m_Name: Death
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1305,6 +1436,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 462937654083726823, guid: a651940ebf2b5476e884f28b860991d1, type: 3}
+--- !u!114 &4324414361854756724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4205891083378372601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d106167c887db349a23a2395e1671dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4306635435579193699
 GameObject:
   m_ObjectHideFlags: 0
@@ -1318,8 +1461,9 @@ GameObject:
   - component: {fileID: 467385196936632040}
   - component: {fileID: 4306635435579193697}
   - component: {fileID: 4306635435579193696}
+  - component: {fileID: 8637508704772086786}
   m_Layer: 0
-  m_Name: Object_Part_12
+  m_Name: Death
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1420,6 +1564,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8637508704772086786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4306635435579193699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d106167c887db349a23a2395e1671dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4378576298425922552
 GameObject:
   m_ObjectHideFlags: 0
@@ -1432,8 +1588,9 @@ GameObject:
   - component: {fileID: 4148318417539690885}
   - component: {fileID: 3472589584400425414}
   - component: {fileID: 4378576298425922550}
+  - component: {fileID: 2718935290257992004}
   m_Layer: 0
-  m_Name: Object_Part_14
+  m_Name: Death
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1518,6 +1675,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -2567984690826859475, guid: a651940ebf2b5476e884f28b860991d1, type: 3}
+--- !u!114 &2718935290257992004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4378576298425922552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d106167c887db349a23a2395e1671dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4897070402752170893
 GameObject:
   m_ObjectHideFlags: 0
@@ -1530,8 +1699,9 @@ GameObject:
   - component: {fileID: 5187868524002230726}
   - component: {fileID: 4982066126571656379}
   - component: {fileID: 4897070402752170891}
+  - component: {fileID: 8699428191679231412}
   m_Layer: 0
-  m_Name: Object_Part_3
+  m_Name: Death
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1616,6 +1786,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 1002455671022223481, guid: a651940ebf2b5476e884f28b860991d1, type: 3}
+--- !u!114 &8699428191679231412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4897070402752170893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d106167c887db349a23a2395e1671dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5350297411300210533
 GameObject:
   m_ObjectHideFlags: 0
@@ -1628,8 +1810,9 @@ GameObject:
   - component: {fileID: 6978175483369420123}
   - component: {fileID: 6175905922132080263}
   - component: {fileID: 5350297411300210531}
+  - component: {fileID: 2198573795546299647}
   m_Layer: 0
-  m_Name: Object_Part_19
+  m_Name: Death
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1714,6 +1897,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -8133936564746771224, guid: a651940ebf2b5476e884f28b860991d1, type: 3}
+--- !u!114 &2198573795546299647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5350297411300210533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d106167c887db349a23a2395e1671dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5373794368894563341
 GameObject:
   m_ObjectHideFlags: 0
@@ -1809,8 +2004,9 @@ GameObject:
   - component: {fileID: 4345681518653385453}
   - component: {fileID: 1223816994521766228}
   - component: {fileID: 5472793513715297543}
+  - component: {fileID: 6961335070891286212}
   m_Layer: 0
-  m_Name: Object_Part_1
+  m_Name: Death
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1895,6 +2091,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -8549927763208490919, guid: a651940ebf2b5476e884f28b860991d1, type: 3}
+--- !u!114 &6961335070891286212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5472793513715297545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d106167c887db349a23a2395e1671dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6187746353627444057
 GameObject:
   m_ObjectHideFlags: 0
@@ -2032,8 +2240,9 @@ GameObject:
   - component: {fileID: 1012326507294586398}
   - component: {fileID: 7386720872223715475}
   - component: {fileID: 6238032322923255367}
+  - component: {fileID: 247981947228428455}
   m_Layer: 0
-  m_Name: Object_Part_16
+  m_Name: Death
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2118,6 +2327,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 6280677808056235987, guid: a651940ebf2b5476e884f28b860991d1, type: 3}
+--- !u!114 &247981947228428455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6238032322923255369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d106167c887db349a23a2395e1671dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6947421480576605618
 GameObject:
   m_ObjectHideFlags: 0
@@ -2183,8 +2404,9 @@ GameObject:
   - component: {fileID: 5247557273754261126}
   - component: {fileID: 2911298775816994277}
   - component: {fileID: 7655926294528366981}
+  - component: {fileID: 8051418944916308863}
   m_Layer: 0
-  m_Name: Object_Part_2
+  m_Name: Death
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2269,6 +2491,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4093869558345327209, guid: a651940ebf2b5476e884f28b860991d1, type: 3}
+--- !u!114 &8051418944916308863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7655926294528366983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d106167c887db349a23a2395e1671dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8116374784704510679
 GameObject:
   m_ObjectHideFlags: 0
@@ -2281,8 +2515,9 @@ GameObject:
   - component: {fileID: 4977733741931782345}
   - component: {fileID: 7676217945124841412}
   - component: {fileID: 8116374784704510677}
+  - component: {fileID: 6578309470099508203}
   m_Layer: 0
-  m_Name: Object_Part_11
+  m_Name: Death
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2367,6 +2602,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -5031310119425372151, guid: a651940ebf2b5476e884f28b860991d1, type: 3}
+--- !u!114 &6578309470099508203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8116374784704510679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d106167c887db349a23a2395e1671dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9066813172203849433
 GameObject:
   m_ObjectHideFlags: 0
@@ -2380,8 +2627,9 @@ GameObject:
   - component: {fileID: 3446817686599469543}
   - component: {fileID: 9066813172203849431}
   - component: {fileID: 9066813172203849430}
+  - component: {fileID: 273845474833874921}
   m_Layer: 0
-  m_Name: Object_Part_10
+  m_Name: Death
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2482,3 +2730,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &273845474833874921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9066813172203849433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d106167c887db349a23a2395e1671dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
