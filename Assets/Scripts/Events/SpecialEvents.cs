@@ -28,6 +28,8 @@ public class SpecialEvents : MonoBehaviour
         Time.timeScale = 0.5f;
        // SimpleCameraShakeInCinemachine.Instance.VirtualCamera.aim
         SimpleCameraShakeInCinemachine.Instance.VirtualCamera.LookAt = Dragon.transform;
+        Dragon.GetComponent<AudioSource>().Play();
+            Dragon.GetComponent<Animator>().SetBool("IsRoar", true);
         yield return new WaitForSeconds(1.5f);
         SimpleCameraShakeInCinemachine.Instance.VirtualCamera.LookAt = CharacterStateManager.Instance.MainCharacter.transform;
         Time.timeScale = 1f;
