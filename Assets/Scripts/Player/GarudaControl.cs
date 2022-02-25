@@ -14,6 +14,10 @@ public class GarudaControl : MonoBehaviour
         velocity = new Vector3(0, 0, 1);
     }
 
+    private void OnEnable()
+    {
+       // aboveCloudLOD.transform.position = new Vector3(0, 0, this.gameObject.transform.position.z + 40);  
+    }
     private void Update()
     {
         Mathf.Clamp(this.gameObject.transform.position.x, -0.4f, 0.4f);
@@ -25,12 +29,12 @@ public class GarudaControl : MonoBehaviour
 
     private void FixedUpdate()
     {
-        cloudLODVel= new Vector3(0, 0, 1) * speed;
+        //cloudLODVel= new Vector3(0, 0, 1) * speed;
         velocity = new Vector3(0, 0, 1) * speed;//curSpeed += acceleration * Time.deltaTime;
         velocity.x = Input.acceleration.x * speed;
         velocity.x = Input.GetAxis("Horizontal") * speed;
         transform.Translate(velocity  * Time.deltaTime);
-        aboveCloudLOD.transform.Translate(cloudLODVel * Time.deltaTime);
+       // aboveCloudLOD.transform.Translate(cloudLODVel * Time.deltaTime);
 
 
     }
