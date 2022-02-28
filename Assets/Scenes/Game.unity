@@ -17273,7 +17273,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &323763148
 Transform:
   m_ObjectHideFlags: 0
@@ -17719,6 +17719,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CaveLASTSegmentPlainPlatform (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3382886335407418452, guid: ca1a031699f974e10996ca81c6755ca4,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3382886335407418452, guid: ca1a031699f974e10996ca81c6755ca4,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3382886335407418452, guid: ca1a031699f974e10996ca81c6755ca4,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3382886335456633290, guid: ca1a031699f974e10996ca81c6755ca4,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3382886335456633290, guid: ca1a031699f974e10996ca81c6755ca4,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3382886335456633290, guid: ca1a031699f974e10996ca81c6755ca4,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3382886335456633290, guid: ca1a031699f974e10996ca81c6755ca4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -378
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca1a031699f974e10996ca81c6755ca4, type: 3}
@@ -58609,6 +58644,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: DamagePlatform2
       objectReference: {fileID: 0}
+    - target: {fileID: 3382886334101590901, guid: c5f2f4de0040c2548b440fab54743941,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4.003476
+      objectReference: {fileID: 0}
+    - target: {fileID: 3382886334101590901, guid: c5f2f4de0040c2548b440fab54743941,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4.0034766
+      objectReference: {fileID: 0}
+    - target: {fileID: 3382886334101590901, guid: c5f2f4de0040c2548b440fab54743941,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 4.0034766
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5f2f4de0040c2548b440fab54743941, type: 3}
 --- !u!4 &1283902040 stripped
@@ -66497,6 +66547,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlainPlatformSkull
+      objectReference: {fileID: 0}
+    - target: {fileID: 3382886334735568793, guid: aebb3631a8095d646b7abc9c645694c4,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3382886334735568793, guid: aebb3631a8095d646b7abc9c645694c4,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3382886334735568793, guid: aebb3631a8095d646b7abc9c645694c4,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aebb3631a8095d646b7abc9c645694c4, type: 3}
