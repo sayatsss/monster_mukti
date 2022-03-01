@@ -47,6 +47,7 @@ public class UIManager : MonoBehaviour
     {
         Time.timeScale = 1;
         GameManager.instance.GameStateChange(GameManager.GameState.game);
+        //StartCoroutine(FollowAI.Instance.FirstAsuraAttack());
         PausePanel.SetActive(false);
         GamePanel.SetActive(true);
     }

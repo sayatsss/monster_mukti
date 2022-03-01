@@ -1,9 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using Cinemachine;
 
 public class FollowAI : MonoBehaviour
 {
+
+
+    public static FollowAI Instance;
     public GameObject target; //the enemy's target
     public float moveSpeed = 5; //move speed
     public float rotationSpeed = 5; //speed of turning
@@ -11,7 +16,18 @@ public class FollowAI : MonoBehaviour
     [SerializeField] private float maxSpeed;
     [SerializeField] private float acceleration = 0.1f;
 
+    
+    
 
+    private void Awake()
+    {
+        Instance = this;
+    }
+
+    private void Start()
+    {
+        InvokeRepeating("AsuraAction", 15f, 10f);
+    }
     void Update()
     {
         if (GameManager.instance.GameStatus == GameManager.GameState.game.ToString())
@@ -34,8 +50,32 @@ public class FollowAI : MonoBehaviour
         }
         //rotate to look at the player
 
+        if(Input.GetKeyDown(KeyCode.L))
+        {
+            StartCoroutine(AsuraAttack());
+        }
 
 
     }
+    public IEnumerator FirstAsuraAttack()
+    {
+        yield return new WaitForSeconds(0.6f);
+        StartCoroutine(AsuraAttack());
+    }
+    private void AsuraAction()
+    {
+        StartCoroutine(AsuraAttack());
+    }
+    public IEnumerator AsuraAttack()
+    {
+        //SimpleCameraShakeInCinemachine.Instance.VirtualCamera.GetComponent<CinemachineVirtualCamera>().m_Lens.FieldOfView = 90f;
+        this.gameObject.GetComponent<Animator>().SetBool("IsAttack", true);
+        yield return new WaitForSeconds(2f);
+        StartCoroutine(SimpleCameraShakeInCinemachine.Instance.cameraAction());
+        yield return new WaitForSeconds(0.5f);
+        this.gameObject.GetComponent<Animator>().SetBool("IsAttack", false);
+        //SimpleCameraShakeInCinemachine.Instance.VirtualCamera.GetComponent<CinemachineVirtualCamera>().m_Lens.FieldOfView = 80f;
+    }
+    
 
 }

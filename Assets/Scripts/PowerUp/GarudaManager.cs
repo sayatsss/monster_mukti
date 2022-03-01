@@ -19,14 +19,17 @@ public class GarudaManager : MonoBehaviour
     {
         Instance = this;
     }
-
+    private void Start()
+    {
+        value = 150;
+    }
     private void Update()
     {
-        value++;
-        if(value>5)
+        value--;
+        if(value<0)
         {
             GarudaTimeSpan--;
-            value = 0;
+            value = 5;
         }
         temp_Garuda_Time_Span = GarudaTimeSpan / 100;
 

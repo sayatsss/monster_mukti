@@ -94,9 +94,10 @@ public class GameManager : MonoBehaviour
         UIManager.instance.GameUIPanel.SetActive(true);
         UIManager.instance.MenuPanel.SetActive(false);
         GameStateChange(GameState.game);
+        StartCoroutine(FollowAI.Instance.FirstAsuraAttack());
         CinemachineCameraManager.instance.MenuCamera.SetActive(false);
         CinemachineCameraManager.instance.CameraTransition.SetActive(true);
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(3f);
         CinemachineCameraManager.instance.CameraTransition.SetActive(false);
         CinemachineCameraManager.instance.GamePlayCamera.SetActive(true);
 

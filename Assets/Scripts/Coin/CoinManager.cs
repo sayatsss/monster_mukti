@@ -40,8 +40,9 @@ public class CoinManager : MonoBehaviour
 
         if (Jetpack != null)
         {
-            int value = Random.Range(0, 5);
-            if(value==2)
+            //Jetpack.SetActive(true);
+           int value = Random.Range(0, 3);
+            if(value==1)
             {
                 Jetpack.SetActive(true);
             }

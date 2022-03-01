@@ -16,8 +16,9 @@ public class SimpleCameraShakeInCinemachine : MonoBehaviour
     private float ShakeElapsedTime = 0f;
 
     // Cinemachine Shake
-    public CinemachineVirtualCamera VirtualCamera;
+    public CinemachineVirtualCamera VirtualCamera,VirtualCameraMenu;
     private CinemachineBasicMultiChannelPerlin virtualCameraNoise;
+    private CinemachineBasicMultiChannelPerlin virtualCameraNoiseMenu;
 
 
     private void Awake()
@@ -30,6 +31,8 @@ public class SimpleCameraShakeInCinemachine : MonoBehaviour
         // Get Virtual Camera Noise Profile
         if (VirtualCamera != null)
             virtualCameraNoise = VirtualCamera.GetCinemachineComponent<Cinemachine.CinemachineBasicMultiChannelPerlin>();
+        if (VirtualCameraMenu != null)
+            virtualCameraNoiseMenu = VirtualCameraMenu.GetCinemachineComponent<Cinemachine.CinemachineBasicMultiChannelPerlin>();
     }
 
    public IEnumerator cameraAction()
@@ -39,9 +42,12 @@ public class SimpleCameraShakeInCinemachine : MonoBehaviour
         ShakeElapsedTime = 0;
 
     }
+
+  
     private void Update()
     {
         CameraAction();
+        CameraActionMenu();
     }
     // Update is called once per frame
     public  void CameraAction()
@@ -69,5 +75,37 @@ public class SimpleCameraShakeInCinemachine : MonoBehaviour
                 ShakeElapsedTime = 0f;
             }
         }
+    }
+
+    public void CameraActionMenu()
+    {
+
+
+        // If the Cinemachine componet is not set, avoid update
+        if (VirtualCameraMenu != null && virtualCameraNoiseMenu != null)
+        {
+            // If Camera Shake effect is still playing
+            if (ShakeElapsedTime > 0)
+            {
+                // Set Cinemachine Camera Noise parameters
+                virtualCameraNoiseMenu.m_AmplitudeGain = ShakeAmplitude;
+                virtualCameraNoiseMenu.m_FrequencyGain = ShakeFrequency;
+
+                // Update Shake Timer
+                //ShakeElapsedTime -= Time.deltaTime;
+                //Debug.Log(ShakeElapsedTime);
+            }
+            else
+            {
+                // If Camera Shake effect is over, reset variables
+                virtualCameraNoiseMenu.m_AmplitudeGain = 0f;
+                ShakeElapsedTime = 0f;
+            }
+        }
+    }
+    public void FocusPuller()
+    {
+        
+       
     }
 }
