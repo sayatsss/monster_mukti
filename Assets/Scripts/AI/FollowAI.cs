@@ -16,6 +16,8 @@ public class FollowAI : MonoBehaviour
     [SerializeField] private float maxSpeed;
     [SerializeField] private float acceleration = 0.1f;
 
+    private bool isAttacking = false;
+
     
     
 
@@ -30,7 +32,7 @@ public class FollowAI : MonoBehaviour
     }
     void Update()
     {
-        if (GameManager.instance.GameStatus == GameManager.GameState.game.ToString())
+        if (GameManager.instance.GameStatus == GameManager.GameState.game.ToString()&&!isAttacking)
         {
            
             if (moveSpeed >= maxSpeed)
@@ -70,10 +72,13 @@ public class FollowAI : MonoBehaviour
     {
         //SimpleCameraShakeInCinemachine.Instance.VirtualCamera.GetComponent<CinemachineVirtualCamera>().m_Lens.FieldOfView = 90f;
         this.gameObject.GetComponent<Animator>().SetBool("IsAttack", true);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1.8f);
+        isAttacking = true;
         StartCoroutine(SimpleCameraShakeInCinemachine.Instance.cameraAction());
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.2f);
+        isAttacking = false;
         this.gameObject.GetComponent<Animator>().SetBool("IsAttack", false);
+        
         //SimpleCameraShakeInCinemachine.Instance.VirtualCamera.GetComponent<CinemachineVirtualCamera>().m_Lens.FieldOfView = 80f;
     }
     
