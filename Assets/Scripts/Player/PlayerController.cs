@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
     }
     private void Update()
     {
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -2f, 2f), transform.position.y, transform.position.z);
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -1.8f, 1.8f), transform.position.y, transform.position.z);
         _isGrounded = controller.isGrounded;
 
     }
