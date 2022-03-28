@@ -17,9 +17,16 @@ public class UIManager : MonoBehaviour
     public GameObject GarudaMeter;
 
 
+
+
+    public GameObject StartButton,MenuBoard;
+
+
     private void Awake()
     {
         instance = this;
+        StartButton.transform.DOMoveY(-500f, 0.1f);
+        MenuBoard.transform.DOMoveY(3000f, 0.1f);
     }
     private void Start()
     {
