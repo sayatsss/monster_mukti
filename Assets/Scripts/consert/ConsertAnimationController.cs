@@ -13,7 +13,7 @@ public class ConsertAnimationController : MonoBehaviour
     }
     IEnumerator playAnimation()
     {
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(6f);
         Player.GetComponent<Animator>().SetBool("IsDance", true);
         Ishita.GetComponent<Animator>().SetBool("IsDance", true);
         Caanu.GetComponent<Animator>().SetBool("IsDance", true);
