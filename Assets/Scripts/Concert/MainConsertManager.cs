@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 using DG.Tweening;
+using UnityEngine.Playables;
 
 public class MainConsertManager : MonoBehaviour
 {
@@ -12,6 +13,11 @@ public class MainConsertManager : MonoBehaviour
     private float valueCal;
     private bool flash = false;
     static float t = 0.0f;
+
+    public PlayableDirector cameraTransition;
+
+
+    //public GameObject CameraTransition;
 
 
     [SerializeField] private Vector3 playerFinalPosition,jumpValue;
@@ -30,6 +36,7 @@ public class MainConsertManager : MonoBehaviour
         profile.profile.TryGetSettings(out bloom);
         bloomValue = bloom.intensity.value;
         flash = true;
+        //cameraTransition = cameraTransition.GetComponent<PlayableDirector>();
         StartCoroutine(PlayerAction());
     }
     private IEnumerator PlayerAction()
@@ -44,6 +51,9 @@ public class MainConsertManager : MonoBehaviour
         Player.transform.DOMove(playerFinalPosition, 1.8f);
         yield return new WaitForSeconds(1.5f);
         Player.GetComponent<Animator>().SetBool("IsIdle", true);
+        yield return new WaitForSeconds(1.5f);
+        cameraTransition.Play();
+        //CameraTransition.GetComponent<TimelinePlayable>().pla
 
     }
    
