@@ -96,6 +96,10 @@ public class MainConsertManager : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         Bhasamasura.transform.position = BhasamasuraScalePosition;
         Bhasamasura.SetActive(true);
+        yield return new WaitForSeconds(1f);
+      //  CameraShake.instance.shakeDuration = 2;
+        yield return new WaitForSeconds(0.6f);
+        Bhasamasura.GetComponent<Animator>().SetBool("BigDance", true);
         Bhasamasura.transform.DOScale(20f, 0.5f);
     }
     private void Update()
