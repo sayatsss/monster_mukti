@@ -32,7 +32,7 @@ public class SceneTransition : MonoBehaviour
         {
             valueCal= Mathf.Lerp(bloomValue, 80f, t);
             t += 0.5f * Time.deltaTime;
-            Debug.Log(valueCal);
+//            Debug.Log(valueCal);
             bloom.intensity.value = valueCal;
         }
     }

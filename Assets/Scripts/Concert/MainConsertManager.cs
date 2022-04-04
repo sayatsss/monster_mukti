@@ -21,12 +21,16 @@ public class MainConsertManager : MonoBehaviour
     public PlayableDirector cameraTransition;
     public PlayableDirector BhasamasuraCameraTransition;
     public PlayableDirector ChaanuCameraTransition;
+    public PlayableDirector BhasmasuraCameraTransition;
 
 
 
 
     //Public gameobject for refence
-    [SerializeField] private GameObject VirtualCamera, IshitaCamera,CaanuCamera;
+    [SerializeField] private GameObject VirtualCamera, IshitaCamera,CaanuCamera,BhasmasuraCamera;
+
+
+    [SerializeField] private GameObject islandModel;
 
 
     //Position for movement of characters.
@@ -46,6 +50,8 @@ public class MainConsertManager : MonoBehaviour
         VirtualCamera.SetActive(true);
         IshitaCamera.SetActive(false);
         CaanuCamera.SetActive(false);
+        BhasmasuraCamera.SetActive(false);
+        islandModel.SetActive(false);
 
 
     }
@@ -101,6 +107,12 @@ public class MainConsertManager : MonoBehaviour
         yield return new WaitForSeconds(0.6f);
         Bhasamasura.GetComponent<Animator>().SetBool("BigDance", true);
         Bhasamasura.transform.DOScale(20f, 0.5f);
+        yield return new WaitForSeconds(4f);
+        islandModel.SetActive(true);
+        BhasmasuraCamera.SetActive(true);
+        CaanuCamera.SetActive(false);
+        yield return new WaitForSeconds(1f);
+        BhasmasuraCameraTransition.Play();
     }
     private void Update()
     {
