@@ -26,10 +26,15 @@ public class MainConsertManager : MonoBehaviour
     public PlayableDirector HorseCameraTransiton;
 
 
+
+
+    public AudioSource Blast;
+    public GameObject FireWorks;
+
   
 
     //Public gameobject for refence
-    [SerializeField] private GameObject VirtualCamera, IshitaCamera,CaanuCamera,BhasmasuraCamera,stageCamera,horseCamera,chariotCamera;
+    [SerializeField] private GameObject VirtualCamera, IshitaCamera,CaanuCamera,BhasmasuraCamera,stageCamera,horseCamera,chariotCamera,BhasmaCamera,LastCamera;
 
 
     [SerializeField] private GameObject islandModel;
@@ -37,18 +42,23 @@ public class MainConsertManager : MonoBehaviour
 
     //Position for movement of characters.
 
-    [SerializeField] private Vector3 playerFinalPosition,jumpValue,BhasamasuraScalePosition,chariotEndPoint,playerChariotPoint;
+    [SerializeField] private Vector3 playerFinalPosition,jumpValue,BhasamasuraScalePosition,chariotEndPoint;
 
 
     //refence of player.
     public GameObject Player,chariotPlayer;
     public GameObject Bhasamasura;
 
-
+    public GameObject ParticleBashma,particleBashmaBig;
 
 
     [SerializeField] private GameObject Chariot;
     [SerializeField] private List<GameObject> Horses = new List<GameObject>();
+    [SerializeField] private List<GameObject> Conffetti = new List<GameObject>();
+    [SerializeField] private GameObject BoomPArticle;
+
+
+    public GameObject VVLOGO;
 
     private void Awake()
     {
@@ -65,6 +75,17 @@ public class MainConsertManager : MonoBehaviour
         horseCamera.SetActive(false);
         chariotPlayer.SetActive(false);
         chariotCamera.SetActive(false);
+        BhasmaCamera.SetActive(false);
+        LastCamera.SetActive(false);
+        VVLOGO.SetActive(false);
+        ParticleBashma.SetActive(false);
+        particleBashmaBig.SetActive(false);
+        BoomPArticle.SetActive(false);
+        FireWorks.SetActive(false);
+        for (int i = 0; i < Conffetti.Count; i++)
+        {
+            Conffetti[i].SetActive(false);
+        }
 
 
     }
@@ -125,21 +146,28 @@ public class MainConsertManager : MonoBehaviour
         yield return new WaitForSeconds(2f);
         stageCamera.SetActive(false);
         horseCamera.SetActive(true);
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1f);
         Player.transform.DOScale(0.001f, 0.2f);
         HorseCameraTransiton.Play();
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
         chariotPlayer.SetActive(true);
         horseCamera.SetActive(false);
         chariotCamera.SetActive(true);
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(0.5f);
 
         for (int i = 0; i < Horses.Count; i++)
         {
             Horses[i].GetComponent<Animator>().SetBool("IsIdle", false);
             Horses[i].GetComponent<Animator>().SetBool("IsJump", true);
         }
+        yield return new WaitForSeconds(0.5f);
+        Chariot.GetComponent<PathFollowe>().moveChariot = true;
+        yield return new WaitForSeconds(3f);
+        chariotCamera.SetActive(false);
+        BhasmaCamera.SetActive(true);
+
+        StartCoroutine(LastCutScne());
 
 
 
@@ -147,10 +175,31 @@ public class MainConsertManager : MonoBehaviour
 
     }
 
+    private IEnumerator LastCutScne()
+    {
+        yield return new WaitForSeconds(10f);
+        islandModel.SetActive(false);
+        LastCamera.SetActive(true);
+        BhasmaCamera.SetActive(false);
+        Chariot.SetActive(false);
+        yield return new WaitForSeconds(10f);
+        VVLOGO.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        for (int i=0;i<Conffetti.Count;i++)
+        {
+            Conffetti[i].SetActive(true);
+        }
+
+        FireWorks.SetActive(true);
+        BoomPArticle.SetActive(true);
+        Blast.Play();
+    }
+
 
 
     private IEnumerator BhasamasuraDisapearAction()
     {
+        ParticleBashma.SetActive(true);
         Bhasamasura.transform.DOScale(0.01f, 0.2f);
         yield return new WaitForSeconds(0.6f);
         Bhasamasura.SetActive(false);
@@ -162,6 +211,7 @@ public class MainConsertManager : MonoBehaviour
         yield return new WaitForSeconds(0.6f);
         Bhasamasura.GetComponent<Animator>().SetBool("BigDance", true);
         Bhasamasura.transform.DOScale(20f, 0.5f);
+        particleBashmaBig.SetActive(true);
         yield return new WaitForSeconds(4f);
         islandModel.SetActive(true);
         BhasmasuraCamera.SetActive(true);
