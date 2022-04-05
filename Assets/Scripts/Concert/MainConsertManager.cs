@@ -22,12 +22,14 @@ public class MainConsertManager : MonoBehaviour
     public PlayableDirector BhasamasuraCameraTransition;
     public PlayableDirector ChaanuCameraTransition;
     public PlayableDirector BhasmasuraCameraTransition;
+    public PlayableDirector StageCameraTransition;
+    public PlayableDirector HorseCameraTransiton;
 
 
-
+  
 
     //Public gameobject for refence
-    [SerializeField] private GameObject VirtualCamera, IshitaCamera,CaanuCamera,BhasmasuraCamera;
+    [SerializeField] private GameObject VirtualCamera, IshitaCamera,CaanuCamera,BhasmasuraCamera,stageCamera,horseCamera,chariotCamera;
 
 
     [SerializeField] private GameObject islandModel;
@@ -35,12 +37,18 @@ public class MainConsertManager : MonoBehaviour
 
     //Position for movement of characters.
 
-    [SerializeField] private Vector3 playerFinalPosition,jumpValue,BhasamasuraScalePosition;
+    [SerializeField] private Vector3 playerFinalPosition,jumpValue,BhasamasuraScalePosition,chariotEndPoint,playerChariotPoint;
 
 
     //refence of player.
-    public GameObject Player;
+    public GameObject Player,chariotPlayer;
     public GameObject Bhasamasura;
+
+
+
+
+    [SerializeField] private GameObject Chariot;
+    [SerializeField] private List<GameObject> Horses = new List<GameObject>();
 
     private void Awake()
     {
@@ -52,6 +60,11 @@ public class MainConsertManager : MonoBehaviour
         CaanuCamera.SetActive(false);
         BhasmasuraCamera.SetActive(false);
         islandModel.SetActive(false);
+        stageCamera.SetActive(false);
+        Chariot.SetActive(false);
+        horseCamera.SetActive(false);
+        chariotPlayer.SetActive(false);
+        chariotCamera.SetActive(false);
 
 
     }
@@ -75,6 +88,7 @@ public class MainConsertManager : MonoBehaviour
         Player.transform.DOMove(playerFinalPosition, 1.8f);
         yield return new WaitForSeconds(1.5f);
         Player.GetComponent<Animator>().SetBool("IsIdle", true);
+        Player.GetComponent<Animator>().SetBool("IsRun", false);
         yield return new WaitForSeconds(1.5f);
         cameraTransition.Play();
         yield return new WaitForSeconds(20f);
@@ -88,6 +102,47 @@ public class MainConsertManager : MonoBehaviour
         ChaanuCameraTransition.Play();
         yield return new WaitForSeconds(1.5f);
         StartCoroutine(BhasamasuraDisapearAction());
+        
+
+    }
+
+
+    private IEnumerator ChariotMovement()
+    {
+        yield return new WaitForSeconds(5f);
+        Chariot.SetActive(true);
+        for(int i=0;i<Horses.Count;i++)
+        {
+            Horses[i].GetComponent<Animator>().SetBool("IsRun", true);
+        }
+        Chariot.transform.DOMove(chariotEndPoint, 2f); ;
+        yield return new WaitForSeconds(0.1f);
+        for (int i = 0; i < Horses.Count; i++)
+        {
+            Horses[i].GetComponent<Animator>().SetBool("IsRun", false);
+            Horses[i].GetComponent<Animator>().SetBool("IsIdle", true);
+        }
+        yield return new WaitForSeconds(2f);
+        stageCamera.SetActive(false);
+        horseCamera.SetActive(true);
+        yield return new WaitForSeconds(1.5f);
+        Player.transform.DOScale(0.001f, 0.2f);
+        HorseCameraTransiton.Play();
+        yield return new WaitForSeconds(2f);
+        chariotPlayer.SetActive(true);
+        horseCamera.SetActive(false);
+        chariotCamera.SetActive(true);
+
+        yield return new WaitForSeconds(2f);
+
+        for (int i = 0; i < Horses.Count; i++)
+        {
+            Horses[i].GetComponent<Animator>().SetBool("IsIdle", false);
+            Horses[i].GetComponent<Animator>().SetBool("IsJump", true);
+        }
+
+
+
 
 
     }
@@ -113,6 +168,11 @@ public class MainConsertManager : MonoBehaviour
         CaanuCamera.SetActive(false);
         yield return new WaitForSeconds(1f);
         BhasmasuraCameraTransition.Play();
+        yield return new WaitForSeconds(8f);
+        BhasmasuraCamera.SetActive(false);
+        stageCamera.SetActive(true);
+        StageCameraTransition.Play();
+        StartCoroutine(ChariotMovement());
     }
     private void Update()
     {
