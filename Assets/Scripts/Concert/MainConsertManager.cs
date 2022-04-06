@@ -182,7 +182,7 @@ public class MainConsertManager : MonoBehaviour
         LastCamera.SetActive(true);
         BhasmaCamera.SetActive(false);
         Chariot.SetActive(false);
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(12f);
         VVLOGO.SetActive(true);
         yield return new WaitForSeconds(2f);
         for (int i=0;i<Conffetti.Count;i++)

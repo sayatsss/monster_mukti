@@ -49,8 +49,9 @@ public class FollowAI : MonoBehaviour
         this.gameObject.GetComponent<Animator>().SetBool("IsAttack", true);
         yield return new WaitForSeconds(1.8f);
         isAttacking = true;
-        StartCoroutine(SimpleCameraShakeInCinemachine.Instance.cameraAction());
+       
         yield return new WaitForSeconds(0.2f);
+        StartCoroutine(SimpleCameraShakeInCinemachine.Instance.cameraAction());
         isAttacking = false;
         this.gameObject.GetComponent<Animator>().SetBool("IsAttack", false);
         

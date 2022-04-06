@@ -11,7 +11,7 @@ public class WaterLevel : MonoBehaviour
     {
         if ( GameManager.instance.GameStatus == GameManager.GameState.game.ToString())
         {
-            this.gameObject.transform.DOMoveY(10f, 1000f);
+            this.gameObject.transform.DOMoveY(20f, 5000f);
             
         }
     }
