@@ -16,9 +16,12 @@ public class CameraManager : MonoBehaviour
 
     public IEnumerator ChangeOfCameraAngle()
     {
-        yield return new WaitForSeconds(0f);
+        yield return new WaitForSeconds(0.5f);
         asuraCamera.SetActive(true);
-        yield return new WaitForSeconds(1f);
         mainCamera.SetActive(false);
+        yield return new WaitForSeconds(1.5f);
+        asuraCamera.SetActive(false);
+        mainCamera.SetActive(true);
+
     }
 }

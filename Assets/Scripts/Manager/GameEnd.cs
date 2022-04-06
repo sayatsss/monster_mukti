@@ -18,6 +18,7 @@ public class GameEnd : MonoBehaviour
         {
             AudioManager.Instance.DamageLow.Play();
             StartCoroutine(GameEndActionCameraShake());
+            FollowAI.Instance.AsuraAction();
         }
 
     }

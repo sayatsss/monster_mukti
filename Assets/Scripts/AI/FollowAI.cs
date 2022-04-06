@@ -9,14 +9,13 @@ public class FollowAI : MonoBehaviour
 
 
     public static FollowAI Instance;
-    public GameObject target; //the enemy's target
-    public float moveSpeed = 5; //move speed
-    public float rotationSpeed = 5; //speed of turning
-
-    [SerializeField] private float maxSpeed;
-    [SerializeField] private float acceleration = 0.1f;
-
+   
     private bool isAttacking = false;
+
+
+    private bool isFirstAttack = false;
+
+  
 
     
     
@@ -25,49 +24,23 @@ public class FollowAI : MonoBehaviour
     {
         Instance = this;
     }
-
-    void Update()
-    {
-        if (GameManager.instance.GameStatus == GameManager.GameState.game.ToString()&&!isAttacking)
-        {
-           
-            if (moveSpeed >= maxSpeed)
-            {
-                moveSpeed = maxSpeed;
-            }
-            else
-            {
-                moveSpeed += acceleration * Time.deltaTime;
-            }
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(target.transform.position - transform.position), rotationSpeed * Time.deltaTime);
-
-
-            //move towards the player
-            transform.position += transform.forward * Time.deltaTime * moveSpeed;
-            if(Vector3.Distance(this.gameObject.transform.position,target.transform.position)<1)
-            {
-                Debug.Log("Attack");
-            }
-
-        }
-        //rotate to look at the player
-
-       
-
-
-    }
+    
+   
     public IEnumerator FirstAsuraAttack()
     {
         yield return new WaitForSeconds(0.6f);
         StartCoroutine(AsuraAttack(true));
+        yield return new WaitForSeconds(6f);
+        isFirstAttack = true;
     }
-    private void AsuraAction()
+    public void AsuraAction()
     {
         StartCoroutine(AsuraAttack(false));
     }
     public IEnumerator AsuraAttack(bool FirstAttack)
     {
-        if(!FirstAttack)
+       
+        if (!FirstAttack)
         {
             StartCoroutine(CameraManager.instance.ChangeOfCameraAngle());
             
