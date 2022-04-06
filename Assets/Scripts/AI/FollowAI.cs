@@ -26,10 +26,6 @@ public class FollowAI : MonoBehaviour
         Instance = this;
     }
 
-    private void Start()
-    {
-       // InvokeRepeating("AsuraAction", 0f, 10f);
-    }
     void Update()
     {
         if (GameManager.instance.GameStatus == GameManager.GameState.game.ToString()&&!isAttacking)
@@ -48,28 +44,34 @@ public class FollowAI : MonoBehaviour
 
             //move towards the player
             transform.position += transform.forward * Time.deltaTime * moveSpeed;
+            if(Vector3.Distance(this.gameObject.transform.position,target.transform.position)<1)
+            {
+                Debug.Log("Attack");
+            }
 
         }
         //rotate to look at the player
 
-        if(Input.GetKeyDown(KeyCode.L))
-        {
-            StartCoroutine(AsuraAttack());
-        }
+       
 
 
     }
     public IEnumerator FirstAsuraAttack()
     {
         yield return new WaitForSeconds(0.6f);
-        StartCoroutine(AsuraAttack());
+        StartCoroutine(AsuraAttack(true));
     }
     private void AsuraAction()
     {
-        StartCoroutine(AsuraAttack());
+        StartCoroutine(AsuraAttack(false));
     }
-    public IEnumerator AsuraAttack()
+    public IEnumerator AsuraAttack(bool FirstAttack)
     {
+        if(!FirstAttack)
+        {
+            StartCoroutine(CameraManager.instance.ChangeOfCameraAngle());
+            
+        }
         //SimpleCameraShakeInCinemachine.Instance.VirtualCamera.GetComponent<CinemachineVirtualCamera>().m_Lens.FieldOfView = 90f;
         this.gameObject.GetComponent<Animator>().SetBool("IsAttack", true);
         yield return new WaitForSeconds(1.8f);
