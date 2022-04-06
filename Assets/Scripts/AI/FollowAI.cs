@@ -28,7 +28,7 @@ public class FollowAI : MonoBehaviour
 
     private void Start()
     {
-        InvokeRepeating("AsuraAction", 0f, 10f);
+       // InvokeRepeating("AsuraAction", 0f, 10f);
     }
     void Update()
     {

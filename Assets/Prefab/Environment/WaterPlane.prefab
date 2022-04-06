@@ -12,12 +12,14 @@ GameObject:
   - component: {fileID: 8441517749370526051}
   - component: {fileID: 8441517749370526053}
   - component: {fileID: 2143058916}
+  - component: {fileID: 1619639998}
+  - component: {fileID: 4325624381182617221}
   m_Layer: 0
   m_Name: WaterPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &8441517749370526050
 Transform:
@@ -51,7 +53,7 @@ MeshRenderer:
   m_GameObject: {fileID: 8441517749370526054}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
@@ -62,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bbdc3364420d0b24999bc03774829c53, type: 2}
+  - {fileID: 2100000, guid: eaf050df2db7845738571f011d6f3d26, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -96,3 +98,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7f268250ff8f44f4b0c51ac823eb53b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &1619639998
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8441517749370526054}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.0000002, z: 2.6370596e-15}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4325624381182617221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8441517749370526054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8b3cef84845d4ddbb8d29b40e7e771b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WFX_speed: 0.5
+  WFY_speed: 0.2

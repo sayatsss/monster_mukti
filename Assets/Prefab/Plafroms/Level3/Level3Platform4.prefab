@@ -4796,7 +4796,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d69a474679f644c88b8cdffb857f27c6, type: 2}
+  - {fileID: 2100000, guid: eaf050df2db7845738571f011d6f3d26, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -62835,6 +62835,7 @@ GameObject:
   - component: {fileID: 1629444739558292828}
   - component: {fileID: 5784151258923414136}
   - component: {fileID: 6071818120843993320}
+  - component: {fileID: 6497480075716383284}
   m_Layer: 0
   m_Name: Level3Platform4
   m_TagString: Untagged
@@ -62982,6 +62983,19 @@ MonoBehaviour:
   TileYValue: -7.64
   TileXValue: 0
   RotationValue: {x: 0, y: 0, z: 0}
+--- !u!65 &6497480075716383284
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5118214807230043781}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 16.787697, y: 3.0872731, z: 31.364302}
+  m_Center: {x: 0, y: -1.5436375, z: 0}
 --- !u!1 &5205522164393254728
 GameObject:
   m_ObjectHideFlags: 0
