@@ -15,6 +15,8 @@ public class MainConsertManager : MonoBehaviour
     static float t = 0.0f;
 
 
+    public GameObject Music;
+
 
     //TimeLine Action varibales
 
@@ -86,6 +88,7 @@ public class MainConsertManager : MonoBehaviour
         {
             Conffetti[i].SetActive(false);
         }
+        Music.SetActive(false);
 
 
     }
@@ -96,6 +99,12 @@ public class MainConsertManager : MonoBehaviour
         flash = true;
         //cameraTransition = cameraTransition.GetComponent<PlayableDirector>();
         StartCoroutine(PlayerAction());
+        StartCoroutine(MusicDelayPLay());
+    }
+    private IEnumerator MusicDelayPLay()
+    {
+        yield return new WaitForSeconds(1.26f);
+        Music.SetActive(true);
     }
     private IEnumerator PlayerAction()
     {
@@ -149,7 +158,7 @@ public class MainConsertManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
         Player.transform.DOScale(0.001f, 0.2f);
         HorseCameraTransiton.Play();
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(6f);
         chariotPlayer.SetActive(true);
         horseCamera.SetActive(false);
         chariotCamera.SetActive(true);
@@ -182,9 +191,9 @@ public class MainConsertManager : MonoBehaviour
         LastCamera.SetActive(true);
         BhasmaCamera.SetActive(false);
         Chariot.SetActive(false);
-        yield return new WaitForSeconds(12f);
+        yield return new WaitForSeconds(8.5f);
         VVLOGO.SetActive(true);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         for (int i=0;i<Conffetti.Count;i++)
         {
             Conffetti[i].SetActive(true);
