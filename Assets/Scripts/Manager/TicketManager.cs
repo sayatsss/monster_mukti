@@ -37,7 +37,11 @@ public class TicketManager : MonoBehaviour
         
         TicketBoard.transform.DOMoveY(Screen.height, 1f);
         yield return new WaitForSeconds(0.8f);
-        Tickets[ticketCount - 1].SetActive(true);
+        int ticketCollected = ticketCount - 1;
+        if(ticketCollected<=Tickets.Count-1)
+        {
+            Tickets[ticketCollected].SetActive(true);
+        }
         yield return new WaitForSeconds(2f);
         TicketBoard.transform.DOMoveY(Screen.height + 300f, 2f);
     }

@@ -34,8 +34,8 @@ public class ScoreManager : MonoBehaviour
             if (_tempScore > 20)
             {
                 _scoreCount++;
-                _scoreText.text = (_scoreCount).ToString("00");
-                _finalScoreText.text= (_scoreCount).ToString("00");
+                _scoreText.text = (_scoreCount).ToString("00") + "M";
+                _finalScoreText.text= (_scoreCount).ToString("00")+"M";
                 _tempScore = 0;
             }
         }
@@ -62,7 +62,7 @@ public class ScoreManager : MonoBehaviour
         yield return new WaitForSeconds(0f);
         TicketManager.instance.ticketCount+=1;
 
-        if(TicketManager.instance.ticketCount==TicketManager.instance.Tickets.Count)
+        if(TicketManager.instance.ticketCount==TicketManager.instance.Tickets.Count && CharacterStateManager.Instance.IsPlayerActive)
         {
             StartCoroutine(PortalFollow.instance.ActivatePortal());
         }

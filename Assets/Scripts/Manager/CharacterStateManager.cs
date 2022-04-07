@@ -16,6 +16,8 @@ public class CharacterStateManager : MonoBehaviour
 
     public static CharacterStateManager Instance;
 
+    [HideInInspector]public bool IsPlayerActive = false;
+
 
     private void Awake()
     {
@@ -28,6 +30,7 @@ public class CharacterStateManager : MonoBehaviour
     }
     public IEnumerator Character_Garuda_Transition(GameObject gameObject)
     {
+        IsPlayerActive = false;
         Garuda.SetActive(true);
         UIManager.instance.GarudaMeter.SetActive(true);
         GarudaManager.Instance.GarudaTimeSpan = 100;
@@ -45,6 +48,7 @@ public class CharacterStateManager : MonoBehaviour
 
     public IEnumerator Garuda_Character_Transition()
     {
+        IsPlayerActive = true;
         Garuda.transform.DOMoveY(LevelGenerator.instance.Y_Offset, 5f, false);
         yield return new WaitForSeconds(6f);
         MainCharacter.transform.position = Garuda.transform.position;
@@ -57,6 +61,10 @@ public class CharacterStateManager : MonoBehaviour
         UIManager.instance.GarudaMeter.SetActive(false);
         GarudaManager.Instance.GarudaTimeSpan = 100;
 
+        if (TicketManager.instance.ticketCount == TicketManager.instance.Tickets.Count && CharacterStateManager.Instance.IsPlayerActive)
+        {
+            StartCoroutine(PortalFollow.instance.ActivatePortal());
+        }
 
     }
 
