@@ -27,13 +27,13 @@ public class PlatfromView : MonoBehaviour
             }
             if (this.gameObject.name.Contains("BridgePoint"))
             {
-                int value = Random.Range(0, 3);
+                int value = Random.Range(0, 5);
 
 
-                if (value == 2)
+                if (value == 2 || value == 4)
                 {
-                    //Debug.Log("Destruct start");
                     this.gameObject.transform.parent.GetComponent<DestructionArc>().ArcDestruction();
+                   
                     
                 }
             }

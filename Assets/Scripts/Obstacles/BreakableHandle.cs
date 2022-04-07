@@ -12,7 +12,7 @@ public class BreakableHandle : MonoBehaviour
 
     private IEnumerator DestroySelf()
     {
-        yield return new WaitForSeconds(7f);
+        yield return new WaitForSeconds(5f);
         Destroy(this.gameObject);
     }
    

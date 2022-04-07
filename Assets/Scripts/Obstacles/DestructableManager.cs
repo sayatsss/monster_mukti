@@ -34,7 +34,7 @@ public class DestructableManager : MonoBehaviour
         {
             //Debug.Log("Baccaoo");
             int RandomValue = Random.Range(0, DestructableElements.Count);
-            DestructableElements[RandomValue].GetComponent<Destructable>().Destruct();
+            DestructableElements[RandomValue].GetComponent<Destructable>().Destruct(false);
         }
     }
 }

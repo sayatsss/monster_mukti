@@ -1366,6 +1366,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4308375148244378041}
+  - component: {fileID: 5981632988720438819}
   m_Layer: 0
   m_Name: Arch
   m_TagString: Untagged
@@ -1410,6 +1411,20 @@ Transform:
   m_Father: {fileID: 9036659485744315219}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5981632988720438819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3495282534534249219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ebdb0e9349c7b54a98eb7b3e01e2ef0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DestructablePrefab: {fileID: 3964234856243322582, guid: cddc6644504574809a11df18b137297b,
+    type: 3}
 --- !u!1 &3995497715058198013
 GameObject:
   m_ObjectHideFlags: 0
