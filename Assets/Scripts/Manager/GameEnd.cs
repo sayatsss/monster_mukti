@@ -9,9 +9,9 @@ public class GameEnd : MonoBehaviour
    
     private void OnTriggerEnter(Collider other)
     {
-       if(this.gameObject.name.Contains("Death"))
+       if(this.gameObject.name.Contains("Die"))
         {
-           
+            //Debug.Log(gameObject.name);
             StartCoroutine(GameEndAction());
         }
         if (this.gameObject.name.Contains("Cam"))
