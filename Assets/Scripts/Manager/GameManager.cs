@@ -45,8 +45,8 @@ public class GameManager : MonoBehaviour
         //RenderSettings.fogDensity = 0.004f;
         yield return new WaitForSeconds(3.5f);
         UIManager.instance.MenuPanel.SetActive(true);
-        UIManager.instance.StartButton.transform.DOMoveY(20f, 2f);
-        UIManager.instance.MenuBoard.transform.DOMoveY(Screen.height+100f, 2f);
+        UIManager.instance.StartButton.transform.DOMoveY(200f, 2f);
+        UIManager.instance.MenuBoard.transform.DOMoveY(Screen.height-20f, 2f);
     }
    
     public void GameStateChange(GameState gameState)

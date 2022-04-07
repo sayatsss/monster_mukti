@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
+using System.Collections.Generic;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -45,7 +47,26 @@ public class ScoreManager : MonoBehaviour
         _tempSliderValue = _coinCount;
         coinIndicator.value = _tempSliderValue;
         _coinText.text = _coinCount.ToString();
+        if(_tempSliderValue>coinIndicator.maxValue)
+        {
+            coinIndicator.value = 0;
+            _tempSliderValue = 0;
+            _coinCount = 0;
+            StartCoroutine(TicketAddition());
+        }
 
-       // CoinAnimation.Instance.StartMovingCoin(coinGameobject.transform.position);
+    }
+
+    private IEnumerator TicketAddition()
+    {
+        yield return new WaitForSeconds(0f);
+        TicketManager.instance.ticketCount+=1;
+
+        if(TicketManager.instance.ticketCount==TicketManager.instance.Tickets.Count)
+        {
+            StartCoroutine(PortalFollow.instance.ActivatePortal());
+        }
+        TicketManager.instance.TicketActive();
+        StopCoroutine(TicketAddition());
     }
 }
