@@ -2,17 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class TicketManager : MonoBehaviour
 {
     public static TicketManager instance; 
     [HideInInspector]public int ticketCount;
-    public List<Image> Tickets = new List<Image>();
+    public List<GameObject> Tickets = new List<GameObject>();
+    public GameObject TicketBoard;
+
 
 
     private void Awake()
     {
         instance = this;
+        TicketBoard.transform.DOMoveY(Screen.height+300f,0.5f);
     }
     private void Start()
     {
@@ -24,13 +28,17 @@ public class TicketManager : MonoBehaviour
     {
         for(int i=0;i<Tickets.Count;i++)
         {
-            Tickets[i].color = new Color(Tickets[i].color.r, Tickets[i].color.g, Tickets[i].color.b, 0.2f);
+            Tickets[i].SetActive(false);
         }
     }
 
-    public  void TicketActive()
+    public  IEnumerator TicketActive()
     {
-        //TicketHandlerSetAplaLow();
-        Tickets[ticketCount-1].color= new Color(Tickets[ticketCount-1].color.r, Tickets[ticketCount-1].color.g, Tickets[ticketCount-1].color.b, 1f);
+        
+        TicketBoard.transform.DOMoveY(Screen.height, 1f);
+        yield return new WaitForSeconds(0.8f);
+        Tickets[ticketCount - 1].SetActive(true);
+        yield return new WaitForSeconds(2f);
+        TicketBoard.transform.DOMoveY(Screen.height + 300f, 2f);
     }
 }

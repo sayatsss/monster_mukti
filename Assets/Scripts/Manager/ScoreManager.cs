@@ -66,7 +66,9 @@ public class ScoreManager : MonoBehaviour
         {
             StartCoroutine(PortalFollow.instance.ActivatePortal());
         }
-        TicketManager.instance.TicketActive();
+
+        StartCoroutine(TicketManager.instance.TicketActive());
+        
         StopCoroutine(TicketAddition());
     }
 }
