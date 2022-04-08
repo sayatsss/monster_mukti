@@ -23,7 +23,7 @@ public class GarudaManager : MonoBehaviour
     {
         value = 150;
     }
-    private void Update()
+    private void FixedUpdate()
     {
         value--;
         if(value<0)

@@ -17,6 +17,11 @@ public class LevelGenerator : MonoBehaviour
     [SerializeField] private List<GameObject> platformPrefabL3;
 
 
+    [Header("FlatPlatform prefabs ")]
+    [SerializeField] private List<GameObject> platformPrefab;
+
+
+
 
 
     [Header("WaterBody values")]
@@ -32,51 +37,28 @@ public class LevelGenerator : MonoBehaviour
     private void Awake()
     {
         instance = this;
-        for (int i = 0; i < platformPrefabL1.Count; i++)
-        {
-            platformPrefabL1[i].SetActive(false);
-           
-        }
-        for (int i = 0; i < platformPrefabL2.Count; i++)
-        {
-            platformPrefabL2[i].SetActive(false);
-            
-        }
-        for (int i = 0; i < platformPrefabL3.Count; i++)
-        {
-            platformPrefabL3[i].SetActive(false);
-            
-        }
+       
     }
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
-        //Shuffle(platformPrefabL1);
-        //Shuffle(platformPrefabL2);
-        //Shuffle(platformPrefabL3);
-        for (int i=0;i< platformPrefabL1.Count; i++)
+        //StartCoroutine(ActivatePlatform());
+        for (int i = 0; i < platformPrefab.Count; i++)
         {
-            GameObject Go = platformPrefabL1[i];
+            GameObject Go = Instantiate(platformPrefab[i]);
             SetTileValue(Go);
+            
         }
-        for (int i = 0; i < platformPrefabL2.Count; i++)
-        {
-            GameObject Go = platformPrefabL2[i];
-            SetTileValue(Go);
-        }
-        for (int i = 0; i < platformPrefabL3.Count; i++)
-        {
-            GameObject Go = platformPrefabL3[i];
-            SetTileValue(Go);
-        }
+
     }
+
+    
 
     public void SetTileValue(GameObject gameObject)
     {
-        gameObject.SetActive(true);
+        
         gameObject.transform.position = new Vector3(0, Y_Offset, Z_Offset);
         gameObject.transform.rotation = Quaternion.Euler(gameObject.GetComponent<TilesValues>().RotationValue);
         //waterBody.transform.position = new Vector3(0,Y_Offset-5, 0);
