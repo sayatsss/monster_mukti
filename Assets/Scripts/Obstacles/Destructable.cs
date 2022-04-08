@@ -9,12 +9,12 @@ public class Destructable : MonoBehaviour
 
     public void Destruct(bool arc)
     {
-        //GameObject GO = Instantiate(DestructablePrefab);
+        GameObject GO = Instantiate(DestructablePrefab);
          //GO.transform.parent = this.gameObject.transform.parent;
-        // GO.transform.position = this.gameObject.transform.position;
-        //GO.transform.localScale = this.gameObject.transform.localScale;
+         GO.transform.position = this.gameObject.transform.position;
+        GO.transform.localScale = this.gameObject.transform.localScale;
       
-        // this.gameObject.SetActive(false);
+         this.gameObject.SetActive(false);
         
     }
 }
