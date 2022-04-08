@@ -37,24 +37,22 @@ public class LevelGenerator : MonoBehaviour
     private void Awake()
     {
         instance = this;
-       
-    }
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
         //StartCoroutine(ActivatePlatform());
         for (int i = 0; i < platformPrefab.Count; i++)
         {
             GameObject Go = Instantiate(platformPrefab[i]);
             SetTileValue(Go);
-            
+
         }
 
     }
 
-    
+
+    private void Update()
+    {
+        Debug.Log(Y_Offset);
+    }
+
 
     public void SetTileValue(GameObject gameObject)
     {

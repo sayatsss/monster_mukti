@@ -14,6 +14,7 @@ public class OverTheCloudManager : MonoBehaviour
     }
     private void Start()
     {
+        overTheCloudObject.AddRange(GameObject.FindGameObjectsWithTag("Cloud"));
         DeactivateOverTheCloud();
     }
 

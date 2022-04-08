@@ -9,7 +9,7 @@ public class PathEventmanager : MonoBehaviour
 
     private int value;
 
-    private void Awake()
+    private void Start()
     {
         foreach (Transform child in transform)
         {
@@ -28,7 +28,7 @@ public class PathEventmanager : MonoBehaviour
                 }
                 value = Random.Range(0, pillarsArc.Count);
                 pillarsArc[value].SetActive(true);
-               // pillarsArc[value].GetComponent<Animator>().enabled = false;
+                pillarsArc[value].GetComponent<Animator>().enabled = false;
 
             }
 
@@ -46,11 +46,14 @@ public class PathEventmanager : MonoBehaviour
     }
     public IEnumerator PillarArcAction()
     {
+//        Debug.Log("Pillar hil");
 
-        pillarsArc[value].GetComponent<Animator>().SetBool("IsAttack", true);
-        yield return new WaitForSeconds(2f);
-        pillarsArc[value].GetComponent<Animator>().SetBool("IsAttack", false);
-
+        pillarsArc[value].GetComponent<Animator>().enabled = true;
+        yield return new WaitForSeconds(4f);
+        pillarsArc[value].GetComponent<Animator>().enabled = false;
+        pillarsArc[value].SetActive(false);
+        yield return new WaitForSeconds(3f);
+        pillarsArc[value].SetActive(true);
     }
 
 

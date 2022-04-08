@@ -22,6 +22,7 @@ public class RaiseEvent : MonoBehaviour
             }
             else
             {
+//                Debug.Log("rAised event");
                 StartCoroutine(SimpleCameraShakeInCinemachine.Instance.cameraAction());
                 StartCoroutine(this.gameObject.transform.parent.GetComponent<PathEventmanager>().PillarArcAction());
                 

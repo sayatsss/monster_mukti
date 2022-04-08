@@ -51,7 +51,7 @@ public class CharacterStateManager : MonoBehaviour
     {
         OverTheCloudManager.instance.DeactivateOverTheCloud();
         IsPlayerActive = true;
-        Garuda.transform.DOMoveY(LevelGenerator.instance.Y_Offset, 5f, false);
+        Garuda.transform.DOMoveY(24f, 5f, false);
         yield return new WaitForSeconds(6f);
         MainCharacter.transform.position = Garuda.transform.position;
         MainCharacter.SetActive(true);
