@@ -23,15 +23,18 @@ public class JetPackManager : MonoBehaviour
 
     public void GenerateJetpack()
     {
-        
-
-        int val = Random.Range(0, 4);
-        if(val==2)
+        if(GameStart.instance.Game_Start)
         {
-            int value = Random.Range(0, JetpackPoint.Count - 1);
-            GameObject Go = Instantiate(JetPack);
-            Go.transform.position = JetpackPoint[value].transform.position;
+            int val = Random.Range(0, 4);
+            if (val == 2)
+            {
+                int value = Random.Range(0, JetpackPoint.Count - 1);
+                GameObject Go = Instantiate(JetPack);
+                Go.transform.position = JetpackPoint[value].transform.position;
+            }
         }
+
+        
         
     }
 }

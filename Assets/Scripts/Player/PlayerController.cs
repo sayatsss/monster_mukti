@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if(GameManager.instance.GameStatus==GameManager.GameState.game.ToString())
+        if(GameManager.instance.GameStatus==GameManager.GameState.game.ToString()  )
         {
             if (_isGrounded)
             {
@@ -76,26 +76,16 @@ public class PlayerController : MonoBehaviour
             {
                 speed += acceleration * Time.deltaTime;
             }
-
-
-#if (UNITY_EDITOR && !UNITY_ANDROID)
-           
             velocity = new Vector3(0, 0, 1) * speed;//curSpeed += acceleration * Time.deltaTime;
-            //velocity.x = Input.GetAxis("Horizontal") * turnSpeed;//curSpeed += acceleration * Time.deltaTime;
-            velocity.x = Input.acceleration.x * turnSpeed;
-#endif
-
-#if UNITY_ANDROID
-            // your code
-           // Debug.Log("I ma here");
-            velocity = new Vector3(0, 0, 1) * speed;//curSpeed += acceleration * Time.deltaTime;
-            velocity.x = Input.acceleration.x * turnSpeed;
-            velocity.x = Input.GetAxis("Horizontal")*turnSpeed;
-
-#endif
+            if (GameStart.instance.Game_Start)
+            {
 
 
+                
+                velocity.x = Input.acceleration.x * turnSpeed;
+                //velocity.x = Input.GetAxis("Horizontal") * turnSpeed;
 
+            }
 
 
             velocity.y = _yvelocity;

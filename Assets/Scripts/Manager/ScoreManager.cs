@@ -60,11 +60,16 @@ public class ScoreManager : MonoBehaviour
     private IEnumerator TicketAddition()
     {
         yield return new WaitForSeconds(0f);
-        TicketManager.instance.ticketCount+=1;
+        if(TicketManager.instance.ticketCount<TicketManager.instance.Tickets.Count)
+        {
+            TicketManager.instance.ticketCount += 1;
+        }
 
         if(TicketManager.instance.ticketCount==TicketManager.instance.Tickets.Count && CharacterStateManager.Instance.IsPlayerActive)
         {
+            Debug.Log("hello");
             StartCoroutine(PortalFollow.instance.ActivatePortal());
+            TicketManager.instance.ticketCount = TicketManager.instance.Tickets.Count;
         }
 
         StartCoroutine(TicketManager.instance.TicketActive());

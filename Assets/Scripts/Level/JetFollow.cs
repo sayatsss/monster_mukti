@@ -20,7 +20,11 @@ public class JetFollow : MonoBehaviour
     }
     void FixedUpdate()
     {
+
+        if(GameStart.instance.Game_Start)
+        {
             Jet.transform.position = this.gameObject.transform.position + offset;
+        }
         
 
     }

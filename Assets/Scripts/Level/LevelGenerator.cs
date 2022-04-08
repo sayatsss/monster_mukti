@@ -48,10 +48,7 @@ public class LevelGenerator : MonoBehaviour
     }
 
 
-    private void Update()
-    {
-        Debug.Log(Y_Offset);
-    }
+   
 
 
     public void SetTileValue(GameObject gameObject)

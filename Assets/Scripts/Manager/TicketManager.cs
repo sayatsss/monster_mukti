@@ -35,15 +35,18 @@ public class TicketManager : MonoBehaviour
 
     public  IEnumerator TicketActive()
     {
-        
-        TicketBoard.transform.DOMoveY(Screen.height-10f, 1f);
-        yield return new WaitForSeconds(0.8f);
-        int ticketCollected = ticketCount - 1;
-        if(ticketCollected<=Tickets.Count-1)
+        if(ticketCount<=Tickets.Count)
         {
-            Tickets[ticketCollected].SetActive(true);
+            TicketBoard.transform.DOMoveY(Screen.height - 10f, 1f);
+            yield return new WaitForSeconds(0.8f);
+            int ticketCollected = ticketCount - 1;
+            if (ticketCollected <= Tickets.Count - 1)
+            {
+                Tickets[ticketCollected].SetActive(true);
+            }
+            yield return new WaitForSeconds(2f);
+            TicketBoard.transform.DOMoveY(Screen.height + 800f, 2f);
         }
-        yield return new WaitForSeconds(2f);
-        TicketBoard.transform.DOMoveY(Screen.height + 800f, 2f);
+       
     }
 }

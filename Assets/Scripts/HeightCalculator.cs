@@ -22,6 +22,6 @@ public class HeightCalculator : MonoBehaviour
         Debug.DrawRay(transform.position, dir * dist, Color.green);
         Physics.Raycast(transform.position, dir, out hit);
         //end edit//
-        Debug.Log(hit.collider.gameObject.name);
+       // Debug.Log(hit.collider.gameObject.name);
     }
 }
