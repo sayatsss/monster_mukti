@@ -32,13 +32,14 @@ public class CharacterStateManager : MonoBehaviour
     {
         IsPlayerActive = false;
         Garuda.SetActive(true);
+        OverTheCloudManager.instance.activateOverTheCloud();
         UIManager.instance.GarudaMeter.SetActive(true);
         GarudaManager.Instance.GarudaTimeSpan = 100;
         Garuda.transform.position = MainCharacter.transform.position;
         Garuda.transform.DOMoveY(90f, 6f, false);
         cam.GetComponent<CinemachineVirtualCamera>().m_Follow = Garuda.transform;
         cam.GetComponent<CinemachineVirtualCamera>().LookAt = Garuda.transform;
-      
+        OverTheCloudManager.instance.activateOverTheCloud();
         yield return new WaitForSeconds(0f);
         MainCharacter.SetActive(false);
         gameObject.SetActive(false);
@@ -48,6 +49,7 @@ public class CharacterStateManager : MonoBehaviour
 
     public IEnumerator Garuda_Character_Transition()
     {
+        OverTheCloudManager.instance.DeactivateOverTheCloud();
         IsPlayerActive = true;
         Garuda.transform.DOMoveY(LevelGenerator.instance.Y_Offset, 5f, false);
         yield return new WaitForSeconds(6f);
