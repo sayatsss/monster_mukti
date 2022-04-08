@@ -10,13 +10,21 @@ public class RaiseEvent : MonoBehaviour
         {
             if(this.gameObject.transform.parent.GetComponent<PathEventmanager>().obstacleObject!=null)
             {
-                this.gameObject.transform.parent.GetComponent<PathEventmanager>().obstacleObject.SetActive(true);
-                StartCoroutine(SimpleCameraShakeInCinemachine.Instance.cameraAction());
+                
+                int value = Random.Range(0, 3);
+                //Debug.Log(value);
+                if(value==2||value==3)
+                {
+                    StartCoroutine(this.gameObject.transform.parent.GetComponent<PathEventmanager>().BlockAction());
+                    StartCoroutine(SimpleCameraShakeInCinemachine.Instance.cameraAction());
+                }
+               
             }
             else
             {
                 StartCoroutine(SimpleCameraShakeInCinemachine.Instance.cameraAction());
-                this.gameObject.transform.parent.GetComponent<PathEventmanager>().PillarArcAction();
+                StartCoroutine(this.gameObject.transform.parent.GetComponent<PathEventmanager>().PillarArcAction());
+                
             }
              
 

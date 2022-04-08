@@ -32,6 +32,7 @@ public class SpecialEvents : MonoBehaviour
             Dragon.GetComponent<Animator>().SetBool("IsRoar", true);
         yield return new WaitForSeconds(1.5f);
         SimpleCameraShakeInCinemachine.Instance.VirtualCamera.LookAt = CharacterStateManager.Instance.MainCharacter.transform;
+        Dragon.GetComponent<Animator>().SetBool("IsRoar", false);
         Time.timeScale = 1f;
         
     }

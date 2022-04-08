@@ -16,6 +16,7 @@ public class PathEventmanager : MonoBehaviour
             if (child.name.Contains("Block"))
             {
                 obstacleObject=child.transform.gameObject;
+                obstacleObject.GetComponent<Animator>().enabled = false;
                 obstacleObject.SetActive(false);
             }
             if (child.name.Contains("Ani"))
@@ -27,17 +28,28 @@ public class PathEventmanager : MonoBehaviour
                 }
                 value = Random.Range(0, pillarsArc.Count);
                 pillarsArc[value].SetActive(true);
-                pillarsArc[value].GetComponent<Animator>().enabled = false;
+               // pillarsArc[value].GetComponent<Animator>().enabled = false;
 
             }
 
         }
         
     }
-    public void PillarArcAction()
+
+    public IEnumerator BlockAction()
+    {
+        obstacleObject.SetActive(true);
+        obstacleObject.GetComponent<Animator>().enabled = true;
+        yield return new WaitForSeconds(4f);
+        obstacleObject.GetComponent<Animator>().enabled = false;
+        obstacleObject.SetActive(false);
+    }
+    public IEnumerator PillarArcAction()
     {
 
-        pillarsArc[value].GetComponent<Animator>().enabled = true;
+        pillarsArc[value].GetComponent<Animator>().SetBool("IsAttack", true);
+        yield return new WaitForSeconds(2f);
+        pillarsArc[value].GetComponent<Animator>().SetBool("IsAttack", false);
 
     }
 

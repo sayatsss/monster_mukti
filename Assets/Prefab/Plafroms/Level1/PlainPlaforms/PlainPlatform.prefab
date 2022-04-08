@@ -48631,6 +48631,7 @@ GameObject:
   - component: {fileID: 98476578578310405}
   - component: {fileID: 5153321226870532641}
   - component: {fileID: -4358843563200169807}
+  - component: {fileID: 3191465199984468769}
   m_Layer: 0
   m_Name: PlainPlatform
   m_TagString: Untagged
@@ -48797,6 +48798,20 @@ MonoBehaviour:
   TileYValue: 0
   TileXValue: 0
   RotationValue: {x: 0, y: 0, z: 0}
+--- !u!114 &3191465199984468769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5820521577381121756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 324877f8e07b2443eb4119fd491d4d44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleObject: {fileID: 0}
+  pillarsArc: []
 --- !u!1 &5860192935549603280
 GameObject:
   m_ObjectHideFlags: 0

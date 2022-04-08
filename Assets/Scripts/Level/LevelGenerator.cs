@@ -7,10 +7,17 @@ public class LevelGenerator : MonoBehaviour
 
     public static LevelGenerator instance;
 
-    [Header("FlatPlatform prefabs ")]
-    [SerializeField] private List<GameObject> platformPrefab;
+    [Header("FlatPlatformL1 prefabs ")]
+    [SerializeField] private List<GameObject> platformPrefabL1;
 
-   
+    [Header("FlatPlatformL2 prefabs ")]
+    [SerializeField] private List<GameObject> platformPrefabL2;
+
+    [Header("FlatPlatformL3 prefabs ")]
+    [SerializeField] private List<GameObject> platformPrefabL3;
+
+
+
 
     [Header("WaterBody values")]
     [SerializeField] private GameObject waterBody;
@@ -24,23 +31,52 @@ public class LevelGenerator : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;   
+        instance = this;
+        for (int i = 0; i < platformPrefabL1.Count; i++)
+        {
+            platformPrefabL1[i].SetActive(false);
+           
+        }
+        for (int i = 0; i < platformPrefabL2.Count; i++)
+        {
+            platformPrefabL2[i].SetActive(false);
+            
+        }
+        for (int i = 0; i < platformPrefabL3.Count; i++)
+        {
+            platformPrefabL3[i].SetActive(false);
+            
+        }
     }
 
 
     // Start is called before the first frame update
     void Start()
     {
-        for(int i=0;i< platformPrefab.Count; i++)
+        
+        //Shuffle(platformPrefabL1);
+        //Shuffle(platformPrefabL2);
+        //Shuffle(platformPrefabL3);
+        for (int i=0;i< platformPrefabL1.Count; i++)
         {
-            GameObject Go = Instantiate(platformPrefab[i]);
+            GameObject Go = platformPrefabL1[i];
+            SetTileValue(Go);
+        }
+        for (int i = 0; i < platformPrefabL2.Count; i++)
+        {
+            GameObject Go = platformPrefabL2[i];
+            SetTileValue(Go);
+        }
+        for (int i = 0; i < platformPrefabL3.Count; i++)
+        {
+            GameObject Go = platformPrefabL3[i];
             SetTileValue(Go);
         }
     }
 
     public void SetTileValue(GameObject gameObject)
     {
-
+        gameObject.SetActive(true);
         gameObject.transform.position = new Vector3(0, Y_Offset, Z_Offset);
         gameObject.transform.rotation = Quaternion.Euler(gameObject.GetComponent<TilesValues>().RotationValue);
         //waterBody.transform.position = new Vector3(0,Y_Offset-5, 0);
@@ -63,5 +99,16 @@ public class LevelGenerator : MonoBehaviour
         }
 
 
+    }
+
+    void Shuffle<T>(List<T> inputList)
+    {
+        for (int i = 0; i < inputList.Count - 1; i++)
+        {
+            T temp = inputList[i];
+            int rand = Random.Range(i, inputList.Count);
+            inputList[i] = inputList[rand];
+            inputList[rand] = temp;
+        }
     }
 }

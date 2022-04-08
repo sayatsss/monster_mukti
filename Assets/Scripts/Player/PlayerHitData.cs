@@ -9,7 +9,7 @@ public class PlayerHitData : MonoBehaviour
        
         if(hit.transform.tag == "Block")
         {
-            Debug.Log(hit.gameObject.name + "Hello");
+            //Debug.Log(hit.gameObject.name + "Hello");
             StartCoroutine(UIManager.instance.BloodScreenSplash());
             StartCoroutine(GameManager.instance.GameEndAction());
         }
