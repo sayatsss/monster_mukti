@@ -35,6 +35,7 @@ public class AboveCloiudCoinAction : MonoBehaviour
     public void RecycleCoinsAboveCloud(GameObject coinChunks)
     {
         coinChunks.transform.position = new Vector3(0, 98f, Z_offset);
+        coinChunks.GetComponent<CoinList>().ActivateAllCoins();
         Z_offset += FPZ_Value;
         
     }

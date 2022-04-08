@@ -10,7 +10,7 @@ public class JetPackManager : MonoBehaviour
 
     private void Start()
     {
-        InvokeRepeating("GenerateJetpack", 10f, 40f);
+        InvokeRepeating("GenerateJetpack", 10f, 30f);
     }
     private void Awake()
     {
@@ -25,8 +25,8 @@ public class JetPackManager : MonoBehaviour
     {
         
 
-        int val = Random.Range(0, 5);
-        if(val==3)
+        int val = Random.Range(0, 4);
+        if(val==2)
         {
             int value = Random.Range(0, JetpackPoint.Count - 1);
             GameObject Go = Instantiate(JetPack);
