@@ -16,11 +16,12 @@ public class TicketManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
-        TicketBoard.transform.DOMoveY(Screen.height+300f,0.5f);
+        TicketBoard.transform.DOMoveY(Screen.height + 800f, 0.5f);
     }
     private void Start()
     {
         TicketHandlerSetAplaLow();
+        TicketBoard.transform.DOMoveY(Screen.height + 800f, 0.5f);
     }
 
 
@@ -35,7 +36,7 @@ public class TicketManager : MonoBehaviour
     public  IEnumerator TicketActive()
     {
         
-        TicketBoard.transform.DOMoveY(Screen.height, 1f);
+        TicketBoard.transform.DOMoveY(Screen.height-10f, 1f);
         yield return new WaitForSeconds(0.8f);
         int ticketCollected = ticketCount - 1;
         if(ticketCollected<=Tickets.Count-1)
@@ -43,6 +44,6 @@ public class TicketManager : MonoBehaviour
             Tickets[ticketCollected].SetActive(true);
         }
         yield return new WaitForSeconds(2f);
-        TicketBoard.transform.DOMoveY(Screen.height + 300f, 2f);
+        TicketBoard.transform.DOMoveY(Screen.height + 800f, 2f);
     }
 }

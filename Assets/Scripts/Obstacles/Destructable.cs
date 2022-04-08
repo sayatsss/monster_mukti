@@ -14,7 +14,7 @@ public class Destructable : MonoBehaviour
         // GO.transform.position = this.gameObject.transform.position;
         //GO.transform.localScale = this.gameObject.transform.localScale;
       
-         this.gameObject.SetActive(false);
+        // this.gameObject.SetActive(false);
         
     }
 }

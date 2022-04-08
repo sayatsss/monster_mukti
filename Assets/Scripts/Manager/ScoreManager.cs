@@ -31,11 +31,11 @@ public class ScoreManager : MonoBehaviour
         if(GameManager.instance.GameStatus==GameManager.GameState.game.ToString())
         {
             _tempScore++;
-            if (_tempScore > 20)
+            if (_tempScore > 25)
             {
                 _scoreCount++;
-                _scoreText.text = (_scoreCount).ToString("00") + "M";
-                _finalScoreText.text= (_scoreCount).ToString("00")+"M";
+                _scoreText.text = (_scoreCount).ToString("00") + " m";
+                _finalScoreText.text= (_scoreCount).ToString("00")+" m";
                 _tempScore = 0;
             }
         }
