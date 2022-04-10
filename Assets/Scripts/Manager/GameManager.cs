@@ -81,7 +81,7 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(2f);
         UIManager.instance.GamePanel.SetActive(false);
         UIManager.instance.GameEndPanel.SetActive(true);
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
         
     }
     public void GameStart()

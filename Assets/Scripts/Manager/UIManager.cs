@@ -17,7 +17,8 @@ public class UIManager : MonoBehaviour
     public GameObject GarudaMeter;
 
 
-
+    public Animator transistor;
+    public float transitionTime=1;
 
     public GameObject StartButton,MenuBoard;
 
@@ -60,8 +61,10 @@ public class UIManager : MonoBehaviour
     }
     public void RestartGame()
     {
-        Time.timeScale = 1;
-        SceneManager.LoadSceneAsync(0);
+        
+        //
+        StartCoroutine(loadSceneTrans(0));
+       // SceneManager.LoadSceneAsync(0);
         
     }
 
@@ -80,5 +83,15 @@ public class UIManager : MonoBehaviour
     public void HelpForTheGame()
     {
         Debug.Log("Help panel open");
+    }
+
+    private IEnumerator loadSceneTrans(int level)
+    {
+        Debug.Log("its trigger");
+        Time.timeScale = 1;
+        transistor.SetTrigger("Start");
+        yield return new WaitForSeconds(transitionTime);
+        Debug.Log("its afetr time");
+        SceneManager.LoadSceneAsync(level);
     }
 }

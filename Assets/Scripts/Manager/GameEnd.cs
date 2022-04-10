@@ -32,7 +32,7 @@ public class GameEnd : MonoBehaviour
         UIManager.instance.GameEndPanel.SetActive(true);
         UIManager.instance.GamePanel.SetActive(false);
         yield return new WaitForSeconds(2f);
-        Time.timeScale = 0;
+       // Time.timeScale = 0;
     }
     IEnumerator GameEndActionCameraShake()
     {
