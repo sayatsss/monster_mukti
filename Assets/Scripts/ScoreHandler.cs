@@ -4,15 +4,27 @@ using UnityEngine;
 
 public class ScoreHandler : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static ScoreHandler instance;
+
+    public float highScore;
+    public float levelScore;
+
+    private void Awake()
     {
-        
+        DontDestroyOnLoad(this.gameObject);
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+
+    private void Start()
     {
-        
+        highScore = PlayerPrefs.GetFloat("higScore");
     }
 }

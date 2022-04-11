@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ConsertButtonManager : MonoBehaviour
 {
@@ -11,9 +12,13 @@ public class ConsertButtonManager : MonoBehaviour
     public Animator transistor;
     public float transitionTime = 1;
 
-
-
     public GameObject UICanvas;
+
+    public Text HighScore;
+    public Text LastScore;
+    
+
+
 
     private void Awake()
     {
@@ -25,6 +30,11 @@ public class ConsertButtonManager : MonoBehaviour
         UICanvas.SetActive(false);
     }
 
+    private void Update()
+    {
+        HighScore.text = ScoreHandler.instance.highScore.ToString();
+        LastScore.text = ScoreHandler.instance.levelScore.ToString();
+    }
     public void RestartGame()
     {
 

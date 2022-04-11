@@ -36,7 +36,14 @@ public class ScoreManager : MonoBehaviour
                 _scoreCount++;
                 _scoreText.text = (_scoreCount).ToString("00") + " m";
                 _finalScoreText.text= (_scoreCount).ToString("00")+" m";
+                ScoreHandler.instance.levelScore = _scoreCount;
+                if (_scoreCount > ScoreHandler.instance.highScore)
+                {
+                    ScoreHandler.instance.highScore = _scoreCount;
+                    PlayerPrefs.SetFloat("higScore", _scoreCount);
+                }
                 _tempScore = 0;
+                
             }
         }
     }
