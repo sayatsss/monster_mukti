@@ -19,7 +19,7 @@ public class CameraManager : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         asuraCamera.SetActive(true);
         mainCamera.SetActive(false);
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2f);
         asuraCamera.SetActive(false);
         mainCamera.SetActive(true);
 

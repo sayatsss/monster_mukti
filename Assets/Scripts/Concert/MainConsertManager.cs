@@ -202,6 +202,8 @@ public class MainConsertManager : MonoBehaviour
         FireWorks.SetActive(true);
         BoomPArticle.SetActive(true);
         Blast.Play();
+        yield return new WaitForSeconds(1f);
+        ConsertButtonManager.instance.UICanvas.SetActive(true);
     }
 
 
