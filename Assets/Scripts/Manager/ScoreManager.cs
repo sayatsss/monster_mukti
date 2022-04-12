@@ -12,7 +12,7 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private Text _finalScoreText;
     [HideInInspector]public float _coinCount, _scoreCount;
     [SerializeField] private Slider coinIndicator;
-
+    [SerializeField] private Text HighScore;
     private float _tempSliderValue = 0;
     private int _tempScore = 0;
 
@@ -46,6 +46,7 @@ public class ScoreManager : MonoBehaviour
                 
             }
         }
+        HighScore.text = PlayerPrefs.GetFloat("higScore").ToString();
     }
 
     public void AddCoin(GameObject coinGameobject)
