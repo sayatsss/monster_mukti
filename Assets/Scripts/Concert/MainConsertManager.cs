@@ -36,6 +36,8 @@ public class MainConsertManager : MonoBehaviour
 
     [SerializeField] private GameObject MainCamera;
     [SerializeField] private GameObject VibeVadersCamera;
+    [SerializeField] private GameObject VibevadersPerspectiveCamera;
+    [SerializeField] private GameObject CaanuPerspectiveCamera;
 
 
 
@@ -64,6 +66,8 @@ public class MainConsertManager : MonoBehaviour
         }
         Music.SetActive(false);
         VibeVadersCamera.SetActive(false);
+        VibevadersPerspectiveCamera.SetActive(false);
+        CaanuPerspectiveCamera.SetActive(false);
 
 
     }
@@ -85,6 +89,12 @@ public class MainConsertManager : MonoBehaviour
         yield return new WaitForSeconds(6f);
         MainCamera.SetActive(false);
         VibeVadersCamera.SetActive(true);
+        yield return new WaitForSeconds(22f);
+        VibeVadersCamera.SetActive(false);
+        VibevadersPerspectiveCamera.SetActive(true);
+        yield return new WaitForSeconds(8f);
+        VibevadersPerspectiveCamera.SetActive(false);
+        CaanuPerspectiveCamera.SetActive(true);
 
     }
     
