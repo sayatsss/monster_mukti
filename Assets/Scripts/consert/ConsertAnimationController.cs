@@ -5,7 +5,7 @@ using UnityEngine;
 public class ConsertAnimationController : MonoBehaviour
 {
 
-    public GameObject Player, Ishita, Caanu, Bhasmasura;
+    public GameObject  Ishita, Caanu ;
 
     private void Start()
     {
@@ -14,9 +14,9 @@ public class ConsertAnimationController : MonoBehaviour
     IEnumerator playAnimation()
     {
         yield return new WaitForSeconds(6f);
-        Player.GetComponent<Animator>().SetBool("IsDance", true);
+        //Player.GetComponent<Animator>().SetBool("IsDance", true);
         Ishita.GetComponent<Animator>().SetBool("IsDance", true);
         Caanu.GetComponent<Animator>().SetBool("IsDance", true);
-        Bhasmasura.GetComponent<Animator>().SetBool("IsDance", true);
+        //Bhasmasura.GetComponent<Animator>().SetBool("IsDance", true);
     }
 }
