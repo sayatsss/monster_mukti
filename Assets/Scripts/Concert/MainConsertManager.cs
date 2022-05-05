@@ -40,7 +40,7 @@ public class MainConsertManager : MonoBehaviour
     [SerializeField] private GameObject CaanuPerspectiveCamera;
 
 
-
+    [SerializeField] private GameObject novaBhasma;
 
 
 
@@ -48,6 +48,9 @@ public class MainConsertManager : MonoBehaviour
     [SerializeField] private GameObject Chariot;
     [SerializeField] private List<GameObject> Conffetti = new List<GameObject>();
     [SerializeField] private GameObject BoomPArticle;
+
+    [SerializeField]private GameObject bhasmaMainChar;
+    
 
 
     public GameObject VVLOGO;
@@ -68,7 +71,7 @@ public class MainConsertManager : MonoBehaviour
         VibeVadersCamera.SetActive(false);
         VibevadersPerspectiveCamera.SetActive(false);
         CaanuPerspectiveCamera.SetActive(false);
-
+        novaBhasma.SetActive(false);
 
     }
     private void Start()
@@ -95,6 +98,13 @@ public class MainConsertManager : MonoBehaviour
         yield return new WaitForSeconds(8f);
         VibevadersPerspectiveCamera.SetActive(false);
         CaanuPerspectiveCamera.SetActive(true);
+        yield return new WaitForSeconds(8f);
+        bhasmaMainChar.transform.DOScale(0.01f, 0.5f);
+        novaBhasma.SetActive(true);
+        //islandModel.SetActive(true);
+
+
+
 
     }
     
