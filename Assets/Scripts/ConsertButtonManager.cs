@@ -32,8 +32,10 @@ public class ConsertButtonManager : MonoBehaviour
 
     private void Update()
     {
-        HighScore.text = ScoreHandler.instance.highScore.ToString();
-        LastScore.text = ScoreHandler.instance.levelScore.ToString();
+
+        //Need to change the aciton once the setup is done.
+        //HighScore.text = ScoreHandler.instance.highScore.ToString();
+        //LastScore.text = ScoreHandler.instance.levelScore.ToString();
     }
     public void RestartGame()
     {

@@ -97,6 +97,7 @@ public class MainConsertManager : MonoBehaviour
         profile.profile.TryGetSettings(out bloom);
         bloomValue = bloom.intensity.value;
         flash = true;
+        Debug.Log(flash);
         //cameraTransition = cameraTransition.GetComponent<PlayableDirector>();
         StartCoroutine(PlayerAction());
         StartCoroutine(MusicDelayPLay());
@@ -239,9 +240,10 @@ public class MainConsertManager : MonoBehaviour
     {
         if (flash == true)
         {
+           // Debug.Log(" i am here buddy flash on");
             valueCal = Mathf.Lerp(90f, 20f, t);
             t += 0.2f * Time.deltaTime;
-            
+            Debug.Log(valueCal);
             bloom.intensity.value = valueCal;
         }
     }
