@@ -108,7 +108,7 @@ public class MainConsertManager : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         bigBhasmaChar.SetActive(true);
         bigBhasmaChar.transform.DOScale(10f, 0.8f);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(4f);
         islandModel.SetActive(true);
         CaanuPerspectiveCamera.SetActive(false);
         Temple_BhasmaCamera.SetActive(true);
