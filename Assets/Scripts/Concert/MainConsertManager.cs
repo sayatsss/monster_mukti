@@ -40,6 +40,10 @@ public class MainConsertManager : MonoBehaviour
     [SerializeField] private GameObject CaanuPerspectiveCamera;
     [SerializeField]private GameObject Temple_BhasmaCamera;
     [SerializeField] private GameObject vibevadersBackCamera;
+    [SerializeField] private GameObject LastCamera;
+
+
+    [SerializeField] private GameObject chariotcameraAngles, Bhasmasuraangle;
 
 
     [SerializeField] private GameObject novaBhasma;
@@ -53,6 +57,8 @@ public class MainConsertManager : MonoBehaviour
 
     [SerializeField]private GameObject bhasmaMainChar;
     [SerializeField] private GameObject bigBhasmaChar;
+
+    [SerializeField] private List<GameObject> ChariotHorses = new List<GameObject>();
     
 
 
@@ -78,6 +84,7 @@ public class MainConsertManager : MonoBehaviour
         bigBhasmaChar.SetActive(false);
         Temple_BhasmaCamera.SetActive(false);
         vibevadersBackCamera.SetActive(false);
+        LastCamera.SetActive(false);
 
     }
     private void Start()
@@ -95,7 +102,7 @@ public class MainConsertManager : MonoBehaviour
     }
    private IEnumerator CameraActionTowardsVibeVaders()
     {
-        yield return new WaitForSeconds(6f);
+        yield return new WaitForSeconds(7f);
         MainCamera.SetActive(false);
         VibeVadersCamera.SetActive(true);
         yield return new WaitForSeconds(22f);
@@ -104,24 +111,60 @@ public class MainConsertManager : MonoBehaviour
         yield return new WaitForSeconds(8f);
         VibevadersPerspectiveCamera.SetActive(false);
         CaanuPerspectiveCamera.SetActive(true);
-        yield return new WaitForSeconds(8f);
-        bhasmaMainChar.transform.DOScale(0.01f, 0.8f);
+        yield return new WaitForSeconds(7f);
+        bhasmaMainChar.transform.DOScale(0.01f, 0.3f);
         novaBhasma.SetActive(true);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.3f);
         bigBhasmaChar.SetActive(true);
-        bigBhasmaChar.transform.DOScale(10f, 0.8f);
-        yield return new WaitForSeconds(4f);
+        bigBhasmaChar.transform.DOScale(10f, 0.5f);
+        yield return new WaitForSeconds(5.5f);
         islandModel.SetActive(true);
         CaanuPerspectiveCamera.SetActive(false);
         Temple_BhasmaCamera.SetActive(true);
-        yield return new WaitForSeconds(6f);
+        yield return new WaitForSeconds(9f);
         Temple_BhasmaCamera.SetActive(false);
         vibevadersBackCamera.SetActive(true);
         yield return new WaitForSeconds(1f);
         Chariot.SetActive(true);
+        ChariotMovement(true);
         Chariot.transform.DOMove(chariotRefencePostion.transform.position, 5f);
+        yield return new WaitForSeconds(3f);
+        ChariotMovement(false);
+        yield return new WaitForSeconds(2f);
+        StartCoroutine(ChariotAction());
 
 
+    }
+
+    private IEnumerator ChariotAction()
+    {
+        vibevadersBackCamera.SetActive(false);
+        chariotcameraAngles.SetActive(true);
+        for (int i = 0; i < ChariotHorses.Count; i++)
+        {
+            ChariotHorses[i].GetComponent<Animator>().SetBool("IsJump", true);
+        }
+        yield return new WaitForSeconds(2f);
+        Chariot.GetComponent<PathFollowe>().moveChariot = true;
+        yield return new WaitForSeconds(0.5f);
+        chariotcameraAngles.SetActive(false);
+        Bhasmasuraangle.SetActive(true);
+        yield return new WaitForSeconds(14f);
+        Chariot.GetComponent<PathFollowe>().moveChariot = false;
+        Chariot.SetActive(false);
+        Bhasmasuraangle.SetActive(false);
+        LastCamera.SetActive(true);
+
+    }
+
+
+    private void ChariotMovement(bool value)
+    {
+        Debug.Log(value);
+        for(int i=0;i<ChariotHorses.Count;i++)
+        {
+            ChariotHorses[i].GetComponent<Animator>().SetBool("IsRun", value);
+        }
     }
     
 
