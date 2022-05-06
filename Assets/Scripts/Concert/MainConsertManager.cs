@@ -44,7 +44,7 @@ public class MainConsertManager : MonoBehaviour
 
     [SerializeField] private GameObject novaBhasma;
 
-
+    [SerializeField] private GameObject chariotRefencePostion;
 
 
     [SerializeField] private GameObject Chariot;
@@ -117,6 +117,10 @@ public class MainConsertManager : MonoBehaviour
         yield return new WaitForSeconds(6f);
         Temple_BhasmaCamera.SetActive(false);
         vibevadersBackCamera.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        Chariot.SetActive(true);
+        Chariot.transform.DOMove(chariotRefencePostion.transform.position, 5f);
+
 
     }
     
