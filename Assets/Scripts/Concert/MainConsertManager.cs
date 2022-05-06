@@ -39,6 +39,7 @@ public class MainConsertManager : MonoBehaviour
     [SerializeField] private GameObject VibevadersPerspectiveCamera;
     [SerializeField] private GameObject CaanuPerspectiveCamera;
     [SerializeField]private GameObject Temple_BhasmaCamera;
+    [SerializeField] private GameObject vibevadersBackCamera;
 
 
     [SerializeField] private GameObject novaBhasma;
@@ -76,6 +77,7 @@ public class MainConsertManager : MonoBehaviour
         novaBhasma.SetActive(false);
         bigBhasmaChar.SetActive(false);
         Temple_BhasmaCamera.SetActive(false);
+        vibevadersBackCamera.SetActive(false);
 
     }
     private void Start()
@@ -112,6 +114,9 @@ public class MainConsertManager : MonoBehaviour
         islandModel.SetActive(true);
         CaanuPerspectiveCamera.SetActive(false);
         Temple_BhasmaCamera.SetActive(true);
+        yield return new WaitForSeconds(6f);
+        Temple_BhasmaCamera.SetActive(false);
+        vibevadersBackCamera.SetActive(true);
 
     }
     
