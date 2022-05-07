@@ -63,7 +63,7 @@ public class UIManager : MonoBehaviour
     {
         
         //
-        StartCoroutine(loadSceneTrans(0));
+        StartCoroutine(loadSceneTrans(1));
        // SceneManager.LoadSceneAsync(0);
         
     }
