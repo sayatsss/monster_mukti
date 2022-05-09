@@ -102,8 +102,10 @@ public class CharacterStateManager : MonoBehaviour
         MainCharacter_Chariot.GetComponent<ChariotControl>().HorseRunAnimation();
         MainCameraGameplay.SetActive(false);
         MainCharacter.SetActive(false);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         MainCharacter_Chariot.GetComponent<ChariotControl>().ChariotActivated = true;
+        yield return new WaitForSeconds(0.5f);
+        MainCharacter_Chariot.GetComponent<ChariotControl>().controller.stepOffset = 0.8f;
         
     }
 }

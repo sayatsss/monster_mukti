@@ -5,7 +5,7 @@ using UnityEngine;
 public class ChariotControl : MonoBehaviour
 {
 
-    private CharacterController controller;
+    [HideInInspector]public  CharacterController controller;
     public List<GameObject> Horses = new List<GameObject>();
     private Vector3 velocity;
     public float speed;
@@ -34,7 +34,7 @@ public class ChariotControl : MonoBehaviour
         {
             if(ChariotActivated)
             {
-                Debug.Log("chariot moving");
+
                 velocity = new Vector3(0, 0, 1) * speed;
                 controller.Move(velocity * Time.deltaTime);
             }

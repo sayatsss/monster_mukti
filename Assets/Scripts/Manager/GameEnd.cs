@@ -9,17 +9,21 @@ public class GameEnd : MonoBehaviour
    
     private void OnTriggerEnter(Collider other)
     {
-       if(this.gameObject.name.Contains("Die"))
+        if(other.gameObject.tag=="Player")
         {
-            //Debug.Log(gameObject.name);
-            StartCoroutine(GameEndAction());
+            if (this.gameObject.name.Contains("Die"))
+            {
+                //Debug.Log(gameObject.name);
+                StartCoroutine(GameEndAction());
+            }
+            if (this.gameObject.name.Contains("Cam"))
+            {
+                AudioManager.Instance.DamageLow.Play();
+                StartCoroutine(GameEndActionCameraShake());
+                FollowAI.Instance.AsuraAction();
+            }
         }
-        if (this.gameObject.name.Contains("Cam"))
-        {
-            AudioManager.Instance.DamageLow.Play();
-            StartCoroutine(GameEndActionCameraShake());
-            FollowAI.Instance.AsuraAction();
-        }
+       
 
     }
 
