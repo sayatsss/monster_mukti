@@ -41,6 +41,6 @@ public class SceneTransition : MonoBehaviour
     {
         flash = true;  
         yield return new WaitForSeconds(2.5f);
-        SceneManager.LoadSceneAsync(2);
+        SceneManager.LoadSceneAsync(3);
     }
 }
