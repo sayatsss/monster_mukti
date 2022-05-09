@@ -12,6 +12,15 @@ public class CharacterStateManager : MonoBehaviour
     public GameObject GarudaBody;
     public GameObject MainCharacter_Chariot;
 
+
+    public GameObject MainCameraGameplay;
+
+
+    public GameObject Chariot_PlayerMesh;
+
+    public GameObject Chariot_Refence;
+    
+
     public GameObject cam;
 
     public static CharacterStateManager Instance;
@@ -22,11 +31,15 @@ public class CharacterStateManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        MainCharacter_Chariot.transform.DOScale(0.01f, 0.1f);
+        Chariot_PlayerMesh.transform.DOScale(0.01f, 0.1f);
     }
 
     private void Start()
     {
         Garuda.SetActive(false);
+        MainCharacter_Chariot.SetActive(false);
+        Chariot_PlayerMesh.SetActive(false);
     }
     public IEnumerator Character_Garuda_Transition(GameObject gameObject)
     {
@@ -69,5 +82,21 @@ public class CharacterStateManager : MonoBehaviour
         }
 
     }
-
+    public IEnumerator Player_Chariot_Transition(GameObject gameObject)
+    {
+        IsPlayerActive = false;
+       
+        MainCharacter_Chariot.transform.position = Chariot_Refence.transform.position;
+        MainCharacter_Chariot.SetActive(true);
+        MainCharacter_Chariot.transform.DOScale(1f, 0.5f);
+        yield return new WaitForSeconds(0.3f);
+        MainCharacter.transform.DOScale(0.01f, 0.2f);
+        yield return new WaitForSeconds(0.1f);
+        MainCharacter.SetActive(false);
+        Chariot_PlayerMesh.SetActive(true);
+        Chariot_PlayerMesh.transform.DOScale(1.2f, 0.4f);
+        MainCameraGameplay.SetActive(false);
+        // MainCharacter.SetActive(false);
+        gameObject.SetActive(false);
+    }
 }

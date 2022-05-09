@@ -87,11 +87,11 @@ public class UIManager : MonoBehaviour
 
     private IEnumerator loadSceneTrans(int level)
     {
-        Debug.Log("its trigger");
+       // Debug.Log("its trigger");
         Time.timeScale = 1;
         transistor.SetTrigger("Start");
         yield return new WaitForSeconds(transitionTime);
-        Debug.Log("its afetr time");
+      //  Debug.Log("its afetr time");
         SceneManager.LoadSceneAsync(level);
     }
 }
