@@ -15,6 +15,7 @@ public class UIManager : MonoBehaviour
     public GameObject GameEndPanel;
     public GameObject BloodHint;
     public GameObject GarudaMeter;
+    public GameObject ChariotMeter;
 
 
     public Animator transistor;
@@ -37,6 +38,7 @@ public class UIManager : MonoBehaviour
         GameEndPanel.SetActive(false);
         BloodHint.SetActive(false);
         GarudaMeter.SetActive(false);
+        ChariotMeter.SetActive(false);
     }
 
     public void PauseButton()
