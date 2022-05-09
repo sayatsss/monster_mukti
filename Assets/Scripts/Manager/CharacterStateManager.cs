@@ -14,6 +14,7 @@ public class CharacterStateManager : MonoBehaviour
 
 
     public GameObject MainCameraGameplay;
+    public GameObject ChariotCamera;
 
 
     public GameObject Chariot_PlayerMesh;
@@ -33,6 +34,7 @@ public class CharacterStateManager : MonoBehaviour
         Instance = this;
         MainCharacter_Chariot.transform.DOScale(0.01f, 0.1f);
         Chariot_PlayerMesh.transform.DOScale(0.01f, 0.1f);
+        ChariotCamera.SetActive(false);
     }
 
     private void Start()
@@ -85,8 +87,8 @@ public class CharacterStateManager : MonoBehaviour
     public IEnumerator Player_Chariot_Transition(GameObject gameObject)
     {
         IsPlayerActive = false;
-       
-        MainCharacter_Chariot.transform.position = Chariot_Refence.transform.position;
+        gameObject.transform.DOScale(0.01f, 0.1f);
+        MainCharacter_Chariot.transform.position = new Vector3(0, Chariot_Refence.transform.position.y, Chariot_Refence.transform.position.z);
         MainCharacter_Chariot.SetActive(true);
         MainCharacter_Chariot.transform.DOScale(1f, 0.5f);
         yield return new WaitForSeconds(0.3f);
@@ -94,9 +96,14 @@ public class CharacterStateManager : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         MainCharacter.SetActive(false);
         Chariot_PlayerMesh.SetActive(true);
-        Chariot_PlayerMesh.transform.DOScale(1.2f, 0.4f);
+        Chariot_PlayerMesh.transform.DOScale(1.2f, 0.2f);
+        //yield return new WaitForSeconds(1f);
+        ChariotCamera.SetActive(true);
+        MainCharacter_Chariot.GetComponent<ChariotControl>().HorseRunAnimation();
         MainCameraGameplay.SetActive(false);
-        // MainCharacter.SetActive(false);
-        gameObject.SetActive(false);
+        MainCharacter.SetActive(false);
+        yield return new WaitForSeconds(1f);
+        MainCharacter_Chariot.GetComponent<ChariotControl>().ChariotActivated = true;
+        
     }
 }
