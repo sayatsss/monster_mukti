@@ -105,13 +105,13 @@ public class MainConsertManager : MonoBehaviour
         yield return new WaitForSeconds(7f);
         MainCamera.SetActive(false);
         VibeVadersCamera.SetActive(true);
-        yield return new WaitForSeconds(22f);
+        yield return new WaitForSeconds(21f);
         VibeVadersCamera.SetActive(false);
         VibevadersPerspectiveCamera.SetActive(true);
         yield return new WaitForSeconds(8f);
         VibevadersPerspectiveCamera.SetActive(false);
         CaanuPerspectiveCamera.SetActive(true);
-        yield return new WaitForSeconds(7f);
+        yield return new WaitForSeconds(8f);
         bhasmaMainChar.transform.DOScale(0.01f, 0.3f);
         novaBhasma.SetActive(true);
         yield return new WaitForSeconds(0.3f);
