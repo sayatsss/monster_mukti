@@ -20,15 +20,16 @@ public class ChariotManager : MonoBehaviour
 
         }
     }
-
     public void GenerateChairot()
     {
         if (GameStart.instance.Game_Start)
         {
-//            Debug.Log("Chariot Activated");
-            int val = Random.Range(0, 2);
 
+            int val = Random.Range(0, 2);
+            Debug.Log("Chairot Generated");
+            
             int value = Random.Range(0, ChariotPoints.Count - 1);
+            Debug.Log(value);
             GameObject Go = Instantiate(Chariot);
             Go.transform.position = ChariotPoints[value].transform.position;
 

@@ -92,13 +92,10 @@ public class CharacterStateManager : MonoBehaviour
         MainCharacter_Chariot.SetActive(true);
         MainCharacter_Chariot.transform.DOScale(1f, 0.5f);
         yield return new WaitForSeconds(0.3f);
-        //MainCharacter.transform.DOScale(0.01f, 0.2f);
-        yield return new WaitForSeconds(0.1f);
-        MainCharacter.SetActive(false);
         Chariot_PlayerMesh.SetActive(true);
         Chariot_PlayerMesh.transform.DOScale(1.2f, 0.2f);
-        //yield return new WaitForSeconds(1f);
         ChariotCamera.SetActive(true);
+        MainCharacter.SetActive(false);
         MainCharacter_Chariot.GetComponent<ChariotControl>().HorseRunAnimation();
         UIManager.instance.ChariotMeter.SetActive(true);
         MainCameraGameplay.SetActive(false);
@@ -116,7 +113,7 @@ public class CharacterStateManager : MonoBehaviour
         MainCameraGameplay.SetActive(true);
         ChariotCamera.SetActive(false);
         IsPlayerActive = true;
-        MainCharacter.transform.position = MainCharacter_Chariot.transform.position;
+        MainCharacter.transform.position = MainCharacter_Chariot.transform.localPosition;
         MainCharacter.SetActive(true);
         MainCharacter_Chariot.SetActive(false);
         UIManager.instance.ChariotMeter.SetActive(false);
