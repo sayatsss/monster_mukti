@@ -27,19 +27,16 @@ public class ChariotManager : MonoBehaviour
 
             int val = Random.Range(0, 2);
             Debug.Log("Chairot Generated");
-            
-            int value = Random.Range(0, ChariotPoints.Count - 1);
-            Debug.Log(value);
-            GameObject Go = Instantiate(Chariot);
-            Go.transform.position = ChariotPoints[value].transform.position;
 
-            /*if (val == 2)
-                {
-                    int value = Random.Range(0, ChariotPoints.Count - 1);
-                    GameObject Go = Instantiate(Chariot);
-                    Go.transform.position = ChariotPoints[value].transform.position;
-                }
-            }*/
+            
+
+            if (val == 2)
+            {
+                int value = Random.Range(0, ChariotPoints.Count - 1);
+                Debug.Log(value);
+                GameObject Go = Instantiate(Chariot);
+                Go.transform.position = ChariotPoints[value].transform.position;
+            }
         }
 
     }

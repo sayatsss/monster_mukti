@@ -12,6 +12,8 @@ public class CharacterStateManager : MonoBehaviour
     public GameObject GarudaBody;
     public GameObject MainCharacter_Chariot;
 
+    public GameObject Bhasmasura;
+
 
     public GameObject MainCameraGameplay;
     public GameObject ChariotCamera;
@@ -96,6 +98,7 @@ public class CharacterStateManager : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
         ChariotCamera.SetActive(true);
         MainCharacter.SetActive(false);
+        Bhasmasura.SetActive(false);
         MainCameraGameplay.SetActive(false);
         Chariot_PlayerMesh.SetActive(true);
         Chariot_PlayerMesh.transform.DOScale(1.2f, 0.2f);
@@ -118,6 +121,7 @@ public class CharacterStateManager : MonoBehaviour
         IsPlayerActive = true;
         MainCharacter.transform.position = MainCharacter_Chariot.transform.localPosition;
         MainCharacter.SetActive(true);
+        Bhasmasura.SetActive(true);
         MainCharacter_Chariot.SetActive(false);
         
         UIManager.instance.ChariotMeter.SetActive(false);
