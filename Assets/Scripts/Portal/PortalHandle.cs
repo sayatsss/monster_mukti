@@ -25,6 +25,6 @@ public class PortalHandle : MonoBehaviour
     {
         Firework.SetActive(true);
         yield return new WaitForSeconds(0.2f);
-        SceneManager.LoadSceneAsync(1);
+        SceneManager.LoadSceneAsync(2);
     }
 }
