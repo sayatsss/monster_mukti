@@ -69,7 +69,11 @@ public class UIManager : MonoBehaviour
        // SceneManager.LoadSceneAsync(0);
         
     }
-
+    public void Customisationpage()
+    {
+        Debug.Log("Customisation page is been loaded");
+        StartCoroutine(loadSceneTrans(4));
+    }
     public IEnumerator BloodScreenSplash()
     {
         if(BloodHint==true)
