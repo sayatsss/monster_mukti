@@ -8,6 +8,7 @@ public class CustomisationManager : MonoBehaviour
    
     [SerializeField] private List<GameObject> WalletPanels = new List<GameObject>();
     [SerializeField] private List<GameObject> LocalOptions = new List<GameObject>();
+    [SerializeField] private List<GameObject> LocalAssetsView = new List<GameObject>();
 
     public void WalletChange(int value)
     {
@@ -27,19 +28,29 @@ public class CustomisationManager : MonoBehaviour
             WalletPanels[i].SetActive(false);
         }
     }
+    private void LocalAssetOption()
+    {
+        for (int i = 0; i < LocalAssetsView.Count; i++)
+        {
+            LocalAssetsView[i].SetActive(false);
+
+        }
+    }
     private void LocalOptionsDefault()
     {
-        for (int i = 0; i < WalletPanels.Count; i++)
+        for (int i = 0; i < LocalOptions.Count; i++)
         {
             LocalOptions[i].SetActive(false);
-           // LocalOptions[i].GetComponent<Image>().color = SelectedColour;
+          
         }
     }
     public void OptionChange(int value)
     {
         LocalOptionsDefault();
+        LocalAssetOption();
         LocalOptions[value].SetActive(true);
-        //LocalOptions[value].GetComponent<Image>().color = SelectedColour;
+        LocalAssetsView[value].SetActive(true);
+
     }
     public void CustomisationCloseButton()
     {
