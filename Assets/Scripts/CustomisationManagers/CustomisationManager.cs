@@ -41,4 +41,15 @@ public class CustomisationManager : MonoBehaviour
         LocalOptions[value].SetActive(true);
         //LocalOptions[value].GetComponent<Image>().color = SelectedColour;
     }
+    public void CustomisationCloseButton()
+    {
+        StartCoroutine(PlayerCustomisation.instance.loadSceneTrans(1));
+       
+    }
+    public void CustomisationDoneButton()
+    {
+        StartCoroutine(PlayerCustomisation.instance.loadSceneTrans(1));
+        CustomisationConstant.instance.playerValue = CustomisationPlayer.instance.Playervalue;
+        PlayerPrefs.SetInt("playervalue", CustomisationConstant.instance.playerValue);
+    }
 }

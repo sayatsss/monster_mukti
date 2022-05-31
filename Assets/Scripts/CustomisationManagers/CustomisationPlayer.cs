@@ -25,6 +25,7 @@ public class CustomisationPlayer : MonoBehaviour
     {
         PlayerDefault();
         PlayerVariation[value].SetActive(true);
+        Playervalue = value;
 
     }
     private void PlayerDefault()

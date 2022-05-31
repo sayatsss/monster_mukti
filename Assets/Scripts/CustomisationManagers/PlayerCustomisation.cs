@@ -6,6 +6,13 @@ using UnityEngine.SceneManagement;
 public class PlayerCustomisation : MonoBehaviour
 {
 
+    public static PlayerCustomisation instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
     public Animator transistor;
     public float transitionTime = 1;
 
@@ -16,7 +23,7 @@ public class PlayerCustomisation : MonoBehaviour
     }
 
 
-    private IEnumerator loadSceneTrans(int level)
+    public IEnumerator loadSceneTrans(int level)
     {
         // Debug.Log("its trigger");
         Time.timeScale = 1;
