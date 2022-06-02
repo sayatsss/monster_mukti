@@ -4,34 +4,19 @@ using UnityEngine;
 
 public class InGamePlayerCustom : MonoBehaviour
 {
-
-    public List<GameObject> inGamePlayervariation = new List<GameObject>();
-
+    public Renderer playerCloth,ChariotPlayer;
     private int inGamePlayerValue;
-    private void Awake()
-    {
-        foreach (Transform child in transform)
-        {
-            inGamePlayervariation.Add(child.gameObject);
+    public List<Material> ClothMat = new List<Material>();
 
-        }
-    }
     private void Start()
     {
-        GamePlayerDefault();
         inGamePlayerValue = PlayerPrefs.GetInt("playervalue");
-        inGamePlayervariation[inGamePlayerValue].SetActive(true);
-        CinemachineCameraManager.instance.AssignCameraValue(inGamePlayerValue);
-
+        playerCloth.material = ClothMat[inGamePlayerValue];
+        ChariotPlayer.material= ClothMat[inGamePlayerValue];
 
     }
-
-
-    private void GamePlayerDefault()
-    {
-        for(int i=0;i<inGamePlayervariation.Count;i++)
-        {
-            inGamePlayervariation[i].SetActive(false);
-        }
-    }
+   
+   
+    
+    
 }

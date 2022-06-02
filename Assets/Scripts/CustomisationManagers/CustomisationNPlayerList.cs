@@ -6,7 +6,7 @@ public class CustomisationNPlayerList : MonoBehaviour
 {
     public static CustomisationNPlayerList instance;
     public List<GameObject> PlayerNFTVariation = new List<GameObject>();
-    public int PlayerNFTvalue = 0;
+    private int PlayerNFTvalue = 5;
 
     private void Awake()
     {
@@ -25,7 +25,9 @@ public class CustomisationNPlayerList : MonoBehaviour
     {
         PlayerNFTDefault();
         PlayerNFTVariation[value].SetActive(true);
-        PlayerNFTvalue = value;
+        PlayerNFTvalue = PlayerNFTvalue+value;
+        Debug.Log(PlayerNFTvalue);
+        CustomisationConstant.instance.playerValue = PlayerNFTvalue;
 
     }
     private void PlayerNFTDefault()

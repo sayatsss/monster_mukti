@@ -26,6 +26,7 @@ public class CustomisationLPlayerList : MonoBehaviour
         PlayerDefault();
         PlayerVariation[value].SetActive(true);
         Playervalue = value;
+        CustomisationConstant.instance.playerValue = Playervalue;
 
     }
     private void PlayerDefault()

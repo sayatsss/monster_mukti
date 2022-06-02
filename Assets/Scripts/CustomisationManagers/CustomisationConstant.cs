@@ -9,6 +9,7 @@ public class CustomisationConstant : MonoBehaviour
     [HideInInspector] public int playerValue;
     [HideInInspector] public int chariotValue;
     [HideInInspector] public int garudaValue;
+    //[HideInInspector] public int NFTValue;
 
     private void Awake()
     {

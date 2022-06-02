@@ -7,6 +7,7 @@ public class CustomisationManager : MonoBehaviour
 {
    
     [SerializeField] private List<GameObject> WalletPanels = new List<GameObject>();
+    //[SerializeField] private List<GameObject> walletButtons = new List<GameObject>();
     [SerializeField] private List<GameObject> AssetType = new List<GameObject>();
     [SerializeField] private List<GameObject> LocalOptions = new List<GameObject>();
     [SerializeField] private List<GameObject> LocalAssetsView = new List<GameObject>();
@@ -21,8 +22,18 @@ public class CustomisationManager : MonoBehaviour
         WalletPanels[value].SetActive(true);
         AssetDefault();
         AssetType[value].SetActive(true);
+        //ButtonWalletDefault();
+       // walletButtons[value].SetActive(true);
 
     }
+
+    //private void ButtonWalletDefault()
+    //{
+    //    for (int i = 0; i < walletButtons.Count; i++)
+    //    {
+    //        walletButtons[i].SetActive(false);
+    //    }
+    //}
 
     private void Start()
     {
@@ -77,8 +88,13 @@ public class CustomisationManager : MonoBehaviour
     }
     public void CustomisationDoneButton()
     {
-        StartCoroutine(PlayerCustomisation.instance.loadSceneTrans(1));
-        CustomisationConstant.instance.playerValue = CustomisationLPlayerList.instance.Playervalue;
+        //CustomisationConstant.instance.playerValue = CustomisationLPlayerList.instance.Playervalue;
+        // CustomisationConstant.instance.chariotValue = CustomisationLChariotList.instance.Chariotvalue;
+       // CustomisationConstant.instance.garudaValue = CustomisationLGarudaList.instance.Garudavalue;
         PlayerPrefs.SetInt("playervalue", CustomisationConstant.instance.playerValue);
+        PlayerPrefs.SetInt("chariotvalue", CustomisationConstant.instance.chariotValue);
+        PlayerPrefs.SetInt("garudavalue", CustomisationConstant.instance.garudaValue);
+        StartCoroutine(PlayerCustomisation.instance.loadSceneTrans(1));
     }
+    
 }

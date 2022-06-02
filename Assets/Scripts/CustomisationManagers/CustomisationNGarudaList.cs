@@ -6,7 +6,7 @@ public class CustomisationNGarudaList : MonoBehaviour
 {
     public static CustomisationNGarudaList instance;
     public List<GameObject> GarudaNFTVariation = new List<GameObject>();
-    public int GarudaNFTvalue = 0;
+    private int GarudaNFTvalue = 6;
 
     private void Awake()
     {
@@ -25,7 +25,8 @@ public class CustomisationNGarudaList : MonoBehaviour
     {
         GarudaNFTDefault();
         GarudaNFTVariation[value].SetActive(true);
-        GarudaNFTvalue = value;
+        GarudaNFTvalue = GarudaNFTvalue+value;
+        CustomisationConstant.instance.garudaValue = GarudaNFTvalue;
 
     }
     private void GarudaNFTDefault()

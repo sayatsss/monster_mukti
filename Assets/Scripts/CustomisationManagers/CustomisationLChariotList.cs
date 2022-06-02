@@ -6,7 +6,7 @@ public class CustomisationLChariotList : MonoBehaviour
 {
     public static CustomisationLChariotList instance;
     public List<GameObject> ChariotVariation = new List<GameObject>();
-    public int Chariotvalue = 0;
+    private int Chariotvalue = 0;
 
     private void Awake()
     {
@@ -25,7 +25,9 @@ public class CustomisationLChariotList : MonoBehaviour
     {
         ChariotDefault();
         ChariotVariation[value].SetActive(true);
+
         Chariotvalue = value;
+        CustomisationConstant.instance.chariotValue = Chariotvalue;
 
     }
     private void ChariotDefault()
