@@ -6,7 +6,7 @@ public class CustomisationLGarudaList : MonoBehaviour
 {
     public static CustomisationLGarudaList instance;
     public List<GameObject> GarudaVariation = new List<GameObject>();
-    public int Garudavalue = 0;
+    private int Garudavalue = 0;
 
     private void Awake()
     {
@@ -26,6 +26,7 @@ public class CustomisationLGarudaList : MonoBehaviour
         GarudaDefault();
         GarudaVariation[value].SetActive(true);
         Garudavalue = value;
+        CustomisationConstant.instance.garudaValue = Garudavalue;
 
     }
     private void GarudaDefault()

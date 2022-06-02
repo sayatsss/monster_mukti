@@ -25,9 +25,9 @@ public class CustomisationNPlayerList : MonoBehaviour
     {
         PlayerNFTDefault();
         PlayerNFTVariation[value].SetActive(true);
-        PlayerNFTvalue = PlayerNFTvalue+value;
-        Debug.Log(PlayerNFTvalue);
-        CustomisationConstant.instance.playerValue = PlayerNFTvalue;
+        int PnftValue = PlayerNFTvalue+value;
+        Debug.Log(PnftValue);
+        CustomisationConstant.instance.playerValue = PnftValue;
 
     }
     private void PlayerNFTDefault()

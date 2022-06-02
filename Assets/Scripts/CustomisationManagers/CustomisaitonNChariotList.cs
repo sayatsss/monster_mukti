@@ -6,7 +6,7 @@ public class CustomisaitonNChariotList : MonoBehaviour
 {
     public static CustomisaitonNChariotList instance;
     public List<GameObject> ChariotVariationNFT = new List<GameObject>();
-    public int ChariotNFTvalue = 0;
+    private int ChariotNFTvalue = 3;
 
     private void Awake()
     {
@@ -25,7 +25,9 @@ public class CustomisaitonNChariotList : MonoBehaviour
     {
         ChariotNFTDefault();
         ChariotVariationNFT[value].SetActive(true);
-        ChariotNFTvalue = value;
+        ChariotNFTvalue = ChariotNFTvalue+value;
+      
+        CustomisationConstant.instance.chariotValue = ChariotNFTvalue;
 
     }
     private void ChariotNFTDefault()
