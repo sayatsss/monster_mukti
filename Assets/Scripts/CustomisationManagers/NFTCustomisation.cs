@@ -13,10 +13,12 @@ public enum Itemcategory
 public class NFTCustomisation : MonoBehaviour
 {
     [SerializeField] private List<GameObject> NFTOptions = new List<GameObject>();
+    [SerializeField] private List<GameObject> NFTAssetsView = new List<GameObject>();
 
     [SerializeField] private List<NftItem> nftClothList = new List<NftItem>();
     [SerializeField] private List<NftItem> nftGarudaList = new List<NftItem>();
     [SerializeField] private List<NftItem> nftHorseList = new List<NftItem>();
+
 
     private List<NftItemData> nftItemDatas;
 
@@ -33,10 +35,23 @@ public class NFTCustomisation : MonoBehaviour
 
 
     }
+
+    private void NFTAssetOption()
+    {
+        for (int i = 0; i < NFTAssetsView.Count; i++)
+        {
+            NFTAssetsView[i].SetActive(false);
+
+        }
+    }
     public void NFTOptionChange(int value)
     {
         NFTOptionDefault();
         NFTOptions[value].SetActive(true);
+
+        NFTAssetOption();
+        NFTAssetsView[value].SetActive(true);
+
         Debug.Log(NFTOptions[value].name);
         if(value == 0)
         {
