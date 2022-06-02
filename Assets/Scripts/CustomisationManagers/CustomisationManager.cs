@@ -61,7 +61,7 @@ public class CustomisationManager : MonoBehaviour
     public void CustomisationDoneButton()
     {
         StartCoroutine(PlayerCustomisation.instance.loadSceneTrans(1));
-        CustomisationConstant.instance.playerValue = CustomisationPlayer.instance.Playervalue;
+        CustomisationConstant.instance.playerValue = CustomisationLPlayerList.instance.Playervalue;
         PlayerPrefs.SetInt("playervalue", CustomisationConstant.instance.playerValue);
     }
 }
