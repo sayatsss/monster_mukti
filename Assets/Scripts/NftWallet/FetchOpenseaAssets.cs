@@ -15,6 +15,8 @@ public class NftItemData
     public string address;
     public string category;
 
+    
+
     public Sprite itemSprite;
 
     public void UpdateData(string itemName, string itemUrl, string itemToken , string address, string category)
@@ -34,6 +36,9 @@ public class NftItemData
 
 public class FetchOpenseaAssets : MonoBehaviour
 {
+
+    private int dataCount, responseCount;
+    public GameObject Loader;
     public static FetchOpenseaAssets Insatance;
     [SerializeField] private List<NftItemData> nftItems = new List<NftItemData>();
 
@@ -46,6 +51,8 @@ public class FetchOpenseaAssets : MonoBehaviour
     {
         if (Insatance == null)
             Insatance = this;
+
+        Loader.SetActive(false);
     }
 
     private void OnEnable()
@@ -62,14 +69,21 @@ public class FetchOpenseaAssets : MonoBehaviour
         {
             assetRoutine = StartCoroutine(GetAssetData());
         }
+        else
+        {
+            NFTCustomisation.instance.NFTOptionChange(0);
+            Loader.SetActive(false);
+        }
     }
 
     IEnumerator GetAssetData()
     {
-       // Debug.Log("I am in");
+        // Debug.Log("I am in");
         //Loadder.Instance.StartLoader();
+        Loader.SetActive(true);
         using (UnityWebRequest webRequest = UnityWebRequest.Get(string.Concat(url,collection.ToLower())))
         {
+
             // Request and wait for the desired page.
             yield return webRequest.SendWebRequest();
 
@@ -82,7 +96,7 @@ public class FetchOpenseaAssets : MonoBehaviour
 
                 NftModel response = JsonConvert.DeserializeObject<NftModel>(webRequest.downloadHandler.text);
                 //Debug.Log(response.assets[0].token_id);
-                
+                responseCount = response.assets.Count;
                 UpdateItemData(response);
             }
         }
@@ -118,6 +132,12 @@ public class FetchOpenseaAssets : MonoBehaviour
     {
         Debug.Log("OnDownloadCompelete");
         nftItemData.UpdateSprite(sprite);
+        dataCount++;
+        if(dataCount == responseCount)
+        {
+            NFTCustomisation.instance.NFTOptionChange(0);
+            Loader.SetActive(false);
+        }
     }
 
     IEnumerator DownloadImage(string url ,NftItemData itemData, Action<Sprite, NftItemData> OnCompelte)

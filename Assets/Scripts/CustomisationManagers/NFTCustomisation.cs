@@ -12,6 +12,8 @@ public enum Itemcategory
 
 public class NFTCustomisation : MonoBehaviour
 {
+
+    public static NFTCustomisation instance;
     [SerializeField] private List<GameObject> NFTOptions = new List<GameObject>();
     [SerializeField] private List<GameObject> NFTAssetsView = new List<GameObject>();
 
@@ -22,6 +24,10 @@ public class NFTCustomisation : MonoBehaviour
 
     private List<NftItemData> nftItemDatas;
 
+    private void Awake()
+    {
+        instance = this;
+    }
     private void Start()
     {
         NFTOptionChange(0);
