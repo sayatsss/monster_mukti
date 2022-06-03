@@ -37,7 +37,7 @@ public class CustomisationManager : MonoBehaviour
 
     private void Start()
     {
-        //PlayerPrefs.DeleteAll();
+        PlayerPrefs.DeleteAll();
         WalletChange(0);
         OptionChange(0);
     }

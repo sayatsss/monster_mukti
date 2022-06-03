@@ -2,13 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.UI;
 
 public class WalletLoginHandler : MonoBehaviour
 {
     public bool isLoggedIn;
-
+    public Text AccountTest;
     public static Action OnLoggedIn;
 
+    private void Awake()
+    {
+        AccountTest.text = "Wallet Address";
+    }
     public void OnLogin()
     {
         if (PlayerPrefs.HasKey("Account"))
@@ -43,6 +48,8 @@ public class WalletLoginHandler : MonoBehaviour
             PlayerPrefs.SetString("Account", account);
             isLoggedIn = true;
             Debug.Log(account);
+            AccountTest.text = account;
+            
             OnLoggedIn?.Invoke();
         }
     }
