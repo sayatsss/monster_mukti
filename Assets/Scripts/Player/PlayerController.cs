@@ -84,7 +84,7 @@ public class PlayerController : MonoBehaviour
 
                 
                 velocity.x = Input.acceleration.x * turnSpeed;
-                velocity.x = Input.GetAxis("Horizontal") * turnSpeed;
+                //velocity.x = Input.GetAxis("Horizontal") * turnSpeed;
 
             }
 

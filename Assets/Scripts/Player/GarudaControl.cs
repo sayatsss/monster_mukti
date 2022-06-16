@@ -35,7 +35,7 @@ public class GarudaControl : MonoBehaviour
         velocity.x = Input.acceleration.x * speed;
 
 
-        velocity.x = Input.GetAxis("Horizontal") * speed;
+        //velocity.x = Input.GetAxis("Horizontal") * speed;
         transform.Translate(velocity  * Time.deltaTime);
        // aboveCloudLOD.transform.Translate(cloudLODVel * Time.deltaTime);
 
